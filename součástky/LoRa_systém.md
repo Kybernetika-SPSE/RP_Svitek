@@ -1,5 +1,5 @@
-# Součástky potřebné na LoRa komunikaci
-    Pro ovládání jsem se rozhodl použít systém LoRa. Musí to umět 868MHz což je legální frekvence v ČR a iděálně by to mělo mít nějakou anténu. 
+# **Součástky potřebné na LoRa komunikaci**
+Pro ovládání jsem se rozhodl použít systém LoRa. Musí to umět 868MHz což je legální frekvence v ČR a iděálně by to mělo mít nějakou anténu. 
 ## Ovladač
 pro ovladač mám několik možností ale nejlepší mi příjde 
 koupit **[ESP32 heltec V4](https://www.laskakit.cz/heltec-wifi-lora-32-v3-868mhz-0-96--wifi-modul/)**
@@ -7,9 +7,8 @@ což je esp které už má v sobě zabudovaný loRa čip SX1262 a má na sobě d
 
 - **Kód ovladače**
   
-    co jsem procházel knihovny pro ardino IDE at nejlepší volba je **RadioLib** která je velice jednoduchá na použití a dokáže zorganizovat komunikaci mezi čipi **SX1262** a **SX1276**. Pomocí claude code by stačilo napsat něco takového : 
+    co jsem procházel knihovny pro ardino IDE tak nejlepší volba je **RadioLib** která je velice jednoduchá na použití a dokáže zorganizovat komunikaci mezi čipi **SX1262** a **SX1276**. Pomocí claude code jsem dostal takový jdenoduchý kód : 
     
-    ***
 
         #include <RadioLib.h>
 
@@ -50,6 +49,13 @@ což je esp které už má v sobě zabudovaný loRa čip SX1262 a má na sobě d
         delay(50); // 20Hz refresh rate
         }
 
-    ***
 
-    kde místo 
+    kde naše hlavní informace z páček nebo joysticků (jestě sem se nerozhodl) by byli v stringu "command" informace z joysticků. 
+
+          String command = "T:" + String(throttle) + 
+                           ",P:" + String(pitch) + 
+                           ",R:" + String(roll) + 
+                           ",Y:" + String(yaw);
+
+## Přijímač
+Pro příjímač neboli letadlo by kód byl o dost složitější 
