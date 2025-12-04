@@ -50,7 +50,7 @@ což je esp které už má v sobě zabudovaný loRa čip SX1262 a má na sobě d
         }
 
 
-    kde naše hlavní informace z páček nebo joysticků (jestě sem se nerozhodl) by byli v stringu "command" informace z joysticků. 
+    kde naše hlavní informace z páček nebo joysticků (jestě sem se nerozhodl) by byli v stringu "command". 
 
           String command = "T:" + String(throttle) + 
                            ",P:" + String(pitch) + 
