@@ -57,5 +57,10 @@ což je esp které už má v sobě zabudovaný loRa čip SX1262 a má na sobě d
                            ",R:" + String(roll) + 
                            ",Y:" + String(yaw);
 
+
+
 ## Přijímač
 Pro příjímač neboli letadlo by kód byl o dost složitější 
+
+
+Dále bych mohl přidat něco jako Fail-Safe mód kde kdyby nějakou dobu neproběhla komunikace tak by se nastavyli nějaký defaultní hodnoty.
