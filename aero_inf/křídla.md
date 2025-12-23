@@ -1,17 +1,17 @@
 # Křídla
 
 
-## hlavní
+### hlavní
 Hlavní křídlo sem se rozhodl udělat o rozpětí 50cm a chord 13cm. Profil jsem si vybral **NACA 4412**, kvůli jeho dobrým vlastnostem při nizkých rychlostech. Ailerony budou odvozeny z profilu a budou mít asi 40cm dohromady. podle toho sem dá určit vše ostatní
 
-## elevator
+### elevator
 Pro elevátor by měl být profil neutrální takže sem zvolil profil **NACA 0012** bez nějakého vyššího důvodu. klapky budou po celé délce elvátoru.
 
-## Fin
+### Fin
 Pro rudder sem se rozhodl že ani nebude mít žádné servo nebude se dát ovládat a ani tam nebude klapka. Model velikosti jako chci postavit já ho nepotřbuje. Profil bude též NACA 0012.
 
 
-## tabulka hodnot
+### tabulka hodnot :
 
 | Plocha        |           Rozpětí |       Chord | Profil    |
 | ------------- | ----------------: | ----------: | --------- |
