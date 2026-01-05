@@ -13,11 +13,17 @@ Pro rudder sem se rozhodl že ani nebude mít žádné servo nebude se dát ovl�
 
 ### tabulka hodnot :
 
-| Plocha        |           Rozpětí |       Chord | Profil    |
-| ------------- | ----------------: | ----------: | --------- |
-| Hlavní křídlo |         **50 cm** | **13 cm** | NACA 4412 |
-| Elevator      |         **20 cm** |    **8 cm** | NACA 0012 |
-| Fin           | **12 cm (výška)** |    **7 cm** | NACA 0012 |
+| Křídlo       |           Rozpětí |       Chord | Profil    |   Plocha       |
+| ------------- | ----------------: | ----------: | ---------: | --------- |
+| Hlavní křídlo |         **50 cm** | **13 cm** | NACA 4412 |   0,065 m²   |
+| Elevator      |         **20 cm** |    **8 cm** | NACA 0012 | 0,016 m²     |
+| Fin           | **12 cm (výška)** |    **7 cm** | NACA 0012 |  0,0084 m²    |
+
+# objemový koeficient
+(tail volume coefficient) určuje stabilitu křídla. Pro moje použití chci 0,5 - 0,8.
+
+<span style="text-align: center; font-size:2em;">$Vh = \frac{Sh lh}{S c}$</span>
+
 
 
 # Reynoldsovo číslo
