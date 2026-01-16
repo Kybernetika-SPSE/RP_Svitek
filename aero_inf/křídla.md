@@ -16,17 +16,21 @@ Pro rudder sem se rozhodl že ani nebude mít žádné servo nebude se dát ovl�
 | Křídlo       |           Rozpětí |       Chord | Profil    |   Plocha       |
 | ------------- | ----------------: | ----------: | ---------: | --------- |
 | Hlavní křídlo |         **50 cm** | **13 cm** | NACA 4412 |   0,065 m²   |
-| Elevator      |         **20 cm** |    **8 cm** | NACA 0012 | 0,016 m²     |
+| Horizontal stabilizer      |         **20 cm** |    **8 cm** | NACA 0012 | 0,016 m²     |
 | Fin           | **12 cm (výška)** |    **7 cm** | NACA 0012 |  0,0084 m²    |
 
 # objemový koeficient
-(tail volume coefficient) určuje stabilitu křídla. Pro moje použití chci 0,03 - 0,08.
+(tail volume coefficient) určuje stabilitu výškovky. Pro moje použití chci 0,3 - 0,7.
 
 <span style="text-align: center; font-size:2em;">$V_h = \frac{S_h ⋅ l_h}{S⋅c}$</span>
 
-kde $S_h$ je plocha rudderu, $l_h$ je rameno rudderu, $S$ je plocha hlavního křídla a $c$ je střední aerodynamická tětiva u obdelníkového křídla (jako to moje) se $c =$ chord hlavního křídla 
+kde $S_h$ je **plochav výškovky**, $l_h$ je **rameno výškovky** neboli vzdálenost aerodynamického  středu (počítám u NACA 4412 tak 25% chordu) výškovky od hlavního křídla  , $S$ je **plocha hlavního křídla** a $c$ je **střední aerodynamická tětiva** u obdelníkového křídla (jako to moje) se $c =$ chord hlavního křídla 
 
-takže po dasazení hodnot $s_h = 0,0084$ $m^2$ , $l_h = 0,05$ $m$ , $S = 0,065$ $m^2$ a $c = 0,12$ $m$ dostaneme $V_h$ = **0,054** . Výsledek odpovídá typickému rozsahu pro lehké letadla.
+takže po dasazení hodnot $s_h = 0,016$ $m^2$ 
+
+ $l_h = l_{hl-vy} - \frac{C_{hl}}{4} + \frac{C_{vy}}{4} = 298,75$ $mm$ $=0,29875$ $m$, kde $l_{hl-vy}$ je vzdálenost výškovky od hlavního křídla, $C_{hl}$ je chord hlavního křídla a $C_{vy}$ je chord výškovky.
+ 
+  $S = 0,065$ $m^2$ a $c = 0,13$ $m$ dostaneme $V_h$ = **0,566** . Výsledek odpovídá typickému rozsahu pro lehká letadla.
 
 
 # Reynoldsovo číslo
