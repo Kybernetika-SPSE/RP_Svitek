@@ -20,16 +20,19 @@ Pro rudder sem se rozhodl že ani nebude mít žádné servo nebude se dát ovl�
 | Fin           | **12 cm (výška)** |    **7 cm** | NACA 0012 |  0,0084 m²    |
 
 # objemový koeficient
-(tail volume coefficient) určuje stabilitu křídla. Pro moje použití chci 0,5 - 0,8.
+(tail volume coefficient) určuje stabilitu křídla. Pro moje použití chci 0,03 - 0,08.
 
-<span style="text-align: center; font-size:2em;">$Vh = \frac{Sh lh}{S c}$</span>
+<span style="text-align: center; font-size:2em;">$V_h = \frac{S_h ⋅ l_h}{S⋅c}$</span>
 
+kde $S_h$ je plocha rudderu, $l_h$ je rameno rudderu, $S$ je plocha hlavního křídla a $c$ je střední aerodynamická tětiva u obdelníkového křídla (jako to moje) se $c =$ chord hlavního křídla 
+
+takže po dasazení hodnot $s_h = 0,0084$ $m^2$ , $l_h = 0,05$ $m$ , $S = 0,065$ $m^2$ a $c = 0,12$ $m$ dostaneme $V_h$ = **0,054** . Výsledek odpovídá typickému rozsahu pro lehké letadla.
 
 
 # Reynoldsovo číslo
 Z rozměru popsaných výše můžeme vypočítat Re. Použijeme pro to vztah
    
-<span style="text-align: center; font-size:2em;">$Re = \frac{V c}{v}$</span>
+<span style="text-align: center; font-size:2em;">$Re = \frac{V ⋅ c}{v}$</span>
 
 kde *V* je rychlost letu, *c* je charakteristická délka neboli **chord** a *ν* je kinematická viskozita vzduchu  (1.5 × 10⁻⁵ m²/s počítam jako konstantu).
 
