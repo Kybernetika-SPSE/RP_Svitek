@@ -15,8 +15,8 @@ seznam součástek potřebných k provozu
 - napájení
   -  těžší ale vydrží déle **[baterie 1](https://www.rcprofi.cz/kavan-li-po-1300mah-11-1v-40-80c-14-4wh)** / [baterie 2](https://www.bighobby.cz/li-pol-baterie-1300mah-3s-35c--70c--bighobby-nano-tech/)
   - lehčí [baterie 1](https://www.bighobby.cz/li-pol-baterie-1100mah-3s-25c--50c--bighobby-nano-tech/) / [baterie 2](https://www.bighobby.cz/li-pol-baterie-1100-mah-3s-25c--50c--bh-hard/)
-- nějaký [ESC 1](https://www.bighobby.cz/regulator-otacek-20a-flycolor-esc-bec-5v-3a/) / [ESC 2](https://www.bighobby.cz/regulator-otacek-30a-flycolor-esc-bec-5v-3a/)
-- [step-down měnič](https://www.laskakit.cz/step-down-menic-s-lm2596/)
+- nějaký [ESC 1](https://www.bighobby.cz/regulator-otacek-40a-hornet--2-4s-/) / [ESC 2](https://www.bighobby.cz/regulator-otacek-30a-flycolor-esc-bec-5v-3a/)
+- [step-down měnič](https://www.laskakit.cz/step-down-menic-5v-5a-tps40057/), 5V a max 5A dostatečně stačí
 - [vrtule](https://www.rcprofi.cz/apc-vrtule-8x6-pravotociva#description)
 - kondenzátor u esp (proti rušení), +-700µF
 
