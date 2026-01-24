@@ -40,4 +40,30 @@ Z rozměru popsaných výše můžeme vypočítat Re. Použijeme pro to vztah
 
 kde *V* je rychlost letu, *c* je charakteristická délka neboli **chord** a *ν* je kinematická viskozita vzduchu  (1.5 × 10⁻⁵ m²/s počítam jako konstantu).
 
-při rychlsti 8 $ms^{-1}$ bude $Re$ hlavního křídla zhruba 70000. S tímhle číslem se dále pracuje při sumulacích. -> viz simulace
+při rychlsti 10 $ms^{-1}$ bude $Re$ hlavního křídla zhruba 87000. S tímhle číslem se dále pracuje při sumulacích. -> viz simulace
+
+# Stall speed
+pro výpočet rychlosti při který křídlo přestane generovat vztlak použijeme vzorec
+
+
+<span style="text-align: center; font-size:2em;">$V_{stall} = \sqrt{\frac{2⋅W}{ρ⋅S⋅C_{Lmax}}}$</span>
+
+kde $W$ je tíhová síla letadla ( $W = mg$ ), $ρ$ je hustota vzduchu (počítám s $ρ$ = 1.225 $kgm^{−3}$) $S$ je referenční plocha křídla, používá se plocha hlavního křídla a $C_{Lmax}$ je maximální součinitel vztlaku kdy křídlo jestě produkuje vztlak. Hodnotu $C_{Lmax}$ zjistim pomocí simulací v programu XFLR5.
+
+váha podle odhadu vychází zhruba 280g.
+
+$W = 0,280kg = 2,75$ N , $S=0,065$ m²
+
+$C_{l,max}$ podle simulace 2D profilu v Xfoil pro $Re=87000$, vyšel $C_{l,max}=1.31$ tohle je pro 2D křído, kde se nepočítají žádné koncové víry, downwash a to že vztlak nemusí být rovnoměrně rozložený. Proto abychom z 2D získali 3D typicky se to vynásobý 0,75-0,85. takže 
+$C_{L,max}=C_{l,max}⋅0.8$
+
+$C_{L,max} = 1,05$
+
+​$V_{stall} = \sqrt{\frac{2⋅2,75}{1,225⋅0,065⋅1,05}}$
+
+$V_{stall} = 8,11$ $ms^{-1}$
+
+tohle číslo je čistě pro hlavní křídlo když klapky jsou v neutrální pozici. Jakmile se klapky dají dolů/nahorů $C_{l,max}$ se změní. 
+Z grafu v Xfoil vyčteme že $C_{l,max}$ když jsou klapky plně dolů $C_{l,max}=1,61$ které převedeme na 3D stejně jako předtím. Potom $V_{stall}$ pro klapky dolů je
+
+$V_{stall} = 7,32$ $ms^{-1}$.
