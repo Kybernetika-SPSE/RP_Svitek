@@ -102,12 +102,12 @@ váha podle odhadu vychází zhruba 400g.
 
 $W = m⋅g = 3,92$ N , $S=0,078$ m²
 
-$C_{l,max}$ podle simulace 2D profilu v Xfoil pro $Re=87000$, vyšel $C_{l,max}=1.32$ tohle je pro 2D křído, kde se nepočítají žádné koncové víry, downwash a to že vztlak nemusí být rovnoměrně rozložený. Proto abychom z 2D získali 3D typicky se to vynásobý 0,75-0,85. takže 
+$C_{l,max}$ podle simulace 2D profilu v Xfoil pro $Re=104000$, vyšel $C_{l,max}=1.32$ tohle je pro 2D křído, kde se nepočítají žádné koncové víry, downwash a to že vztlak nemusí být rovnoměrně rozložený. Proto abychom z 2D získali 3D typicky se to vynásobý 0,75-0,85. takže 
 $C_{L,max}=C_{l,max}⋅0.8$
 
 $C_{L,max} = 1,06$
 
-​$V_{stall} = \sqrt{\frac{2⋅3,92}{1,225⋅0,078⋅1,05}}$
+<span style="text-align: center; font-size:2em;">​$V_{stall} = \sqrt{\frac{2⋅3,92}{1,225⋅0,078⋅1,05}}$</span>
 
 $V_{stall} = 8,79$ $ms^{-1}$
 
