@@ -2,7 +2,7 @@
 
 
 ### hlavní
-Hlavní křídlo sem se rozhodl udělat o rozpětí 60cm a chord 13cm. Profil jsem si vybral **NACA 4412**, kvůli jeho dobrým vlastnostem při nizkých rychlostech. Ailerony budou odvozeny z profilu a budou mít asi 40cm dohromady. podle toho sem dá určit vše ostatní
+Hlavní křídlo jsem se rozhodl udělat o rozpětí 60cm a chord 13cm. Profil jsem si vybral **NACA 4412**, kvůli jeho dobrým vlastnostem při nizkých rychlostech. Ailerony budou odvozeny z profilu a budou mít asi 40cm dohromady. podle toho sem dá určit vše ostatní
 
 ### Výškovka
 Pro výškovku by měl být profil neutrální takže sem zvolil profil **NACA 0012** bez nějakého vyššího důvodu. klapky budou po celé délce výškovky.
@@ -65,7 +65,7 @@ obr 2: Indukovaný odpor křídla, $α = 0°$
 ![induced drag 0°](../XFLR/TEST/sim1/induced%20drag%20a=7.png)
 obr 3: Indukovaný odpor křídla, $α = 7°$
 
-V obr 1 jde vidět že $C_L = 0,26$ což znamená že vztlak je malý a tím pádem indukovaný odpor je malý. Podle výpočtů $C_{Di}=0,0054$. Naopak v Obr 2 je $C_L = 0,77$ proudění míří dolů a indukovaný odpor je vyší. Podle výpočtů $C_{Di}=0,048$. Analýza v XFLR potvrzuje tyto výpočty ale i přesto XFLR5 v některých bodech udává účinnost $e$ blízkou 1, což je chyba inviscidní metody simulace.
+V obr 2 jde vidět že $C_L = 0,26$ což znamená že vztlak je malý a tím pádem indukovaný odpor je malý. Podle výpočtů $C_{Di}=0,0054$. Naopak v Obr 3 je $C_L = 0,77$ proudění míří dolů a indukovaný odpor je vyší. Podle výpočtů $C_{Di}=0,048$. Analýza v XFLR potvrzuje tyto výpočty ale i přesto XFLR5 v některých bodech udává účinnost $e$ blízkou 1, což je chyba inviscidní metody simulace.
 
 ### Wing Loading
 Wing Loading nebo Zátěž na křídlo je poměr váhy letadla a plochy křídla podle vzorce 
@@ -73,9 +73,6 @@ Wing Loading nebo Zátěž na křídlo je poměr váhy letadla a plochy křídla
 $WL = \frac{m}{S}$ ,  $WL = \frac{400}{0,078}$ $WL = 5,13$ $kg⋅m^{-2}$
 
 kde $m$ je hmotnost letadla a $S$ je plocha křídel. Výsledek 5,128 $kg⋅m^{-2}$ odpovídá lehkému tréningovému modelu. Tato hodnota umožňuje nízkou přistávací rychlost.
-
-
-
 
 # Reynoldsovo číslo
 Z rozměru popsaných výše můžeme vypočítat Re. Použijeme pro to vztah
@@ -107,9 +104,9 @@ Podobně jako $V_h$, $V_v$ určuje stabilitu vertikálního stabilizátoru nebol
 
 kde $S_v$ je plocha vertikálního stabilizátoru, $l_v$ je rameno finu neboli podobně jako u $V_h$ zdálenost aerodynamického  středu (počítám u tak 25% chordu) vertikálního stabilizátoru od hlavního křídla, $S$ je plocha hlavního křídla a $b$ je rozpětí hlavního křídla.
 
-$l_v = l_{hl-fi} - \frac{C_{hl}}{4} + \frac{C_{fi}}{4} = 295$ $mm$ $= 0,295$ $m$, kde $l_{hl-vy}$ je vzdálenost výškovky od hlavního křídla, $C_{hl}$ je chord hlavního křídla a $C_{fi}$ je chord vertikálního stabilizátoru.
+$l_v = l_{hl-fi} - \frac{C_{hl}}{4} + \frac{C_{fi}}{4} = 297,5$ $mm$ $= 0,2975$ $m$, kde $l_{hl-vy}$ je vzdálenost výškovky od hlavního křídla, $C_{hl}$ je chord hlavního křídla a $C_{fi}$ je chord vertikálního stabilizátoru.
 
-$S = 0,078$ $m^2$ a $c = 0,13$ $m$ dostaneme $V_v$ = **0,0403** . Výsledek odpovídá typickému rozsahu pro lehká letadla.
+$S = 0,078$ $m^2$ a $c = 0,13$ $m$ dostaneme $V_v$ = **0,041** . Výsledek odpovídá typickému rozsahu pro lehká letadla.
 
 # Stall speed
 pro výpočet rychlosti při který křídlo přestane generovat vztlak použijeme vzorec
@@ -139,6 +136,25 @@ $V_{stall} = 7,93$ $ms^{-1}$.
 ![grafy Cl](../XFLR/TEST/sim%20a%20=%205°/CL%20graf%20104k.png)
 obr. 4 grafy Cl alpha 
 
+# Podélná stabilita
+
+Z analýzy momentové charakteristiky v XFLR5 vyplývá že, Moment koeficient při nulovém úhlu náběhu je  $C_{m0} = -0,049$. Záporná hodnota $C_{m0}$ indikuje přirozený stabilizační moment. Sklon křivky $\frac{dC_m}{dα} < 0$ potvrzuje statickou podélnou stabilitu.
+![grafy Cm](../XFLR/TEST/sim1/Cm%20graf.png)
+Obr. 5: Grafy stability z XFLR5
+
+Graf v levém dolním rohu ukazuje závislost momentu $C_m$
+​ na úhlu náběhu. Záporná hodnota $C_m$
+znamená přirozený moment natáčející nos k zemi. Výsledek je tak malý že to v podstatě indikuje, že letadlo je téměř
+vyvážené při nízkých úhlech náběhu, což chceme pro efektivní let.
+
+
+# výkon
+Použiju motor **KAVAN Brushless C2822-1400** který má maximální tah s S3 LiPo baterií 500g, pomocí tohoto můžeme vypočítat poměr tahu mototru k hmotnosti letadla (Thrust-to-weight ratio) 
+
+$\frac{T}{W}=\frac{500}{400}=1,25$,
+
+kde $T$ je tah motoru a $W$ je tíha letadla. poměr $\frac{T}{W}$ 1,25 zajišťuje dostatečný výkon pro létání včetně vertikálního stoupání. 
+
 # Letové podmínky
 návrhová rychlost se kterou počítam 10-12 $ms^{-1}$
 
@@ -146,3 +162,21 @@ Re pro 10 $ms^{-1}$ je 87000, pro 12 $ms^{-1}$ 104000. Předpokládám že se bu
 
 XFLR není dokonalý a všehcny výpočty budu doplňovat realnými testy.
 
+# Shrnutí klíčových parametrů
+
+| Parametr | Hodnota | Jednotka |
+|----------|---------|----------|
+| Rozpětí hlavního křídla | 60 | cm |
+| Chord hlavního křídla | 13 | cm |
+| Plocha křídla | 0,078 | m² |
+| Aspect Ratio (AR) | 4,62 | - |
+| Wing Loading | 5,13 | kg/m² |
+| Reynolds číslo (Re) | 80 000 - 110 000 | - |
+| $V_h$ | 0,454 | - |
+| $V_v$ | 0,0403 | - |
+| Stall speed (clean) | 8,76 | m/s |
+| Stall speed (flaps down) | 7,93 | m/s |
+| Návrhová rychlost | 12 | m/s |
+| Hmotnost | 400 | g |
+| Thrust-to-weight | 1,25 | - |
+| CG pozice | 28% MAC | - |
