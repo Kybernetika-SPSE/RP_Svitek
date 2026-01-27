@@ -2,10 +2,10 @@
 
 
 ### hlavní
-Hlavní křídlo sem se rozhodl udělat o rozpětí 50cm a chord 13cm. Profil jsem si vybral **NACA 4412**, kvůli jeho dobrým vlastnostem při nizkých rychlostech. Ailerony budou odvozeny z profilu a budou mít asi 40cm dohromady. podle toho sem dá určit vše ostatní
+Hlavní křídlo sem se rozhodl udělat o rozpětí 60cm a chord 13cm. Profil jsem si vybral **NACA 4412**, kvůli jeho dobrým vlastnostem při nizkých rychlostech. Ailerony budou odvozeny z profilu a budou mít asi 40cm dohromady. podle toho sem dá určit vše ostatní
 
-### elevator
-Pro elevátor by měl být profil neutrální takže sem zvolil profil **NACA 0012** bez nějakého vyššího důvodu. klapky budou po celé délce elvátoru.
+### Výškovka
+Pro výškovku by měl být profil neutrální takže sem zvolil profil **NACA 0012** bez nějakého vyššího důvodu. klapky budou po celé délce výškovky.
 
 ### Fin
 Pro rudder sem se rozhodl že ani nebude mít žádné servo nebude se dát ovládat a ani tam nebude klapka. Model velikosti jako chci postavit já ho nepotřbuje. Profil bude též NACA 0012.
@@ -17,7 +17,7 @@ Pro rudder sem se rozhodl že ani nebude mít žádné servo nebude se dát ovl�
 | ------------- | ----------------: | ----------: | ---------: | --------- |
 | Hlavní křídlo |         **60 cm** | **13 cm** | NACA 4412 |   0,078 m²   |
 | Horizontal stabilizer      |         **20 cm** |    **8 cm** | NACA 0012 | 0,016 m²     |
-| Fin           | **12 cm (výška)** |    **7 cm** | NACA 0012 |  0,0084 m²    |
+| Fin           | **8 cm (výška)** |    **8 cm** | NACA 0012 |  0,0064 m²    |
 
 # Aero základy
 
@@ -55,9 +55,9 @@ indukovaný odpor křídel vyjadřuje vztah
 
 kde $C_L$ je koeficient vztlaku, $e$ je Oswaldův faktor účinnosti který říká jak blízko má křídlo k ideálnímu rozložení vztlaku, kde 1 je ideální křídlo. Pro výpočet jsem počítal s $e=0,85$. $AR$ je poměr rozpětí křídla a plochy křídla
 
-$AR = \frac{b^2}{S}$,
+$AR = \frac{b^2}{S}$ $AR = \frac{0,6^2}{0,078}$ $AR = 4,62$,
 
-kde $b$ je rozpětí křídla a $S$ je plocha křídla.
+kde $b$ je rozpětí křídla a $S$ je plocha křídla. Typicky nízké AR znamená víc indukovaného odporu tím pádem lepší manévrovatelnost.
 
 ![induced drag 0°](../XFLR/TEST/sim1/induced%20drag%20a=0.png)
 obr 2: Indukovaný odpor křídla, $α = 0°$
@@ -66,6 +66,16 @@ obr 2: Indukovaný odpor křídla, $α = 0°$
 obr 3: Indukovaný odpor křídla, $α = 7°$
 
 V obr 1 jde vidět že $C_L = 0,26$ což znamená že vztlak je malý a tím pádem indukovaný odpor je malý. Podle výpočtů $C_{Di}=0,0054$. Naopak v Obr 2 je $C_L = 0,77$ proudění míří dolů a indukovaný odpor je vyší. Podle výpočtů $C_{Di}=0,048$. Analýza v XFLR potvrzuje tyto výpočty ale i přesto XFLR5 v některých bodech udává účinnost $e$ blízkou 1, což je chyba inviscidní metody simulace.
+
+### Wing Loading
+Wing Loading nebo Zátěž na křídlo je poměr váhy letadla a plochy křídla podle vzorce 
+
+$WL = \frac{m}{S}$ ,  $WL = \frac{400}{0,078}$ $WL = 5,13$ $kg⋅m^{-2}$
+
+kde $m$ je hmotnost letadla a $S$ je plocha křídel. Výsledek 5,128 $kg⋅m^{-2}$ odpovídá lehkému tréningovému modelu. Tato hodnota umožňuje nízkou přistávací rychlost.
+
+
+
 
 # Reynoldsovo číslo
 Z rozměru popsaných výše můžeme vypočítat Re. Použijeme pro to vztah
@@ -77,19 +87,29 @@ kde $V$ je rychlost letu, $c$ je charakteristická délka neboli **chord** a $ν
 při rychlsti 12 $ms^{-1}$ bude $Re$ hlavního křídla zhruba 104000. S tímhle číslem se dále pracuje při sumulacích. -> viz simulace
 
 
-# objemový koeficient
+# objemový koeficient výškovky
 (tail volume coefficient) určuje stabilitu výškovky. Pro moje použití chci 0,3 - 0,7.
 
 <span style="text-align: center; font-size:2em;">$V_h = \frac{S_h ⋅ l_h}{S⋅c}$</span>
 
-kde $S_h$ je **plochav výškovky**, $l_h$ je **rameno výškovky** neboli vzdálenost aerodynamického  středu (počítám u NACA 4412 tak 25% chordu) výškovky od hlavního křídla  , $S$ je **plocha hlavního křídla** a $c$ je **střední aerodynamická tětiva** u obdelníkového křídla (jako to moje) se $c =$ chord hlavního křídla 
+kde $S_h$ je **plochav výškovky**, $l_h$ je **rameno výškovky** neboli vzdálenost aerodynamického  středu (počítám u tak 25% chordu) výškovky od hlavního křídla  , $S$ je **plocha hlavního křídla** a $c$ je **střední aerodynamická tětiva** u obdelníkového křídla (jako to moje) se $c =$ chord hlavního křídla 
 
 takže po dasazení hodnot $s_h = 0,016$ $m^2$ 
 
- $l_h = l_{hl-vy} - \frac{C_{hl}}{4} + \frac{C_{vy}}{4} = 298,75$ $mm$ $=0,29875$ $m$, kde $l_{hl-vy}$ je vzdálenost výškovky od hlavního křídla, $C_{hl}$ je chord hlavního křídla a $C_{vy}$ je chord výškovky.
+ $l_h = l_{hl-vy} - \frac{C_{hl}}{4} + \frac{C_{vy}}{4} = 287,5$ $mm$ $=0,2875$ $m$, kde $l_{hl-vy}$ je vzdálenost výškovky od hlavního křídla, $C_{hl}$ je chord hlavního křídla a $C_{vy}$ je chord výškovky.
  
-  $S = 0,078$ $m^2$ a $c = 0,13$ $m$ dostaneme $V_h$ = **0,471** . Výsledek odpovídá typickému rozsahu pro lehká letadla.
+  $S = 0,078$ $m^2$ a $c = 0,13$ $m$ dostaneme $V_h$ = **0,454** . Výsledek odpovídá typickému rozsahu pro lehká letadla.
 
+# objemový koeficient vertikálního stabilizátoru
+Podobně jako $V_h$, $V_v$ určuje stabilitu vertikálního stabilizátoru neboli "finu". Pro moje použití chci 0,05-0,03.
+
+<span style="text-align: center; font-size:2em;">$V_v = \frac{S_v ⋅ l_v}{S⋅b}$</span>
+
+kde $S_v$ je plocha vertikálního stabilizátoru, $l_v$ je rameno finu neboli podobně jako u $V_h$ zdálenost aerodynamického  středu (počítám u tak 25% chordu) vertikálního stabilizátoru od hlavního křídla, $S$ je plocha hlavního křídla a $b$ je rozpětí hlavního křídla.
+
+$l_v = l_{hl-fi} - \frac{C_{hl}}{4} + \frac{C_{fi}}{4} = 295$ $mm$ $= 0,295$ $m$, kde $l_{hl-vy}$ je vzdálenost výškovky od hlavního křídla, $C_{hl}$ je chord hlavního křídla a $C_{fi}$ je chord vertikálního stabilizátoru.
+
+$S = 0,078$ $m^2$ a $c = 0,13$ $m$ dostaneme $V_v$ = **0,0403** . Výsledek odpovídá typickému rozsahu pro lehká letadla.
 
 # Stall speed
 pro výpočet rychlosti při který křídlo přestane generovat vztlak použijeme vzorec
