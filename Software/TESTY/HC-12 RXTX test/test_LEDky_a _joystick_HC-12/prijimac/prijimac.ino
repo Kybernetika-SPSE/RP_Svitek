@@ -16,6 +16,6 @@ void loop() {
   if (HC12.available()) {
     uint8_t val = HC12.read(); 
     analogWrite(LED_PIN, val);   
-    Serial.print("recv="); Serial.println(val);
+    Serial.print("recv ="); Serial.println(val);
   }
 }
