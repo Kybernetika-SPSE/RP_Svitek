@@ -20,7 +20,7 @@ void setup() {
 void loop() {
   if(HC12.available()){
     uint16_t thrPMW;
-    HC12.readBytes((uint8_t*)&thrPMW, sizeof(thrPMW)); // přečti 2 bajty
+    HC12.readBytes((uint8_t*)&thrPMW, sizeof(thrPMW)); 
     servo1.writeMicroseconds(thrPMW);
     Serial.print("T přijato : ");
     Serial.println(thrPMW);

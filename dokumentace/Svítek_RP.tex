@@ -741,7 +741,9 @@ a~jeden pro výškovku.
 
 \subsection{Joystiky}
 
-Ovladač je vybaven dvěma dvouosými joystiky, ketré jsou 
+Ovladač je vybaven dvěma dvouosými joystiky, 
+ketré fungují na principu potenciometrů. Jeden joystick řídí zatáčení (roll/yaw) a~druhý řídí plyn (throttle). 
+Výstupy z~joysticků jsou čteny jako analogové hodnoty pomocí ADC pinů na ESP32, které jsou následně mapovány na odpovídající rozsah PWM signálu a~odesílány přes HC-12 do letadla.
  
 \subsection{Regulátor ESC a motor}
  
@@ -763,7 +765,7 @@ Maximální tah s~vrtulí APC 8$\times$4'' na 3S dosahuje přibližně 500~g.
 Hlavním zdrojem energie je baterie \textbf{KAVAN LiPo 1300~mAh / 11{,}1~V (3S) / 40--80C}.
 Trojčlánková konfigurace (3S) poskytuje jmenovité napětí 11{,}1~V
 a~plně nabitý stav 12{,}6~V. Vybíjecí schopnost 40C znamená,
-že baterie dokáže trvale dodávat proud až $40 \times 1{,}3 = 52$~A,
+že baterie dokáže trvale dodávat proud až 52~A,
 což s~rezervou pokryje potřeby motoru i~elektroniky. 
 
 %%-------------------------------------------------------------------------
@@ -847,7 +849,7 @@ Zapojení HC-12 k~ESP32 je na obou stranách (ovladač i~letadlo) identické:
 čímž se snižuje latence.
 
 \begin{lstlisting}[style=c_style, caption={Datová struktura řídicího paketu.}]
-struct ControlPacket {
+struct Data {
     int16_t throttle;  // plyn:     0 az 1000
     int16_t pitch;     // vyskovka: -500 az +500
     int16_t roll;      // kridela:  -500 az +500
@@ -855,17 +857,17 @@ struct ControlPacket {
 };
 \end{lstlisting}
 
-Použití typu \texttt{int16\_t} (16bitové celé číslo se znaménkem)
-zajišťuje přesnost $\pm$32\,767 kroků a~konstantní velikost 2~bajty
+Použití typu \texttt{int16\_t}, což je 16bitové celé číslo se znaménkem,
+zajišťuje přesnost kroků a~konstantní velikost 2~bajty
 na kanál nezávisle na platformě.
 
 %%-------------------------------------------------------------------------
-\section{Firmware vysílače (ovladač)}
+\section{Kód vysílače (ovladač)}
 
 \subsection{Struktura kódu}
 
-Firmware ovladače provádí v~hlavní smyčce tři operace: přečte aktuální
-hodnoty z~analogových vstupů, uloží je do struktury \texttt{ControlPacket}
+Software ovladače provádí v~hlavní smyčce tři operace: přečte aktuální
+hodnoty z~analogových vstupů, uloží je do struktury \texttt{Data}
 a~odešle strukturu jako blok bajtů přes HC-12. Smyčka se opakuje
 přibližně každých 50~ms, čímž je dosaženo odesílací frekvence 20~Hz.
 
@@ -879,26 +881,11 @@ datové struktuře.
 \subsection{Odesílání dat}
 
 \begin{lstlisting}[style=c_style, caption={Odesílání paketu z ovladače.}]
-HardwareSerial HC12(1);
-ControlPacket packet;
 
-void setup() {
-    HC12.begin(9600, SERIAL_8N1, 16, 17);
-}
-
-void loop() {
-    packet.throttle = map(analogRead(PIN_THROTTLE), 0, 4095, 0, 1000);
-    packet.pitch    = map(analogRead(PIN_PITCH),    0, 4095, -500, 500);
-    packet.roll     = map(analogRead(PIN_ROLL),     0, 4095, -500, 500);
-    packet.yaw      = map(analogRead(PIN_YAW),      0, 4095, -500, 500);
-
-    HC12.write((uint8_t*)&packet, sizeof(packet));
-    delay(50);  // 20 Hz
-}
 \end{lstlisting}
 
 %%-------------------------------------------------------------------------
-\section{Firmware přijímače (letadlo)}
+\section{Kód přijímače (letadlo)}
 
 \subsection{Příjem a dekódování dat}
 
@@ -907,22 +894,7 @@ Jakmile data dorazí, přečte je do struktury \texttt{ControlPacket}
 a~předá dál k~řízení serv a~ESC.
 
 \begin{lstlisting}[style=c_style, caption={Příjem paketu na straně letadla.}]
-HardwareSerial HC12(1);
-ControlPacket packet;
 
-void setup() {
-    HC12.begin(9600, SERIAL_8N1, 16, 17);
-}
-
-void loop() {
-    if (HC12.available() >= (int)sizeof(packet)) {
-        HC12.readBytes((uint8_t*)&packet, sizeof(packet));
-
-        setThrottle(packet.throttle);
-        setElevator(packet.pitch);
-        setAilerons(packet.roll);
-    }
-}
 \end{lstlisting}
 
 \subsection{Řízení servomotorů a ESC}

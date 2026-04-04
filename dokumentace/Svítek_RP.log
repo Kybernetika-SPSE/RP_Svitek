@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.18)  4 APR 2026 13:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.18)  4 APR 2026 21:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -566,15 +566,15 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 ) (C:\Users\marti\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 849.
- [27] [28] [29] [30] [31
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 851.
+ [27] [28] [29] [30
 
 
 ]
 
-LaTeX Warning: Empty `thebibliography' environment on input line 967.
+LaTeX Warning: Empty `thebibliography' environment on input line 939.
 
-[32
+[31
 
 ] [1
 
@@ -589,20 +589,20 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.28pt have occurred.
 
 Package rerunfilecheck Info: File `Svítek_RP.out' has not changed.
-(rerunfilecheck)             Checksum: 3C1BFDEB7F468058964B85D51EAF884C;11288.
+(rerunfilecheck)             Checksum: 373E0A020ADE8F19C600F46FEE68FD3F;11239.
  ) 
 Here is how much of TeX's memory you used:
- 19005 strings out of 467871
- 348285 string characters out of 5418376
- 1030701 words of memory out of 5000000
- 47514 multiletter control sequences out of 15000+600000
+ 18902 strings out of 467871
+ 346961 string characters out of 5418376
+ 960701 words of memory out of 5000000
+ 47444 multiletter control sequences out of 15000+600000
  638083 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,82p,404b,2665s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,13n,82p,404b,1322s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Svítek_RP.pdf (33 pages, 388856 bytes).
+Output written on Svítek_RP.pdf (32 pages, 376205 bytes).
 PDF statistics:
- 706 PDF objects out of 1000 (max. 8388607)
- 170 named destinations out of 1000 (max. 500000)
+ 663 PDF objects out of 1000 (max. 8388607)
+ 137 named destinations out of 1000 (max. 500000)
  571 words of extra memory for PDF output out of 10000 (max. 10000000)
 
