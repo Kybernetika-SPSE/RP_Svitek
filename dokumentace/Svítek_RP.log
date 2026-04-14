@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.18)  4 APR 2026 21:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.18)  13 APR 2026 20:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -476,7 +476,7 @@ Package hyperref Info: Link coloring OFF on input line 69.
 \@outlinefile=\write3
 \openout3 = `Svítek_RP.out'.
 
-<Logo.png, id=283, 65.043pt x 65.043pt>
+<Logo.png, id=291, 65.043pt x 65.043pt>
 File: Logo.png Graphic file (type png)
 <use Logo.png>
 Package pdftex.def Info: Logo.png  used on input line 75.
@@ -513,68 +513,79 @@ LaTeX Font Warning: Font shape `OT1/cmss/bx/n' in size <16> not available
 ]
 Kapitola 1.
 
-Overfull \hbox (2.54419pt too wide) in paragraph at lines 151--156
+Overfull \hbox (2.54419pt too wide) in paragraph at lines 163--168
 \OT1/cmr/m/n/12 po-stu-puje od z^^Sakladn^^S^^P si-lov^^Se rov-nov^^Sahy p^^Tres vztla-ko-vou rov-nici a^^Tz ke konkr^^Setn^^S^^Pm v^^Sypo^^Tct^^Wum
  []
 
 
-Overfull \hbox (2.8408pt too wide) in paragraph at lines 151--156
+Overfull \hbox (2.8408pt too wide) in paragraph at lines 163--168
 \OT1/cmr/m/n/12 jako je Rey-nold-sovo ^^Tc^^S^^Pslo, ob-je-mov^^Se koe-fi-ci-enty ocasn^^S^^Pch ploch nebo rych-lost p^^Sadu. V^^Tsechny
  []
 
-<sily.png, id=398, 602.25pt x 451.6875pt>
+<sily.png, id=408, 602.25pt x 451.6875pt>
 File: sily.png Graphic file (type png)
 <use sily.png>
-Package pdftex.def Info: sily.png  used on input line 166.
+Package pdftex.def Info: sily.png  used on input line 178.
 (pdftex.def)             Requested size: 250.38564pt x 187.79141pt.
 [9
 
- <./sily.png>] [10] [11]
-Overfull \hbox (17.30107pt too wide) in paragraph at lines 258--260
-[]\OT1/cmr/m/n/12 kde $\OML/cmm/m/it/12 b$ \OT1/cmr/m/n/12 je rozp^^Tet^^S^^P k^^Tr^^S^^Pdla. N^^S^^Pzk^^Se $\OML/cmm/m/it/12 AR$ \OT1/cmr/m/n/12 zna-men^^Sa vy^^Ts^^Ts^^S^^P in-du-ko-van^^Sy od-por, ale lep^^Ts^^S^^P man^^Sevrovatelnost.
+ <./sily.png>]
+Overfull \hbox (3.32405pt too wide) in paragraph at lines 225--229
+[]\OT1/cmr/m/n/12 Toto je $\OML/cmm/m/it/12 C[]$ \OT1/cmr/m/n/12 pro ust^^Salen^^Sy let. $\OML/cmm/m/it/12 C[]$ \OT1/cmr/m/n/12 je pak ma-xim^^Saln^^S^^P koe-fi-ci-ent vztlaku, p^^Tri jeho^^Tz p^^Trekro^^Tcen^^S^^P
  []
 
-[12] [13] [14]
-Overfull \hbox (5.02263pt too wide) in paragraph at lines 385--387
+[10] [11] [12] [13] [14]
+Overfull \hbox (5.02263pt too wide) in paragraph at lines 408--410
 \OT1/cmr/m/n/12 Analogicky k $\OML/cmm/m/it/12 V[]$ \OT1/cmr/m/n/12 vy-jad^^Truje $\OML/cmm/m/it/12 V[]$ \OT1/cmr/m/n/12 sta-bi-liza^^Tcn^^S^^P ^^Su^^Tcinek ver-tik^^Saln^^S^^Pho sta-bi-liz^^Satoru (finu) ve sm^^Terov^^Se
  []
 
-[15] [16]
+[15] [16] [17]
 Kapitola 2.
-[17
+[18
 
-]
-Overfull \hbox (9.7691pt too wide) in paragraph at lines 544--549
-\OT1/cmr/m/n/12 P^^Tri v^^Syb^^Teru po-honn^^Se jed-notky byly zva^^Tzov^^Sany dva mo-tory. Prvn^^S^^Pm kan-did^^Satem byl \OT1/cmr/bx/n/12 MT2204\OT1/cmr/m/n/12 ,
- []
+] [19]
+<Cm_alpha.png, id=493, 251.43938pt x 240.9pt>
+File: Cm_alpha.png Graphic file (type png)
+<use Cm_alpha.png>
+Package pdftex.def Info: Cm_alpha.png  used on input line 571.
+(pdftex.def)             Requested size: 318.66948pt x 305.31102pt.
+ [20]
 
-[18] [19] [20]
-Overfull \hbox (12.27179pt too wide) in paragraph at lines 625--629
+LaTeX Warning: Reference `eq:SM' on page 21 undefined on input line 580.
+
+[21 <./Cm_alpha.png>] [22] [23] [24]
+Overfull \hbox (12.27179pt too wide) in paragraph at lines 734--738
 \OT1/cmr/m/n/12 je k trupu p^^Tripevn^^Teno po-moc^^S^^P dvou d^^Trev^^Ten^^Sych p^^Tr^^S^^Plo^^Tzek, kter^^Se jsou ^^Tsrouby uchy-ceny k uhl^^S^^Pkov^^Se
  []
 
-[21]
+[25]
 Kapitola 3.
-[22
-
-] [23] [24] [25]
-Kapitola 4.
 [26
 
-] (C:\Users\marti\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+] [27] [28] [29]
+Kapitola 4.
+[30
+
+] [31] (C:\Users\marti\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 ) (C:\Users\marti\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 851.
- [27] [28] [29] [30
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 969.
+ [32] [33] [34] [35
 
 
 ]
+Underfull \hbox (badness 3179) in paragraph at lines 1073--1076
+\OT1/cmr/m/n/12 Do-stupn^^Se z: []$\OT1/cmtt/m/n/12 https : / / www1 . grc . nasa . gov / beginners-[]guide-[]to-[]aeronautics /
+ []
 
-LaTeX Warning: Empty `thebibliography' environment on input line 939.
 
-[31
+Underfull \hbox (badness 1789) in paragraph at lines 1097--1100
+\OT1/cmr/m/n/12 stupn^^Se z: []$\OT1/cmtt/m/n/12 https : / / www . espressif . com / sites / default / files / documentation /
+ []
+
+[36
 
 ] [1
 
@@ -588,21 +599,24 @@ L3 programming layer <2025-12-24>
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.28pt have occurred.
 
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `Svítek_RP.out' has not changed.
-(rerunfilecheck)             Checksum: 373E0A020ADE8F19C600F46FEE68FD3F;11239.
+(rerunfilecheck)             Checksum: 17EEF83CA0F6E65CFE486DF0C9D5157C;11390.
  ) 
 Here is how much of TeX's memory you used:
- 18902 strings out of 467871
- 346961 string characters out of 5418376
- 960701 words of memory out of 5000000
- 47444 multiletter control sequences out of 15000+600000
+ 18946 strings out of 467871
+ 347554 string characters out of 5418376
+ 959296 words of memory out of 5000000
+ 47472 multiletter control sequences out of 15000+600000
  638083 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,82p,404b,1322s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Svítek_RP.pdf (32 pages, 376205 bytes).
+ 75i,13n,82p,404b,1304s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on Svítek_RP.pdf (37 pages, 401815 bytes).
 PDF statistics:
- 663 PDF objects out of 1000 (max. 8388607)
- 137 named destinations out of 1000 (max. 500000)
- 571 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 724 PDF objects out of 1000 (max. 8388607)
+ 153 named destinations out of 1000 (max. 500000)
+ 592 words of extra memory for PDF output out of 10000 (max. 10000000)
 

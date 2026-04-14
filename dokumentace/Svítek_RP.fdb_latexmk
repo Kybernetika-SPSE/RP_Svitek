@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1775329626.49501 "f:/Ročníkovka/RP_Svitek/dokumentace/Svítek_RP.tex" "Svítek_RP.pdf" "Svítek_RP" 1775329628.03215 0
+["pdflatex"] 1776106739.34721 "f:/Ročníkovka/RP_Svitek/dokumentace/Svítek_RP.tex" "Svítek_RP.pdf" "Svítek_RP" 1776106740.95551 0
   "C:/Users/marti/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1773856266 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/marti/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1773856271 14064 856e08d916f419c2fb569c431b28a149 ""
   "C:/Users/marti/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1773856113 13333487 05bddb2a0c2e8a66a85f9912bfc97fa6 ""
@@ -36,7 +36,6 @@
   "C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
   "C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1247596667 30251 6afa5cb1d0204815a708a080681d4674 ""
   "C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1247596667 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
-  "C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1247596666 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1247596666 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
   "C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247596666 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
@@ -122,12 +121,13 @@
   "C:/Users/marti/AppData/Local/Programs/MiKTeX/tex/latex/translations/translations.sty" 1644048522 44247 2188b95d0ee74e31eca4d316263c58a7 ""
   "C:/Users/marti/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/marti/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
+  "Cm_alpha.png" 1776010013 5151 93662b8a0364f24601a8512e8e37b5f2 ""
   "Logo.png" 1773856295 7776 4d4a006e11e055680c89247a4d10c3dc ""
-  "Svítek_RP.aux" 1775329627 12566 7a9ffc5998bb055514e01b3cde7c365a "pdflatex"
-  "Svítek_RP.out" 1775329627 11239 373e0a020ade8f19c600f46fee68fd3f "pdflatex"
-  "Svítek_RP.tex" 1775329625 39136 7531d7a633d0918d8a0b86ba77390551 ""
-  "Svítek_RP.toc" 1775329627 5898 d8a16171ae23f494422770033b887b1d "pdflatex"
-  "f:/Ročníkovka/RP_Svitek/dokumentace/Svítek_RP.tex" 1775329625 39136 7531d7a633d0918d8a0b86ba77390551 ""
+  "Svítek_RP.aux" 1776106740 13318 5cd4ff2f83945d814d0d248099ba1b69 "pdflatex"
+  "Svítek_RP.out" 1776106740 11390 17eef83ca0f6e65cfe486df0c9d5157c "pdflatex"
+  "Svítek_RP.tex" 1776106738 46875 65f58a4ad21af7164279a4efaa08ddac ""
+  "Svítek_RP.toc" 1776106740 6049 0abc81ca0d52a602f34e141a318bfac8 "pdflatex"
+  "f:/Ročníkovka/RP_Svitek/dokumentace/Svítek_RP.tex" 1776106738 46875 65f58a4ad21af7164279a4efaa08ddac ""
   "sily.png" 1769351589 46576 806e2c784db8eb8912f5adcb5deaadcb ""
   (generated)
   "Svítek_RP.aux"
