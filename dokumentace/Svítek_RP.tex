@@ -142,7 +142,7 @@ V~Plzni dne \today \hfill Podpis: ..........................
 
 Tato ročníková práce se zabývá návrhem a~výrobou modelu RC letadla
 s~pevnými křídly. Cílem projektu je navrhnout a~sestavit
-funkční model, Práce řeší aerodynamické výpočty,
+funkční model. Práce řeší aerodynamické výpočty,
 návrh elektroniky a~softwaru řídicí jednotky.
 
 Práce je rozdělena do čtyř hlavních kapitol. První kapitola popisuje
@@ -225,7 +225,7 @@ pro ustálený vodorovný let:
 Toto je $C_L$ pro ustálený let. $C_{L,max}$ je pak maximální koeficient
 vztlaku, při jehož překročení křídlo přestává generovat vztlak a nastává pád neboli
 \textit{stall}. Koeficient $C_{L,max}$ závisí na tvaru profilu, úhlu náběhu a~Reynoldsově čísle. 
-Hodnotu $C_{L,max}$ pro hlavní křídlo byla odečtena z grafu z~2D simulace profilu v~programu XFLR.
+Hodnotu $C_{L,max}$ pro hlavní křídlo byla odečtena z grafu z~2D simulace profilu v~programu XFLR5.
 \subsection{Koeficient vztlaku v závislosti na úhlu náběhu}
 
 $C_L$ roste přibližně lineárně s~úhlem náběhu $\alpha$ až do kritické hodnoty,
@@ -323,6 +323,16 @@ při nízkých rychlostech charakteristických pro tento model.
 Pro ocasní plochy byl zvolen symetrický profil \textbf{NACA 0012},
 protože tyto plochy mají být aerodynamicky neutrální a~generovat sílu pouze
 při výchylce z~nulové polohy pomocí klapek.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\linewidth]{naca_profily.png}
+    \caption{Profily NACA 4412 (hlavní křídlo) a NACA 0012 (ocasní
+             plochy) vygenerované v~programu XFLR5. Přerušovaná čára
+             znázorňuje střednici profilu.}
+    \label{fig:naca_profily}
+\end{figure}
+
 
 %%-------------------------------------------------------------------------
 \section{Reynoldsovo číslo}
@@ -470,15 +480,24 @@ $C_m/\alpha$, jak je vidět na obrázku~\ref{fig:Cm}.
 Konkrétní hodnoty $C_{m0}$ a poloha neutrálního bodu budou upřesněny
 po dokončení stavby a ověřeny vyvážením modelu.
 
+\newpage
+
 \subsection{Řídicí plochy}
 
 Pohyb modelu ve třech osách je řízen těmito plochami:
 
 \begin{itemize}
-    \item \textbf{Křidélka} (\textit{ailerons}) --- příčné klonění (osa $x$),
-    \item \textbf{Výškovka} (\textit{elevator}) --- podélné kývání (osa $y$),
-    \item \textbf{Fin} --- pevný bez serva, přímosměrná stabilita
-          je zajištěna geometrií ocasních ploch.
+    \item \textbf{Křidélka} (\textit{ailerons}) --- příčné klonění (osa $x$).
+          Křidélka pracují v~protifázi --- při výchylce jednoho nahoru
+          se druhé vychýlí dolů. Vzniká nesymetrické rozložení vztlaku,
+          které způsobuje naklonění modelu.
+    \item \textbf{Výškovka} (\textit{elevator}) --- podélné kývání (osa $y$).
+          Výchylka výškovky mění úhel náběhu ocasní plochy, čímž vzniká
+          moment natáčející nos letadla nahoru nebo dolů.
+    \item \textbf{Fin} --- pevný bez serva. Přímosměrná stabilita
+          je zajištěna samotnou geometrií ocasních ploch.
+          Konkrétní rozměry všech řídicích ploch jsou uvedeny
+          v~kapitole~\ref{kap:navrh}.
 \end{itemize}
 
 %%=========================================================================
@@ -494,10 +513,10 @@ parametrů a~volba pohonné soustavy.
 %%-------------------------------------------------------------------------
 \section{Požadavky a specifikace}
 
-Model je navržen jako RC letadlo s rozpětím křídel 600~mm a hmotností do 500~g.
+Model je navržen jako RC letadlo s rozpětím křídel 600~mm a hmotností do 600~g.
 Cilem je dosáhnoutí dostatečného vztlaku pro stabilní let při rychlosti 10--12~m/s, přičemž
 model bude vybaven křidélky pro řízení příčného naklonění a~výškovkou pro řízení podélného kývání.
-Model bude poháněn jedním bezkartáčovým motorem s~vhodnou vrtulí, přičemž poměr tahu k~hmotnosti bude vyšší než 1 pro zajištění dostatečného výkonu.
+Model bude poháněn jedním bezkartáčovým motorem s~vhodnou vrtulí, přičemž poměr tahu k hmotnosti bude dostatečný pro pevnokřídlý model.
 
 %%-------------------------------------------------------------------------
 \section{Geometrie nosných ploch}
@@ -566,16 +585,11 @@ Táhla jsou dočasně vtvořena ze stavebnice Merkur, ale v~budoucnu budou nahra
 Těžiště (CG) je navrženo tak, aby se nacházelo přibližně na 28~\% střední aerodynamické tětivy
  (MAC) hlavního křídla, což zajišťuje statickou stabilitu s~dostatečnou rezervou.
 
- \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{Cm_alpha.png}
-    \caption{Závislost momentového koeficientu $C_m$ na úhlu náběhu $\alpha$ z~analýzy v~XFLR5.}
-    \label{fig:Cm}
-\end{figure}
+
 
 Neutrálníbod (NP) byl stanoven simulací VLM1 v programu XFLR5 
-na $x_{NP} = 51{,}0$ mm od náběžné hrany hlavního křídla. 
-Těžiště je navrženo na $x_{CG} = 37{,}0$ mm od náběžné hrany, 
+na $x_{NP} = 51{,}0$ mm od přední hrany hlavního křídla. 
+Těžiště je navrženo na $x_{CG} = 37{,}0$ mm od přední hrany, 
 což odpovídá $28{,}5~\%$ střední aerodynamické tětivy (MAC). 
 Statická zásoba stability dle rovnice~\ref{eq:SM} vychází:
 
@@ -586,24 +600,88 @@ SM = \frac{x_{NP} - x_{CG}}{\bar{c}} \cdot 100 =
 
 Výsledek leží v doporučeném rozsahu $5$–$15~\%$ pro RC modely, 
 model je tedy staticky stabilní. 
-Poloha neutrálního bodu byla ověřena analýzou Cm/$\alpha$ kde záporný 
-sklon křivky na obrázku~\ref{fig:Cm}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\linewidth]{Cm_alpha.png}
+    \caption{Závislost momentového koeficientu $C_m$ na úhlu náběhu $\alpha$ z~analýzy v~XFLR5.}
+    \label{fig:Cm}
+\end{figure}
+
+Poloha neutrálního bodu byla ověřena analýzou Cm/$\alpha$ v programu XFLR5, kde záporný 
+sklon křivky na obrázku~\ref{fig:Cm} dokazuje stabilitu letadla.
+
+
 
 %%-------------------------------------------------------------------------
+
+\subsection{Výsledky simulace }
+
+Program XFLR5 byl použit k~ověření aerodynamických vlastností navrženého
+modelu metodou VLM1 při návrhové rychlosti $V = 12\,\text{m/s}$ a~úhlu
+náběhu $\alpha = 2°$. Geometrie modelu odpovídající parametrům z~tabulky~\ref{tab:plochy}
+je zobrazena na obrázku~\ref{fig:xflr5_model}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{letove_plochy.png}
+    \caption{3D model letounu v~programu XFLR5 při $V = 12\,\text{m/s}$,
+    $\alpha = 2°$. Parametry simulace: rozpětí $b = 0{,}6\,\text{m}$,
+    plocha $S = 0{,}078\,\text{m}^2$, hmotnost $m = 0{,}543\,\text{kg}$,
+    $C_L/C_D = 34{,}8$, $x_{NP} = 0{,}058\,\text{m}$.}
+    \label{fig:xflr5_model}
+\end{figure}
+
+Obrázek~\ref{fig:xflr5_tlak} zobrazuje rozložení aerodynamické síly na
+plochu ($F/s = q \cdot C_p$) na profilu křídla. Dominantním zdrojem vztlaku
+je podtlak na horní straně křídla. Červené šipky směřující nahoru dosahují
+hodnot až $58\,\text{Pa}$ a~představují sání táhnoucí křídlo vzhůru.
+Spodní strana křídla přispívá k~vztlaku přetlakem menší měrou. Modré
+šipky na náběžné hraně odpovídají oblasti stagnačního tlaku, kde vzduch
+naráží na profil. Ocasní plocha vykazuje výrazně nižší silové zatížení,
+což potvrzuje její stabilizační funkci bez výrazného příspěvku k~celkovému
+odporu.
+
+Simulace rovněž potvrzuje polohu neutrálního bodu $x_{NP} = 0{,}058\,\text{m}$
+a~polohu těžiště $x_{CG} = 0{,}037\,\text{m}$, ze kterých vychází
+statická zásoba stability vypočtená v~sekci~\ref{sec:stabilita}.
+Klouzavost modelu při tomto režimu letu vychází $K = C_L/C_D = 34{,}8$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{rozlozeni_tlaku.png}
+    \caption{Rozložení aerodynamické síly na plochu ($F/s = q \cdot C_p$)
+    na profilu křídla z~analýzy VLM1 při $V = 12\,\text{m/s}$,
+    $\alpha = 2°$. Červené šipky na horní straně znázorňují podtlak (sání)
+    jako dominantní zdroj vztlaku. Modré šipky na náběžné hraně odpovídají
+    oblasti stagnačního tlaku.}
+    \label{fig:xflr5_tlak}
+\end{figure}
+
+%%-------------------------------------------------------------------------
+
 \section{Rychlost pádu a letové podmínky}
+
 
 Maximální koeficient vztlaku $C_{L,max}$ pro 3D křídlo byl 
 stanoven korekcí 2D hodnoty z programu Xfoil. Ze simulace 
-profilu NACA~4412 při $Re \approx 104\,000$ vychází 
+profilu NACA~4412 při $Re = 104\,000$ vychází z grafu \ref{fig:Cl} 
 $C_{l,max} = 1{,}32$. Po aplikaci korekčního koeficientu 
 $k_{3D} = 0{,}80$ dle rovnice~\ref{eq:CLmax3D}:
 
 \[
-C_{L,max} = 1{,}32 \cdot 0{,}80 \approx 1{,}06
+C_{L,max} = 1{,}32 \cdot 0{,}80 = 1{,}06
 \]
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\linewidth]{NACA_4412_Cl_alpha.png}
+    \caption{Závislost koeficientu vztlaku $C_L$ na úhlu náběhu $\alpha$ z~analýzy v~XFLR5.}
+    \label{fig:Cl}
+\end{figure}
+
 Rychlost pádu byla vypočtena dle rovnice~\ref{eq:Vstall} 
-pro odhadovanou hmotnost modelu $m = 0{,}543$ kg:
+pro naměřenou hmotnost modelu $m = 0{,}543$ kg:
 
 \[
 V_{stall} = \sqrt{\frac{2 \cdot 0{,}543 \cdot 9{,}81}
@@ -882,6 +960,14 @@ což s~rezervou pokryje potřeby motoru i~elektroniky.
 Baterie je připojena k ESC pomocí konektoru XT60, 
 který zajišťuje bezpečné a~spolehlivé spojení. 
 
+\section{Ovladač --- hardwarová realizace}
+
+Jako ovladač byl použit starý ovladač na RC drony.
+V ovladači zůstaly pouze původní joysticky a~vše ostatní bylo odstraněno.
+Do těla ovladače bylo umísěno ESP32 a ve předu ovladače je otvor pro HC-12.
+Ovladač je napájen z~powerbanky, která poskytuje stabilní napětí pro ESP32 a~HC-12.
+
+
 
 
 %%=========================================================================
@@ -998,7 +1084,15 @@ datové struktuře.
 \subsection{Odesílání dat}
 
 \begin{lstlisting}[style=c_style, caption={Odesílání paketu z ovladače.}]
+void loop() {
+    packet.throttle = analogRead(THROTTLE_PIN);
+    packet.pitch    = analogRead(PITCH_PIN);
+    packet.roll     = analogRead(ROLL_PIN);
+    packet.yaw      = analogRead(YAW_PIN);
 
+    HC12.write((uint8_t*)&packet, sizeof(packet));
+    delay(50); // 20 Hz
+}
 \end{lstlisting}
 
 %%-------------------------------------------------------------------------
@@ -1008,10 +1102,33 @@ datové struktuře.
 
 Přijímač čeká, dokud není v~bufferu k~dispozici celý paket (8~bajtů).
 Jakmile data dorazí, přečte je do struktury \texttt{Data}
-a~předá dál k~řízení serv a~ESC.
+a~předá dál k~řízení serv a~ESC. Dále jsou hodnoty mapovány 
+z~rozsahu 0--4095 (12bit ADC) na rozsah 1000--2000~\si{\micro\second} pro PWM signál.
 
-\begin{lstlisting}[style=c_style, caption={Příjem paketu na straně letadla.}]
+\newpage
 
+\begin{lstlisting}[style=c_style, caption={Příjem a řízení na straně letadla.}]
+void loop() {
+    if (HC12.available() >= sizeof(packet)) {
+        HC12.readBytes((uint8_t*)&packet, sizeof(packet));
+
+        esc.writeMicroseconds(map(packet.throttle, 0, 4095, 1000, 2000));
+        servoElevator.writeMicroseconds(map(packet.pitch, 0, 4095, 1000, 2000));
+        servoAileronL.writeMicroseconds(map(packet.roll,  0, 4095, 1000, 2000));
+        servoAileronR.writeMicroseconds(map(packet.roll,  0, 4095, 2000, 1000));
+
+        lastPacketTime = millis();
+    }
+
+    // Fail-safe
+
+    if (millis() - lastPacketTime > 1000) {
+        esc.writeMicroseconds(1000);
+        servoElevator.writeMicroseconds(1500);
+        servoAileronL.writeMicroseconds(1500);
+        servoAileronR.writeMicroseconds(1500);
+    }
+}
 \end{lstlisting}
 
 \subsection{Řízení servomotorů a ESC}
@@ -1024,18 +1141,10 @@ a~předány příslušným výstupním pinům ESP32.
 
 \subsection{Fail-safe}
 
-Do budoucna je plánováno přidání fail-safe módu který by fungoval pokud nepřijde
+V letadle je implementován fail-safe mód, který funguje pokud nepřijde
 žádný paket po dobu delší než stanovený čas, letadlo automaticky
 nastaví nulový plyn a~vycentruje všechna serva. Tím se zamezí nekontrolovanému
 letu v~případě výpadku spojení.
-
-%%-------------------------------------------------------------------------
-\section{Ovladač --- hardwarová realizace}
-
-Jako ovladač byl použit starý ovladač na RC drony.
-V oladači zůstaly pouze původní joysticky a~vše ostatní bylo odstraněno.
-Do těla ovladače bylo umísěno ESP32 a ve předu ovladače je otvor pro HC-12.
-Ovladač je napájen z~powerbanky, která poskytuje stabilní 5~V pro ESP32 a~HC-12.
 
 %%=========================================================================
 %%  ZÁVĚR

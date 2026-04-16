@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1776106739.34721 "f:/Ročníkovka/RP_Svitek/dokumentace/Svítek_RP.tex" "Svítek_RP.pdf" "Svítek_RP" 1776106740.95551 0
+["pdflatex"] 1776370622.07665 "f:/Ročníkovka/RP_Svitek/dokumentace/Svítek_RP.tex" "Svítek_RP.pdf" "Svítek_RP" 1776370623.90734 0
   "C:/Users/marti/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1773856266 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/marti/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1773856271 14064 856e08d916f419c2fb569c431b28a149 ""
   "C:/Users/marti/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1773856113 13333487 05bddb2a0c2e8a66a85f9912bfc97fa6 ""
@@ -123,11 +123,15 @@
   "C:/Users/marti/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "Cm_alpha.png" 1776010013 5151 93662b8a0364f24601a8512e8e37b5f2 ""
   "Logo.png" 1773856295 7776 4d4a006e11e055680c89247a4d10c3dc ""
-  "Svítek_RP.aux" 1776106740 13318 5cd4ff2f83945d814d0d248099ba1b69 "pdflatex"
-  "Svítek_RP.out" 1776106740 11390 17eef83ca0f6e65cfe486df0c9d5157c "pdflatex"
-  "Svítek_RP.tex" 1776106738 46875 65f58a4ad21af7164279a4efaa08ddac ""
-  "Svítek_RP.toc" 1776106740 6049 0abc81ca0d52a602f34e141a318bfac8 "pdflatex"
-  "f:/Ročníkovka/RP_Svitek/dokumentace/Svítek_RP.tex" 1776106738 46875 65f58a4ad21af7164279a4efaa08ddac ""
+  "NACA_4412_Cl_alpha.png" 1776360654 8068 5f2106477cad6a623779075026d24126 ""
+  "Svítek_RP.aux" 1776370623 15802 4aeccd2027290bd0ba8e07d0cf3f74e4 "pdflatex"
+  "Svítek_RP.out" 1776370623 11553 915822e1074a3b87b78fdc139d5ae6a4 "pdflatex"
+  "Svítek_RP.tex" 1776370620 51385 48c544e7f9cec560a1200540f3313f6c ""
+  "Svítek_RP.toc" 1776370623 6139 30cf0adbf39be89d7fdb877b66d50d64 "pdflatex"
+  "f:/Ročníkovka/RP_Svitek/dokumentace/Svítek_RP.tex" 1776370620 51385 48c544e7f9cec560a1200540f3313f6c ""
+  "letove_plochy.png" 1776368860 89685 43cbb1b64e3ab370dd17e7a67918d523 ""
+  "naca_profily.png" 1776204148 72932 14d2049fa454db8cfdabf6921aefa9d7 ""
+  "rozlozeni_tlaku.png" 1776368876 90683 67f8b0088ef7d39ebbf3dfd90a44a8db ""
   "sily.png" 1769351589 46576 806e2c784db8eb8912f5adcb5deaadcb ""
   (generated)
   "Svítek_RP.aux"
