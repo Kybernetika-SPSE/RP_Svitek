@@ -391,7 +391,8 @@ Klouzavost $K$ je definována jako:
     K = \frac{C_L}{C_D}
 \end{equation}
 
-Optimální pracovní bod odpovídá maximu $K$ --- letadlo letí nejúsporněji.
+Čím vyšší klouzavost, tím menší odpor letadlo generuje při dané hodnotě vztlaku.
+Letadlo letí nejúsporněji v bodě, kde klouzavost $K$ dosahuje maxima.
 
 %%-------------------------------------------------------------------------
 \section{Objemový koeficient výškovky}
@@ -453,6 +454,9 @@ přepočítává korekčním koeficientem $k_{3D}$.
     \label{eq:CLmax3D}
 \end{equation}
 
+kde $C_{l,max}$~[--] je maximální koeficient vztlaku z~2D analýzy profilu
+a~$k_{3D}$~[--] je empirický korekční faktor zohledňující 3D efekty.
+
 %%-------------------------------------------------------------------------
 
 
@@ -462,10 +466,20 @@ přepočítává korekčním koeficientem $k_{3D}$.
 Letadlo je staticky podélně stabilní, pokud při vychýlení nosu nahoru
 vznikne moment který nos vrátí zpět dolů, a naopak. Tato podmínka
 je splněna tehdy, když těžiště (CG) leží před neutrálním bodem (NP)
-aerodynamické konfigurace.
+aerodynamické konfigurace. Statická zásoba stability (\textit{static margin}) říká o kolik procent tětivy leží těžiště před neutrálním bodem. Čím větší SM, tím stabilnější letadlo.
+ Statickou zásobu stability uruje vzorec:
+ 
+\begin{equation}
+    SM = \frac{x_{NP} - x_{CG}}{\bar{c}} \cdot 100\,\%
+    \label{eq:SM}
+\end{equation}
 
-Aerodynamický moment křídla je popsán koeficientem $C_m$.
-Podmínka stability vyžaduje:
+kde $x_{CG}$ je poloha těžiště, $x_{NP}$ je poloha neutrálního bodu a $\bar{c}$ je střední aerodynamická tětiva. Pro RC modely se doporučuje
+$SM \approx 5$--$15~\%$.
+
+Aerodynamický moment křídla je popsán koeficientem $C_m$. 
+Podmínka stability vyžaduje, aby se s~rostoucím úhlem náběhu 
+moment zmenšoval, tedy
 
 \begin{equation}
     \frac{dC_m}{d\alpha} < 0
@@ -473,14 +487,7 @@ Podmínka stability vyžaduje:
 \end{equation}
 
 což znamená, že s rostoucím úhlem náběhu $\alpha$ musí moment
-koeficient klesat --- letadlo se samovolně vrací do rovnovážné polohy.
-
-Analýza v XFLR5 metodou VLM1 potvrdila záporný sklon křivky
-$C_m/\alpha$, jak je vidět na obrázku~\ref{fig:Cm}.
-Konkrétní hodnoty $C_{m0}$ a poloha neutrálního bodu budou upřesněny
-po dokončení stavby a ověřeny vyvážením modelu.
-
-\newpage
+koeficient klesat a letadlo se samovolně vrací do rovnovážné polohy.
 
 \subsection{Řídicí plochy}
 
@@ -557,19 +564,19 @@ koeficientu výškovky $V_h$ dle rovnice~\ref{eq:Vh} je třeba určit rameno $l_
  aerodynamickým středem hlavního křídla a~aerodynamickým středem výškovky. Při navržené geometrii a~umístění výškovky za hlavním 
  křídlem vychází $l_h \approx 0{,}29$~m, což dává $V_h \approx 0{,}45$, což je v~doporučeném rozsahu pro lehká letadla.
 
-% ZDE --- klapky po celé délce, výpočet Vh s výsledkem 0,454
 
 \subsection{Vertikální stabilizátor (fin)}
 
-Vertikální stabilizátor (fin) má rozpětí 80~mm a~tětivu 80~mm, což dává plochu $S_v = 0{,}0064$~m².
-Použitý profil NACA~0012 je opět symetrický, což je vhodné pro stabilizátor, který má být aerodynamicky neutrální.
+Vertikální stabilizátor (fin) je navržen jako lichoběžník s~kořenovou tětivou 100~mm a~koncovou tětivou 60~mm při rozpětí 80~mm. Střední
+tětiva vychází 80~mm a~plocha $S_v = 0{,}0064\,\text{m}^2$. Použitý 
+profil NACA 0012 je symetrický, což je vhodné pro stabilizátor, který má být aerodynamicky neutrální.
 Fin bude pevný, bez výchylky, protože při dané velikosti modelu a~navržené geometrii ocasních ploch je zajištěna dostatečná přímosměrná stabilita. 
 Pro výpočet objemového koeficientu vertikálního stabilizátoru $V_v$ dle rovnice~\ref{eq:Vv} 
 je třeba určit rameno $l_v$ --- vzdálenost mezi aerodynamickým středem hlavního křídla a~aerodynamickým středem finu vychází $l_v \approx 0{,}29$~m, což dává $V_v \approx 0{,}041$.Výsledek je v doporučeným rozsahu 
  pro lehká letadla.
 % ZDE --- bez serva, pevný, výpočet Vv s výsledkem 0,041
 
-\subsection{Klapky}
+\subsection{Ovládací plochy}
 
 Křidélka (ailerons) budou umístěna na vnější části každého křídla
 o délce 190~mm, přičemž zbytek křídla u~trupu zůstane pevných.
@@ -581,6 +588,7 @@ Táhla jsou dočasně vtvořena ze stavebnice Merkur, ale v~budoucnu budou nahra
 
 %%-------------------------------------------------------------------------
 \section{Těžiště a statická stabilita}
+\label{teziste}
 
 Těžiště (CG) je navrženo tak, aby se nacházelo přibližně na 28~\% střední aerodynamické tětivy
  (MAC) hlavního křídla, což zajišťuje statickou stabilitu s~dostatečnou rezervou.
@@ -619,16 +627,37 @@ sklon křivky na obrázku~\ref{fig:Cm} dokazuje stabilitu letadla.
 
 Program XFLR5 byl použit k~ověření aerodynamických vlastností navrženého
 modelu metodou VLM1 při návrhové rychlosti $V = 12\,\text{m/s}$ a~úhlu
-náběhu $\alpha = 2°$. Geometrie modelu odpovídající parametrům z~tabulky~\ref{tab:plochy}
+náběhu v rozmezí $\alpha = -5$° až $ 15$°. Úhel 2° byl vybrán jako ukázkový, který odpovídá typickému cestovnímu režimu.
+Geometrie modelu odpovídající parametrům z~tabulky~\ref{tab:kridla}
 je zobrazena na obrázku~\ref{fig:xflr5_model}.
+
+\begin{table}[H]
+    \centering
+    \caption{Hodnoty simulace VLM1 v~programu XFLR5
+    při $V = 12\,\text{m/s}$, $\alpha = 2°$.}
+    \label{tab:xflr5_vysledky}
+    \begin{tabular}{lr}
+        \toprule
+        Parametr & Hodnota \\
+        \midrule
+        Rozpětí $b$                      & 0,600 m \\
+        Plocha křídla $S$              & 0,078 m² \\
+        Hmotnost $m$                       & 0,543 kg \\
+        Koeficient vztlaku $C_L$             & 0,407 \\
+        Koeficient odporu $C_D$         & 0,012 \\
+        Klouzavost $C_L/C_D$              & 34,78 \\
+        Momentový koeficient $C_m$         & $-0{,}066$ \\
+        Poloha neutrálního bodu $x_{NP}$      & 0,058 m \\
+        Poloha těžiště $x_{CG}$               & 0,037 m \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{letove_plochy.png}
-    \caption{3D model letounu v~programu XFLR5 při $V = 12\,\text{m/s}$,
-    $\alpha = 2°$. Parametry simulace: rozpětí $b = 0{,}6\,\text{m}$,
-    plocha $S = 0{,}078\,\text{m}^2$, hmotnost $m = 0{,}543\,\text{kg}$,
-    $C_L/C_D = 34{,}8$, $x_{NP} = 0{,}058\,\text{m}$.}
+    \caption{3D model letounu v~programu XFLR5. Parametry simulace 
+        jsou uvedeny v~tabulce~\ref{tab:xflr5_vysledky}.}
     \label{fig:xflr5_model}
 \end{figure}
 
@@ -645,7 +674,7 @@ odporu.
 Simulace rovněž potvrzuje polohu neutrálního bodu $x_{NP} = 0{,}058\,\text{m}$
 a~polohu těžiště $x_{CG} = 0{,}037\,\text{m}$, ze kterých vychází
 statická zásoba stability vypočtená v~sekci~\ref{sec:stabilita}.
-Klouzavost modelu při tomto režimu letu vychází $K = C_L/C_D = 34{,}8$.
+Klouzavost modelu při tomto režimu letu vychází $K = 34{,}8$.
 
 \begin{figure}[H]
     \centering
@@ -705,8 +734,8 @@ Uvedené hodnoty hmotnosti jsou realné hodnoty získané zvážením hotového 
 
 \subsection{Motor a vrtule}
 
-Jako pohonná jednotka byl zvolen motor \textbf{KAVAN Brushless 
-C2822-1400KV}, bezkartáčový motor s rotačním pláštěm 
+Jako pohonná jednotka byl zvolen motor KAVAN Brushless 
+C2822-1400KV, bezkartáčový motor s rotačním pláštěm 
  přímo určený pro pevnokřídlé RC modely. 
 Motor je nízkootáčkový s vysokým točivým momentem, což mu 
 umožňuje pohánět vrtule většího průměru bez převodovky. 
@@ -714,7 +743,7 @@ Konstantu $KV = 1400$~ot./min/V a hmotnost $34$~g.
 
 Výrobcem doporučená vrtule pro napájení 3S je APC 6$\times$4". 
 Z důvodu vyšší celkové hmotnosti modelu byla zvolena vrtule 
-\textbf{APC 8$\times$4"}, která díky většímu průměru přesouvá 
+APC 8$\times$4", která díky většímu průměru přesouvá 
 více vzduchu a generuje přibližně o $40$--$60~\%$ vyšší tah. 
 Tato volba zvyšuje odběr proudu nad nominální limit motoru, 
 proto je plný plyn využíván pouze krátkodobě při vzletu 
@@ -733,9 +762,9 @@ Motor slouží primárně k udržení dostatečné cestovní rychlosti.
 
 \subsection{Regulátor ESC a baterie}
 
-Pro regulaci otáček motoru je použit elektronický regulátor \textbf{Hornet 40A}
+Pro regulaci otáček motoru je použit elektronický regulátor Hornet 40A
 (2--4S), který komunikuje s~řídící jednotkou pomocí standardního PWM signálu.
-Napájení zajišťuje baterie \textbf{KAVAN LiPo 1300~mAh / 11{,}1~V (3S) / 40--80C}.
+Napájení zajišťuje baterie KAVAN LiPo 1300~mAh / 11{,}1~V (3S) / 40--80C.
 Jmenovité napětí 11{,}1~V a~kapacita 1300~mAh představují dobrý kompromis
 mezi hmotností a~výdrží.
 
@@ -823,7 +852,7 @@ a~připevněny k~trupu kombinací šroubů a~lepidla.
 %%=========================================================================
 \chapter{Elektronika}
 
-Palubní elektronika modelu tvoří dva samostatné celky a to je letadlo
+Elektroniku modelu tvoří dva samostatné celky a to je letadlo
 a~ovladač propojené bezdrátovou komunikací přes moduly HC-12.
 Tato kapitola popisuje všechny použité součástky, schéma zapojení
 a~napájecí architekturu obou celků. Podrobný popis softwarové části
@@ -833,6 +862,13 @@ je uveden v~kapitole~4.
 \section{Schéma zapojení}
 
 \subsection{Schéma letadla}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{schema_letadlo.png}
+    \caption{Schéma zapojení elektroniky přijímače}
+    \label{fig:schema_zapojeni}
+\end{figure}
 
 \subsection{Schéma ovladače}
 
@@ -851,7 +887,7 @@ všechny klíčové součástky obou celků.
         Součástka & Popis \\
         \midrule
         ESP32   & Hlavní řídící jednotka \\
-        HC-12 (433~MHz)      & Bezdrátový přijímač \\
+        HC-12      & Bezdrátový přijímač \\
         MG90S $\times$ 3     & Servomotory (křídla, výškovka) \\
         Hornet 40A ESC       & Regulátor otáček motoru \\
         KAVAN C2822-1400KV       & Bezkartáčový motor \\
@@ -871,7 +907,7 @@ všechny klíčové součástky obou celků.
         Součástka & Popis \\
         \midrule
         ESP32                         & Řídící jednotka ovladače \\
-        HC-12 (433~MHz)               & Bezdrátový vysílač \\
+        HC-12      & Bezdrátový vysílač \\
         Joystick 1              & Řízení zatáčení (roll/yaw) \\
         Joystick 2 & Řízení plynu (throttle) \\
         Powerbanka                    & Napájení ovladače \\
