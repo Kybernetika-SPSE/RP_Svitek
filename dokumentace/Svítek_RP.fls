@@ -205,12 +205,12 @@ INPUT C:\Users\marti\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\marti\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmss12.tfm
 INPUT C:\Users\marti\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmss17.tfm
 INPUT C:\Users\marti\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmssbx10.tfm
+INPUT C:\Users\marti\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmssbx10.tfm
 INPUT .\Svítek_RP.toc
 INPUT .\Svítek_RP.toc
 INPUT Svítek_RP.toc
 INPUT C:\Users\marti\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 OUTPUT Svítek_RP.toc
-INPUT C:\Users\marti\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmssbx10.tfm
 INPUT .\sily.png
 INPUT .\sily.png
 INPUT .\sily.png

@@ -132,46 +132,92 @@ pomocí modulů HC-12 pracujících na frekvenci 433~MHz s~odesílací
 frekvencí 20~Hz. Řídicí data jsou přenášena jako binární struktura.
 
 
-\vfill
+Klíčová slova: RC letadlo, model letadla, aerodynamika, 
+NACA 4412, XFLR5, ESP32, HC-12, bezdrátová komunikace, 3D tisk, pevné křídlo
 
-Prohlašuji, že jsem tuto práci vypracoval samostatně a~použil literárních 
-pramenů a~informací, které cituji a~uvádím v~seznamu použité literatury 
-a~zdrojů informací.
+\newpage
 
-Prohlašuji, že jsem nástroje UI využil v~souladu s~principy akademické integrity 
-a~že na využití těchto nástrojů v~práci vhodným způsobem odkazuji.
+\chapter*{Annotation}
+\thispagestyle{empty}
 
-Souhlasím s~využitím mé práce učiteli VOŠ a~SPŠE Plzeň k~výuce.
+This thesis deals with the design and construction of a fixed-wing RC aircraft 
+model. The work covers the entire development cycle of the project, including 
+aerodynamic analysis of the wing profile, design of lifting surface geometry, 
+selection of the propulsion system, design of onboard electronics, and 
+implementation of wireless communication between the aircraft and the controller.
 
-\vspace{1cm}
-V~Plzni dne 30. dubna 2026 \hfill Podpis: ..........................
+The aerodynamic analysis was performed using Xfoil and XFLR5 software with the 
+VLM1 method for Reynolds numbers in the range of $80\,000$--$110\,000$. The NACA 4412 
+profile with a wingspan of 600 mm was selected for the main wing, and the 
+symmetrical NACA 0012 profile was used for the tail surfaces. The wing structure 
+consists of 3D-printed ribs with carbon spars covered with heat-shrink film. The 
+fuselage is made of a square cross-section carbon tube.
+
+The control electronics are based on the ESP32 microcontroller. Wireless 
+communication between the controller and the aircraft is implemented using HC-12 
+modules operating at 433 MHz with a transmission rate of 20 Hz. Control data is 
+transmitted as a binary structure.
+
+Keywords: RC aircraft, model airplane, aerodynamics, NACA 4412, XFLR5, 
+ESP32, HC-12, wireless communication, 3D printing, fixed-wing
+
+\newpage
+
+\vspace*{\fill}
+\section*{Prohlášení:}
+„Prohlašuji, že jsem tuto práci vypracoval samostatně a použil literárních pramenů a~informací,
+které cituji a uvádím v seznamu použité literatury a zdrojů informací.“
+\vspace{\baselineskip}
+
+„Prohlašuji, že jsem nástroje UI využil v souladu s principy akademické integrity a že na využití
+těchto nástrojů v práci vhodným způsobem odkazuji.“
+
+\noindent „Souhlasím s využitím mé práce učiteli VOŠ a SPŠE Plzeň k výuce.“
+
+\vspace{2cm}
+\noindent V Plzni dne: \makebox[5cm]{\dotfill} \hfill Podpis: \makebox[5cm]{\dotfill}
+
 
 %% OBSAH %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagenumbering{gobble}
 \tableofcontents
 \newpage
 \pagenumbering{arabic}
-\setcounter{page}{8}
+\setcounter{page}{10}
 \newpage
 
-%% ÚVOD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ÚVOD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter*{Úvod}
 \addcontentsline{toc}{chapter}{Úvod}
 
-Tato ročníková práce se zabývá návrhem a~výrobou modelu RC letadla
-s~pevnými křídly. Cílem projektu je navrhnout a~sestavit
-funkční model. Práce řeší aerodynamické výpočty,
-návrh elektroniky a~softwaru řídicí jednotky.
+Stavba modelů RC letadel je oblastí spojující několik technických disciplín, 
+zejména aerodynamiku, mechanickou konstrukci, elektroniku a programování. 
+Většina komerčně dostupných modelů využívá hotové řídicí jednotky a předem 
+navržené aerodynamické profily, čímž se uživatel vyhne nutnosti porozumět 
+principům, na kterých letadlo funguje. Tato ročníková práce naopak pokrývá 
+celý vývojový cyklus návrhu modelu RC letadla od základní aerodynamické 
+analýzy až po vlastní software řídicí jednotky.
 
-Práce je rozdělena do čtyř hlavních kapitol. První kapitola popisuje
-aerodynamický základ potřebný pro návrh modelu, silovou rovnováhu,
-vztlak, odpor, profily křídel a~stabilitu. Druhá kapitola aplikuje
-tyto poznatky na konkrétní geometrický návrh modelu včetně volby
-pohonné soustavy a~konstrukce modelu. Třetí kapitola se věnuje
-elektronice a~popisu použitých součástek.
-Čtvrtá kapitola popisuje softwarovou část projektu, zejména
-bezdrátovou komunikaci mezi ovladačem a~letadlem pomocí modulů HC-12
-a~implementaci softwareu na mikrokontrolér ESP32.
+Cílem projektu je navrhnout a sestavit funkční model RC letadla s pevnými 
+křídly bez použití komerčních sestav a autopilotních jednotek. Model bude
+řízen pomocí vlastního ovladače s bezdrátovou komunikací a bude využívat 3D 
+tištěné díly pro konstrukci křídel a~trupu. Projekt je koncipován jako komplexní 
+případová studie, která demonstruje aplikaci teoretických principů aerodynamiky a 
+mechaniky v praxi.
+
+
+Práce je rozdělena do čtyř hlavních kapitol. První kapitola popisuje 
+aerodynamický základ potřebný pro návrh modelu, silovou rovnováhu, vztlak, 
+odpor, profily křídel a podélnou stabilitu. Druhá kapitola aplikuje tyto 
+poznatky na konkrétní geometrický návrh modelu včetně volby pohonné soustavy 
+a popisu konstrukce. Třetí kapitola se věnuje elektronice, popisu použitých součástek
+ a schématům zapojení obou částí systému. Čtvrtá kapitola popisuje 
+softwarovou část projektu, zejména bezdrátovou komunikaci mezi ovladačem a~letadlem 
+pomocí modulů HC-12 a implementaci softwaru na mikrokontrolér ESP32.
+
+Aerodynamická analýza byla provedena v programech Xfoil a XFLR5, které 
+patří mezi standardní nástroje používané v amatérském i profesionálním 
+návrhu letadel.
 
 %%=========================================================================
 %%  1. AERODYNAMIKA
@@ -466,7 +512,7 @@ vztlaku.
 Hodnotu $C_{L,max}$ pro 3D křídlo nelze přímo odečíst ze 2D simulace profilu
 v~programu Xfoil, protože 2D analýza nezohledňuje koncové víry, downwash
 a~nerovnoměrné rozložení vztlaku po rozpětí. Proto se 2D hodnota $C_{l,max}$
-přepočítává korekčním koeficientem $k_{3D}$.
+přepočítává korekčním koeficientem $k_{3D}$ \cite{anderson}.
 
 \begin{equation}
     C_{L,max} = C_{l,max} \cdot k_{3D}, \quad k_{3D} = 0{,}75\text{--}0{,}85
@@ -540,7 +586,7 @@ parametrů a~volba pohonné soustavy.
 \section{Požadavky a specifikace}
 
 Model je navržen jako RC letadlo s rozpětím křídel 600~mm a hmotností do 600~g.
-Cilem je dosáhnoutí dostatečného vztlaku pro stabilní let při rychlosti 10--12~m/s, přičemž
+Cílem je dosáhnoutí dostatečného vztlaku pro stabilní let při rychlosti 10--12~m/s, přičemž
 model bude vybaven křidélky pro řízení příčného naklonění a~výškovkou pro řízení podélného kývání.
 Model bude poháněn jedním bezkartáčovým motorem s~vhodnou vrtulí, přičemž poměr tahu k hmotnosti bude dostatečný pro pevnokřídlý model.
 
@@ -601,7 +647,7 @@ Celková délka křidélek je tedy 380~mm.
 Klapky budou výchylovány pomocí servomotorů pro řízení naklonění letadla.
 Klapky a serva budou spojeny mechanicky pomocí táhel,
  přičemž výchylka klapek bude nastavena na přibližně $20^\circ$ pro zajištění dostatečné ovladatelnosti bez nadměrného odporu.
-Táhla jsou dočasně vtvořena ze stavebnice Merkur, ale v~budoucnu budou nahrazena pevnějšími a~lehčími karbonovými tyčkami.
+Táhla jsou dočasně vytvořena ze stavebnice Merkur, ale v~budoucnu budou nahrazena pevnější a~lehčí konstrukcí.
 
 %%-------------------------------------------------------------------------
 \section{Těžiště a statická stabilita}
@@ -754,21 +800,20 @@ C2822-1400KV, bezkartáčový motor s rotačním pláštěm
  přímo určený pro pevnokřídlé RC modely. 
 Motor je nízkootáčkový s vysokým točivým momentem, což mu 
 umožňuje pohánět vrtule většího průměru bez převodovky. 
-Konstantu $KV = 1400$~ot./min/V a hmotnost $34$~g.
+Motor má konstantu $KV = 1400$~ot./min/V a hmotnost $34$~g \cite{kavan_motor}.
 
 Výrobcem doporučená vrtule pro napájení 3S je APC 6$\times$4". 
 Z důvodu vyšší celkové hmotnosti modelu byla zvolena vrtule 
 APC 8$\times$4", která díky většímu průměru přesouvá 
-více vzduchu a generuje přibližně o $40$--$60~\%$ vyšší tah. 
+více vzduchu a generuje podstatně vyšší tah. 
 Tato volba zvyšuje odběr proudu nad nominální limit motoru, 
 proto je plný plyn využíván pouze krátkodobě při vzletu 
 a stoupání.
 
-Odhadovaný tah pohonné soustavy s touto konfigurací dosahuje 
-přibližně $500$~g. Poměr tahu k celkové hmotnosti modelu 
+Naměřený tah při plném plynu se pohyboval v rozsahu 480–510 g. Pro další výpočty je uvažována hodnota T = 490 g. Poměr tahu k celkové hmotnosti modelu 
 $m_{MTOW} = 632$~g je
 \[
-\frac{T}{W} = \frac{500}{632} = 0{,}79 .
+\frac{T}{W} = \frac{490}{632} = 0{,}78 .
 \]
 Pro pevnokřídlý model je tento poměr dostačujíc. Na rozdíl 
 od multikoptér nemusí motor nést celou hmotnost, neboť 
@@ -779,14 +824,14 @@ Motor slouží primárně k udržení dostatečné cestovní rychlosti.
 
 Pro regulaci otáček motoru je použit elektronický regulátor Hornet 40A
 (2--4S), který komunikuje s~řídící jednotkou pomocí standardního PWM signálu.
-Napájení zajišťuje baterie KAVAN LiPo 1300~mAh / 11{,}1~V (3S) / 40--80C.
+Napájení zajišťuje baterie KAVAN LiPo 1300~mAh / 11{,}1~V (3S) / 40--80C \cite{kavan_lipo}.
 Jmenovité napětí 11{,}1~V a~kapacita 1300~mAh představují dobrý kompromis
 mezi hmotností a~výdrží.
 
 \subsection{Energetická bilance}
 
 Maximální příkon pohonné soustavy je omezen motorem KAVAN 
-C2822-1400KV na $P_{max} = 122$~W při proudu $I_{max} = 11$~A 
+C2822-1400KV na $P_{max} = 90$~W při proudu $I_{max} = 11$~A 
 ze zdroje $U = 11{,}1$~V (3S LiPo). Při cestovním letu 
 s přibližně $50~\%$ plynu se odhaduje odběr motoru na 
 $I_{motor} \approx 5{,}5$~A. Elektronika (ESP32, HC-12, 
@@ -843,7 +888,7 @@ Hlavní část trupu tvoří tyč čtvercového profilu z~uhlíkového kompozitu
 a~rozměry $20 \times 20 \times 355$~mm. Tato konstrukce poskytuje vysokou tuhost
 při minimální hmotnosti. Na obou stranách tyče jsou připevněny dřevěné příložky,
 které slouží jako úchyt pro hlavní křídlo a~jako nosič elektroniky.
-Na druhém konci tyče je zasunut horizontální stabilizátor, který je připevněn připevněný pomocí šroubu.
+Na druhém konci tyče je zasunut horizontální stabilizátor, který je připevněn pomocí šroubu.
 Vertikální stabilizátor (fin) je přilepen k~horizontálnímu stabilizátoru
 a~zůstává pevný bez serva.
 
@@ -972,7 +1017,7 @@ všechny klíčové součástky obou celků.
         \midrule
         ESP32                         & Řídící jednotka ovladače \\
         HC-12      & Bezdrátový vysílač \\
-        Joystick 1              & Řízení zatáčení (roll/yaw) \\
+        Joystick 1              & Řízení naklánění a klopení (roll/pitch) \\
         Joystick 2 & Řízení plynu (throttle) \\
         Powerbanka                    & Napájení ovladače \\
         \bottomrule
@@ -985,12 +1030,12 @@ všechny klíčové součástky obou celků.
 \subsection{Mikrokontrolér ESP32}
  
 ESP32 je 32bitový mikrokontrolér od společnosti Espressif Systems
-s~dvoujádrovým procesorem Xtensa LX6 taktovaným na 240~MHz.
+s~dvoujádrovým procesorem Xtensa LX6 taktovaným na 240~MHz \cite{esp32}.
 Pro tento projekt je klíčová dostupnost více hardwarových rozhraní
 UART a 12bitový ADC pro čtení analogových vstupů
 a~dostatečný počet PWM výstupů pro řízení serv a~ESC.
 Mikrokontrolér je použit jak v~letadle (přijímač), tak v~ovladači (vysílač),
-což zjednodušuje vývoj firmware --- obě zařízení sdílejí stejnou platformu
+což zjednodušuje vývoj firmware. Obě zařízení sdílejí stejnou platformu
 a~vývojové prostředí Arduino IDE.
  
 \subsection{Bezdrátový modul HC-12}
@@ -1011,7 +1056,7 @@ shrnuty v~tabulce~\ref{tab:mg90s}.
  
 \begin{table}[H]
     \centering
-    \caption{Parametry servomotoru MG90S.}
+    \caption{Parametry servomotoru MG90S \cite{mg90s}.}
     \label{tab:mg90s}
     \begin{tabular}{ll}
         \toprule
@@ -1032,7 +1077,7 @@ a~jeden pro výškovku.
 \subsection{Joystiky}
 
 Ovladač je vybaven dvěma dvouosými joystiky, 
-ketré fungují na principu potenciometrů. Jeden joystick řídí zatáčení (roll/yaw) a~druhý řídí plyn (throttle). 
+které fungují na principu potenciometrů. Jeden joystick řídí naklánění a klopení (roll/pitch) a~druhý řídí plyn (throttle). 
 Výstupy z~joysticků jsou čteny jako analogové hodnoty pomocí ADC pinů na ESP32, které jsou následně mapovány na odpovídající rozsah PWM signálu a~odesílány přes HC-12 do letadla.
  
 \subsection{Regulátor ESC a motor}
@@ -1048,7 +1093,7 @@ Motor KAVAN Brushless C2822-1400KV je bezkartáčový motor
 s~hodnotou KV udávající počet otáček za minutu na volt napájecího napětí.
 Při napájení z~3S LiPo (11{,}1~V) jsou tak teoretické volnoběžné otáčky
 přibližně $1400 \times 11{,}1 = 15\,500$~ot/min.
-Maximální tah s~vrtulí APC 8$\times$4'' na 3S dosahuje přibližně 500~g.
+Naměřený tah s~vrtulí APC 8$\times$4'' na 3S dosahuje přibližně 490~g.
  
 \subsection{Napájení --- LiPo baterie}
  
@@ -1064,7 +1109,7 @@ který zajišťuje bezpečné a~spolehlivé spojení.
 
 Jako ovladač byl použit starý ovladač na RC drony.
 V ovladači zůstaly pouze původní joysticky a~vše ostatní bylo odstraněno.
-Do těla ovladače bylo umísěno ESP32 a ve předu ovladače je otvor pro HC-12.
+Do těla ovladače bylo umístěno ESP32 a ve předu ovladače je otvor pro HC-12.
 Ovladač je napájen z~powerbanky, která poskytuje stabilní napětí pro ESP32 a~HC-12.
 
 
@@ -1105,7 +1150,7 @@ Klíčové parametry modulu jsou shrnuty v~tabulce~\ref{tab:hc12}.
 
 \begin{table}[H]
     \centering
-    \caption{Parametry modulu HC-12.}
+    \caption{Parametry modulu HC-12 \cite{hc12}.}
     \label{tab:hc12}
     \begin{tabular}{ll}
         \toprule
@@ -1148,16 +1193,14 @@ například 1/4 vlnovou tyčovou anténou, připojenou k~pinu ANT.
 \subsection{Formát přenášených dat}
 
 Řídicí hodnoty jsou přenášeny jako binární datová struktura
-(\textit{struct}). Binární přenos je efektivnější než textový formát
-(např. CSV) --- přenáší se přesně 8~bajtů místo desítek ASCII znaků,
+(\textit{struct}). Binární přenos je efektivnější než textový formát a přenáší se přesně 6~bajtů místo desítek ASCII znaků,
 čímž se snižuje latence.
 
 \begin{lstlisting}[style=c_style, caption={Datová struktura řídicího paketu.}]
 struct Data {
-    int16_t throttle;  // plyn:     0 az 1000
-    int16_t pitch;     // vyskovka: -500 az +500
-    int16_t roll;      // kridela:  -500 az +500
-    int16_t yaw;       // smerovka: -500 az +500
+    int16_t throttle;  // plyn:     0 az 4095
+    int16_t pitch;     // vyskovka: 0 az 4095
+    int16_t roll;      // kridela:  0 az 4095
 };
 \end{lstlisting}
 
@@ -1188,7 +1231,6 @@ void loop() {
     packet.throttle = analogRead(THROTTLE_PIN);
     packet.pitch    = analogRead(PITCH_PIN);
     packet.roll     = analogRead(ROLL_PIN);
-    packet.yaw      = analogRead(YAW_PIN);
 
     HC12.write((uint8_t*)&packet, sizeof(packet));
     delay(50); // 20 Hz
@@ -1200,7 +1242,7 @@ void loop() {
 
 \subsection{Příjem a dekódování dat}
 
-Přijímač čeká, dokud není v~bufferu k~dispozici celý paket (8~bajtů).
+Přijímač čeká, dokud není v~bufferu k~dispozici celý paket (6~bajtů).
 Jakmile data dorazí, přečte je do struktury \texttt{Data}
 a~předá dál k~řízení serv a~ESC. Dále jsou hodnoty mapovány 
 z~rozsahu 0--4095 (12bit ADC) na rozsah 1000--2000~\si{\micro\second} pro PWM signál.
@@ -1253,21 +1295,33 @@ letu v~případě výpadku spojení.
 \chapter*{Závěr}
 \addcontentsline{toc}{chapter}{Závěr}
 
-Cílem této ročníkové práce byl návrh a~výroba modelu RC letadla
-s~pevnými křídly. Byly navrženy nosné plochy modelu na základě
-aerodynamické analýzy, zvolena pohonná soustava a~navržena
-elektronika včetně systému dálkového ovládání.
+Cílem této ročníkové práce byl návrh a výroba modelu RC letadla s pevnými 
+křídly. Byly navrženy nosné plochy modelu na základě aerodynamické analýzy, 
+zvolena pohonná soustava a navržena elektronika včetně systému dálkového 
+ovládání.
 
-Aerodynamická analýza v~programech Xfoil a~XFLR5 potvrdila vhodnost
-zvoleného profilu NACA~4412 pro daný rozsah Reynoldsových čísel
-a~ověřila statickou podélnou stabilitu navržené konfigurace.
-Bezdrátová komunikace mezi ovladačem a~letadlem byla úspěšně
-otestována a moduly HC-12 spolehlivě přenášejí řídicí data
-na frekvenci 433~MHz při odesílací frekvenci 20~Hz.
+Aerodynamická analýza v programech Xfoil a XFLR5 potvrdila vhodnost zvoleného 
+profilu NACA 4412 pro daný rozsah Reynoldsových čísel a ověřila statickou 
+podélnou stabilitu navržené konfigurace. Statická zásoba stability vyšla 
+$SM = 7{,}7\,\%$, což odpovídá doporučenému rozsahu pro RC modely. 
 
-Letové testy budou dokončeny po odevzdání
-práce. Výsledky testů mohou sloužit jako základ pro případné
-úpravy návrhu v~budoucích iteracích projektu.
+Bezdrátová komunikace mezi ovladačem a letadlem byla úspěšně otestována 
+a moduly HC-12 spolehlivě přenášejí řídicí data na frekvenci 433\,MHz při 
+odesílací frekvenci 20\,Hz. Implementovaný fail-safe režim zajišťuje, že 
+v případě výpadku spojení letadlo automaticky nastaví nulový plyn a vycentruje 
+všechna serva.
+
+Při realizaci modelu se ukázalo, že hmotnost 3D tištěných ocasních ploch 
+významně ovlivňuje polohu těžiště. Původní verze ocasu vážila 88\,g, což 
+posunulo těžiště o 35\,mm dozadu mimo doporučený rozsah. Tento problém byl 
+vyřešen přetiskem ocasních ploch s nižší hustotou výplně a tenšími stěnami, 
+čímž se hmotnost ocasu snížila na 55\,g. Tato zkušenost potvrzuje, že 
+u 3D tištěných modelů musí být odhady hmotnosti součástí návrhového procesu 
+od počátku.
+
+Letové testy budou dokončeny po finálním potažení křídla smršťovací fólií.
+ Práce může v budoucích iteracích pokračovat přidáváíním více funkcí jako GPS modulu nebo přechodem na výkonnější řídicí jednotku 
+schopnou autonomní stabilizace pomocí gyroskopu a akcelerometru.
 
 
 %%=========================================================================
@@ -1278,10 +1332,6 @@ práce. Výsledky testů mohou sloužit jako základ pro případné
 
 \bibitem{anderson} ANDERSON, John D. \emph{Introduction to Flight}.
 8.~vyd. New York: McGraw-Hill Education, 2017. ISBN 978-1-259-25408-5.
-
-\bibitem{nasa_drag} NASA Glenn Research Center. \emph{What is Drag?}
-[online]. 2022 [cit. 2026-04-10].
-Dostupné z: \url{https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/what-is-drag/}
 
 \bibitem{nasa_drageq} NASA Glenn Research Center. \emph{The Drag Equation}
 [online]. 2022 [cit. 2026-04-10].
@@ -1295,10 +1345,6 @@ Dostupné z: \url{https://web.mit.edu/drela/Public/web/xfoil/}
 [online]. 2022 [cit. 2026-04-10].
 Dostupné z: \url{http://www.xflr5.tech/xflr5.htm}
 
-%\bibitem{kavan} \emph{KAVAN Brushless motor C2822-1400} [online].
-%[cit. 2026-04-10].
-%Dostupné z: \url{https://www.houska-modelar.cz/shop/product_info.php?products_id=24294}
-
 \bibitem{hc12} \emph{HC-12 Wireless Serial Port Communication Module
 --- Datasheet} [online]. [cit. 2026-04-10].
 Dostupné z: \url{https://www.hc01.com/downloads/HC-12%20english%20datasheets.pdf}
@@ -1307,24 +1353,29 @@ Dostupné z: \url{https://www.hc01.com/downloads/HC-12%20english%20datasheets.pd
 [online]. 2023 [cit. 2026-04-10].
 Dostupné z: \url{https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf}
 
+
 \bibitem{drela_lab8}
 DRELA, Mark. \emph{Lab 8 Notes -- Basic Aircraft Design Rules}
 [online]. Massachusetts Institute of Technology, Unified Engineering,
 2006 [cit. 2026-04-25]. Dostupné z: \url{https://ocw.mit.edu/courses/16-01-unified-engineering-i-ii-iii-iv-fall-2005-spring-2006/ffbff8a4985ee6ea819afb90c40834e3_spl8.pdf}
 
-\bibitem{airfoiltools_naca4412}
-AIRFOIL TOOLS. \emph{NACA 4412 (naca4412-il)} [online].
-[cit. 2026-04-25]. Dostupné z: \url{http://airfoiltools.com/airfoil/details?airfoil=naca4412-il}
-
-\bibitem{uiuc_lsat}
-SELIG, Michael S.; LYON, Christopher A.; GIGUERE, Philippe;
-NINHAM, Cameron~A.; GUGLIELMO, James J. \emph{Summary of Low-Speed
-Airfoil Data -- Volume 2}. Virginia Beach: SoarTech Publications, 1996.
-Dostupné také z: \url{https://m-selig.ae.illinois.edu/uiuc_lsat/Low-Speed-Airfoil-Data-V2.pdf}
-
 \bibitem{nasa_lift}
 NASA GLENN RESEARCH CENTER. \emph{The Lift Equation} [online]. 2022
 [cit. 2026-04-25]. Dostupné z: \url{https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/lift-equation/}
+
+\bibitem{mg90s}
+TOWER PRO. \emph{MG90S Micro Servo --- Datasheet} [online].
+[cit. 2026-04-26]. Dostupné z: \url{https://www.electronicoscaldas.com/datasheet/MG90S_Tower-Pro.pdf}
+
+
+\bibitem{kavan_motor}
+KAVAN EUROPE. \emph{KAVAN Brushless motor C2822-1400} [online].
+[cit. 2026-04-26]. Dostupné z: \url{https://kavanrc.com/en/item/product-140793}
+
+
+\bibitem{kavan_lipo}
+KAVAN EUROPE. \emph{KAVAN Li-Po 1300mAh/11,1V 40/80C 14,4Wh}
+[online]. [cit. 2026-04-26]. Dostupné z: \url{https://www.kavanrc.com/en/item/kavan-li-po-1300mah-11-1v-40-80c-14-4wh-140749}
 
 \end{thebibliography}
 

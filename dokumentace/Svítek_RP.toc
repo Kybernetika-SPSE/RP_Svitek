@@ -1,73 +1,73 @@
 \babel@toc {czech}{}\relax 
-\contentsline {chapter}{Úvod}{8}{chapter*.3}%
-\contentsline {chapter}{\numberline {1}Aerodynamika}{9}{chapter.4}%
-\contentsline {section}{\numberline {1.1}Základní silové působení}{9}{section.5}%
-\contentsline {section}{\numberline {1.2}Rovnováha sil v ustáleném letu}{10}{section.7}%
-\contentsline {section}{\numberline {1.3}Vztlak}{10}{section.10}%
-\contentsline {subsection}{\numberline {1.3.1}Vztlaková rovnice}{10}{subsection.11}%
-\contentsline {subsection}{\numberline {1.3.2}Koeficient vztlaku v závislosti na úhlu náběhu}{11}{subsection.14}%
-\contentsline {section}{\numberline {1.4}Aerodynamický odpor}{11}{section.15}%
-\contentsline {subsection}{\numberline {1.4.1}Odporová rovnice}{11}{subsection.16}%
-\contentsline {subsection}{\numberline {1.4.2}Koeficient odporu}{11}{subsection.18}%
-\contentsline {section}{\numberline {1.5}Profil křídla}{12}{section.22}%
-\contentsline {subsection}{\numberline {1.5.1}Geometrie profilu}{12}{subsection.23}%
-\contentsline {subsection}{\numberline {1.5.2}Řada NACA}{13}{subsection.24}%
-\contentsline {subsection}{\numberline {1.5.3}Volba profilů pro tento projekt}{13}{subsection.25}%
-\contentsline {section}{\numberline {1.6}Reynoldsovo číslo}{14}{section.27}%
-\contentsline {section}{\numberline {1.7}Wing loading}{15}{section.30}%
-\contentsline {section}{\numberline {1.8}Aerodynamická polára a klouzavost}{15}{section.32}%
-\contentsline {section}{\numberline {1.9}Objemový koeficient výškovky}{16}{section.34}%
-\contentsline {section}{\numberline {1.10}Objemový koeficient vertikálního stabilizátoru}{16}{section.36}%
-\contentsline {section}{\numberline {1.11}Rychlost pádu}{16}{section.38}%
-\contentsline {section}{\numberline {1.12}Podélná stabilita}{17}{section.41}%
-\contentsline {subsection}{\numberline {1.12.1}Řídicí plochy}{18}{subsection.44}%
-\contentsline {chapter}{\numberline {2}Návrh modelu}{19}{chapter.45}%
-\contentsline {section}{\numberline {2.1}Požadavky a specifikace}{19}{section.46}%
-\contentsline {section}{\numberline {2.2}Geometrie nosných ploch}{19}{section.47}%
-\contentsline {subsection}{\numberline {2.2.1}Hlavní křídlo}{20}{subsection.49}%
-\contentsline {subsection}{\numberline {2.2.2}Horizontální stabilizátor}{20}{subsection.50}%
-\contentsline {subsection}{\numberline {2.2.3}Vertikální stabilizátor (fin)}{20}{subsection.51}%
-\contentsline {subsection}{\numberline {2.2.4}Ovládací plochy}{21}{subsection.52}%
-\contentsline {section}{\numberline {2.3}Těžiště a statická stabilita}{21}{section.53}%
-\contentsline {subsection}{\numberline {2.3.1}Výsledky simulace }{22}{subsection.55}%
-\contentsline {section}{\numberline {2.4}Rychlost pádu a letové podmínky}{24}{section.59}%
-\contentsline {section}{\numberline {2.5}Pohonná soustava}{26}{section.61}%
-\contentsline {subsection}{\numberline {2.5.1}Motor a vrtule}{26}{subsection.62}%
-\contentsline {subsection}{\numberline {2.5.2}Regulátor ESC a baterie}{26}{subsection.63}%
-\contentsline {subsection}{\numberline {2.5.3}Energetická bilance}{27}{subsection.64}%
-\contentsline {section}{\numberline {2.6}Konstrukce a použité materiály}{27}{section.65}%
-\contentsline {subsection}{\numberline {2.6.1}Návrh hlavního křídla}{28}{subsection.66}%
-\contentsline {subsection}{\numberline {2.6.2}Trup}{28}{subsection.67}%
-\contentsline {subsection}{\numberline {2.6.3}Ocasní plochy}{28}{subsection.68}%
-\contentsline {subsection}{\numberline {2.6.4}Výrobní postup}{29}{subsection.69}%
-\contentsline {chapter}{\numberline {3}Elektronika}{31}{chapter.72}%
-\contentsline {section}{\numberline {3.1}Schéma zapojení}{31}{section.73}%
-\contentsline {subsection}{\numberline {3.1.1}Schéma letadla}{31}{subsection.74}%
-\contentsline {subsection}{\numberline {3.1.2}Schéma ovladače}{32}{subsection.76}%
-\contentsline {section}{\numberline {3.2}Přehled součástek}{32}{section.78}%
-\contentsline {section}{\numberline {3.3}Popis součástek}{33}{section.81}%
-\contentsline {subsection}{\numberline {3.3.1}Mikrokontrolér ESP32}{33}{subsection.82}%
-\contentsline {subsection}{\numberline {3.3.2}Bezdrátový modul HC-12}{33}{subsection.83}%
-\contentsline {subsection}{\numberline {3.3.3}Servomotory MG90S}{34}{subsection.84}%
-\contentsline {subsection}{\numberline {3.3.4}Joystiky}{34}{subsection.86}%
-\contentsline {subsection}{\numberline {3.3.5}Regulátor ESC a motor}{34}{subsection.87}%
-\contentsline {subsection}{\numberline {3.3.6}Napájení --- LiPo baterie}{35}{subsection.88}%
-\contentsline {section}{\numberline {3.4}Ovladač --- hardwarová realizace}{35}{section.89}%
-\contentsline {chapter}{\numberline {4}Software a komunikace}{36}{chapter.90}%
-\contentsline {section}{\numberline {4.1}Architektura systému}{36}{section.91}%
-\contentsline {section}{\numberline {4.2}Komunikační modul HC-12}{36}{section.92}%
-\contentsline {subsection}{\numberline {4.2.1}Princip funkce a parametry}{36}{subsection.93}%
-\contentsline {subsection}{\numberline {4.2.2}Konfigurace modulu}{37}{subsection.95}%
-\contentsline {subsection}{\numberline {4.2.3}Anténa}{37}{subsection.96}%
-\contentsline {subsection}{\numberline {4.2.4}Formát přenášených dat}{38}{subsection.97}%
-\contentsline {section}{\numberline {4.3}Kód vysílače (ovladač)}{38}{section.105}%
-\contentsline {subsection}{\numberline {4.3.1}Struktura kódu}{38}{subsection.106}%
-\contentsline {subsection}{\numberline {4.3.2}Čtení vstupů}{39}{subsection.107}%
-\contentsline {subsection}{\numberline {4.3.3}Odesílání dat}{39}{subsection.108}%
-\contentsline {section}{\numberline {4.4}Kód přijímače (letadlo)}{39}{section.119}%
-\contentsline {subsection}{\numberline {4.4.1}Příjem a dekódování dat}{39}{subsection.120}%
-\contentsline {subsection}{\numberline {4.4.2}Řízení servomotorů a ESC}{40}{subsection.143}%
-\contentsline {subsection}{\numberline {4.4.3}Fail-safe}{41}{subsection.144}%
-\contentsline {chapter}{Závěr}{42}{chapter*.145}%
-\contentsline {chapter}{Literatura}{43}{chapter*.146}%
-\contentsline {chapter}{Přílohy}{I}{chapter*.147}%
+\contentsline {chapter}{Úvod}{10}{chapter*.4}%
+\contentsline {chapter}{\numberline {1}Aerodynamika}{11}{chapter.5}%
+\contentsline {section}{\numberline {1.1}Základní silové působení}{11}{section.6}%
+\contentsline {section}{\numberline {1.2}Rovnováha sil v ustáleném letu}{12}{section.8}%
+\contentsline {section}{\numberline {1.3}Vztlak}{12}{section.11}%
+\contentsline {subsection}{\numberline {1.3.1}Vztlaková rovnice}{12}{subsection.12}%
+\contentsline {subsection}{\numberline {1.3.2}Koeficient vztlaku v závislosti na úhlu náběhu}{13}{subsection.15}%
+\contentsline {section}{\numberline {1.4}Aerodynamický odpor}{13}{section.16}%
+\contentsline {subsection}{\numberline {1.4.1}Odporová rovnice}{13}{subsection.17}%
+\contentsline {subsection}{\numberline {1.4.2}Koeficient odporu}{13}{subsection.19}%
+\contentsline {section}{\numberline {1.5}Profil křídla}{14}{section.23}%
+\contentsline {subsection}{\numberline {1.5.1}Geometrie profilu}{14}{subsection.24}%
+\contentsline {subsection}{\numberline {1.5.2}Řada NACA}{15}{subsection.25}%
+\contentsline {subsection}{\numberline {1.5.3}Volba profilů pro tento projekt}{15}{subsection.26}%
+\contentsline {section}{\numberline {1.6}Reynoldsovo číslo}{16}{section.28}%
+\contentsline {section}{\numberline {1.7}Wing loading}{17}{section.31}%
+\contentsline {section}{\numberline {1.8}Aerodynamická polára a klouzavost}{17}{section.33}%
+\contentsline {section}{\numberline {1.9}Objemový koeficient výškovky}{18}{section.35}%
+\contentsline {section}{\numberline {1.10}Objemový koeficient vertikálního stabilizátoru}{18}{section.37}%
+\contentsline {section}{\numberline {1.11}Rychlost pádu}{18}{section.39}%
+\contentsline {section}{\numberline {1.12}Podélná stabilita}{19}{section.42}%
+\contentsline {subsection}{\numberline {1.12.1}Řídicí plochy}{20}{subsection.45}%
+\contentsline {chapter}{\numberline {2}Návrh modelu}{21}{chapter.46}%
+\contentsline {section}{\numberline {2.1}Požadavky a specifikace}{21}{section.47}%
+\contentsline {section}{\numberline {2.2}Geometrie nosných ploch}{21}{section.48}%
+\contentsline {subsection}{\numberline {2.2.1}Hlavní křídlo}{22}{subsection.50}%
+\contentsline {subsection}{\numberline {2.2.2}Horizontální stabilizátor}{22}{subsection.51}%
+\contentsline {subsection}{\numberline {2.2.3}Vertikální stabilizátor (fin)}{22}{subsection.52}%
+\contentsline {subsection}{\numberline {2.2.4}Ovládací plochy}{23}{subsection.53}%
+\contentsline {section}{\numberline {2.3}Těžiště a statická stabilita}{23}{section.54}%
+\contentsline {subsection}{\numberline {2.3.1}Výsledky simulace }{24}{subsection.56}%
+\contentsline {section}{\numberline {2.4}Rychlost pádu a letové podmínky}{26}{section.60}%
+\contentsline {section}{\numberline {2.5}Pohonná soustava}{28}{section.62}%
+\contentsline {subsection}{\numberline {2.5.1}Motor a vrtule}{28}{subsection.63}%
+\contentsline {subsection}{\numberline {2.5.2}Regulátor ESC a baterie}{28}{subsection.64}%
+\contentsline {subsection}{\numberline {2.5.3}Energetická bilance}{29}{subsection.65}%
+\contentsline {section}{\numberline {2.6}Konstrukce a použité materiály}{29}{section.66}%
+\contentsline {subsection}{\numberline {2.6.1}Návrh hlavního křídla}{30}{subsection.67}%
+\contentsline {subsection}{\numberline {2.6.2}Trup}{30}{subsection.68}%
+\contentsline {subsection}{\numberline {2.6.3}Ocasní plochy}{30}{subsection.69}%
+\contentsline {subsection}{\numberline {2.6.4}Výrobní postup}{31}{subsection.70}%
+\contentsline {chapter}{\numberline {3}Elektronika}{33}{chapter.73}%
+\contentsline {section}{\numberline {3.1}Schéma zapojení}{33}{section.74}%
+\contentsline {subsection}{\numberline {3.1.1}Schéma letadla}{33}{subsection.75}%
+\contentsline {subsection}{\numberline {3.1.2}Schéma ovladače}{34}{subsection.77}%
+\contentsline {section}{\numberline {3.2}Přehled součástek}{34}{section.79}%
+\contentsline {section}{\numberline {3.3}Popis součástek}{35}{section.82}%
+\contentsline {subsection}{\numberline {3.3.1}Mikrokontrolér ESP32}{35}{subsection.83}%
+\contentsline {subsection}{\numberline {3.3.2}Bezdrátový modul HC-12}{35}{subsection.84}%
+\contentsline {subsection}{\numberline {3.3.3}Servomotory MG90S}{36}{subsection.85}%
+\contentsline {subsection}{\numberline {3.3.4}Joystiky}{36}{subsection.87}%
+\contentsline {subsection}{\numberline {3.3.5}Regulátor ESC a motor}{36}{subsection.88}%
+\contentsline {subsection}{\numberline {3.3.6}Napájení --- LiPo baterie}{37}{subsection.89}%
+\contentsline {section}{\numberline {3.4}Ovladač --- hardwarová realizace}{37}{section.90}%
+\contentsline {chapter}{\numberline {4}Software a komunikace}{38}{chapter.91}%
+\contentsline {section}{\numberline {4.1}Architektura systému}{38}{section.92}%
+\contentsline {section}{\numberline {4.2}Komunikační modul HC-12}{38}{section.93}%
+\contentsline {subsection}{\numberline {4.2.1}Princip funkce a parametry}{38}{subsection.94}%
+\contentsline {subsection}{\numberline {4.2.2}Konfigurace modulu}{39}{subsection.96}%
+\contentsline {subsection}{\numberline {4.2.3}Anténa}{39}{subsection.97}%
+\contentsline {subsection}{\numberline {4.2.4}Formát přenášených dat}{40}{subsection.98}%
+\contentsline {section}{\numberline {4.3}Kód vysílače (ovladač)}{40}{section.105}%
+\contentsline {subsection}{\numberline {4.3.1}Struktura kódu}{40}{subsection.106}%
+\contentsline {subsection}{\numberline {4.3.2}Čtení vstupů}{41}{subsection.107}%
+\contentsline {subsection}{\numberline {4.3.3}Odesílání dat}{41}{subsection.108}%
+\contentsline {section}{\numberline {4.4}Kód přijímače (letadlo)}{41}{section.118}%
+\contentsline {subsection}{\numberline {4.4.1}Příjem a dekódování dat}{41}{subsection.119}%
+\contentsline {subsection}{\numberline {4.4.2}Řízení servomotorů a ESC}{42}{subsection.142}%
+\contentsline {subsection}{\numberline {4.4.3}Fail-safe}{43}{subsection.143}%
+\contentsline {chapter}{Závěr}{44}{chapter*.144}%
+\contentsline {chapter}{Literatura}{45}{chapter*.145}%
+\contentsline {chapter}{Přílohy}{I}{chapter*.146}%
