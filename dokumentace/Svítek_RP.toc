@@ -39,36 +39,35 @@
 \contentsline {subsection}{\numberline {2.6.1}Návrh hlavního křídla}{28}{subsection.66}%
 \contentsline {subsection}{\numberline {2.6.2}Trup}{28}{subsection.67}%
 \contentsline {subsection}{\numberline {2.6.3}Ocasní plochy}{28}{subsection.68}%
-\contentsline {subsection}{\numberline {2.6.4}Uchycení křídla k trupu}{29}{subsection.69}%
-\contentsline {subsection}{\numberline {2.6.5}Výrobní postup}{29}{subsection.70}%
-\contentsline {chapter}{\numberline {3}Elektronika}{30}{chapter.71}%
-\contentsline {section}{\numberline {3.1}Schéma zapojení}{30}{section.72}%
-\contentsline {subsection}{\numberline {3.1.1}Schéma letadla}{30}{subsection.73}%
-\contentsline {subsection}{\numberline {3.1.2}Schéma ovladače}{31}{subsection.75}%
-\contentsline {section}{\numberline {3.2}Přehled součástek}{31}{section.76}%
-\contentsline {section}{\numberline {3.3}Popis součástek}{31}{section.79}%
-\contentsline {subsection}{\numberline {3.3.1}Mikrokontrolér ESP32}{31}{subsection.80}%
-\contentsline {subsection}{\numberline {3.3.2}Bezdrátový modul HC-12}{32}{subsection.81}%
-\contentsline {subsection}{\numberline {3.3.3}Servomotory MG90S}{32}{subsection.82}%
-\contentsline {subsection}{\numberline {3.3.4}Joystiky}{33}{subsection.84}%
-\contentsline {subsection}{\numberline {3.3.5}Regulátor ESC a motor}{33}{subsection.85}%
-\contentsline {subsection}{\numberline {3.3.6}Napájení --- LiPo baterie}{33}{subsection.86}%
-\contentsline {section}{\numberline {3.4}Ovladač --- hardwarová realizace}{34}{section.87}%
-\contentsline {chapter}{\numberline {4}Software a komunikace}{35}{chapter.88}%
-\contentsline {section}{\numberline {4.1}Architektura systému}{35}{section.89}%
-\contentsline {section}{\numberline {4.2}Komunikační modul HC-12}{35}{section.90}%
-\contentsline {subsection}{\numberline {4.2.1}Princip funkce a parametry}{35}{subsection.91}%
-\contentsline {subsection}{\numberline {4.2.2}Konfigurace modulu}{36}{subsection.93}%
-\contentsline {subsection}{\numberline {4.2.3}Anténa}{36}{subsection.94}%
-\contentsline {subsection}{\numberline {4.2.4}Formát přenášených dat}{37}{subsection.95}%
-\contentsline {section}{\numberline {4.3}Kód vysílače (ovladač)}{37}{section.103}%
-\contentsline {subsection}{\numberline {4.3.1}Struktura kódu}{37}{subsection.104}%
-\contentsline {subsection}{\numberline {4.3.2}Čtení vstupů}{38}{subsection.105}%
-\contentsline {subsection}{\numberline {4.3.3}Odesílání dat}{38}{subsection.106}%
-\contentsline {section}{\numberline {4.4}Kód přijímače (letadlo)}{38}{section.117}%
-\contentsline {subsection}{\numberline {4.4.1}Příjem a dekódování dat}{38}{subsection.118}%
-\contentsline {subsection}{\numberline {4.4.2}Řízení servomotorů a ESC}{39}{subsection.141}%
-\contentsline {subsection}{\numberline {4.4.3}Fail-safe}{40}{subsection.142}%
-\contentsline {chapter}{Závěr}{41}{chapter*.143}%
-\contentsline {chapter}{Literatura}{42}{chapter*.144}%
-\contentsline {chapter}{Přílohy}{I}{chapter*.145}%
+\contentsline {subsection}{\numberline {2.6.4}Výrobní postup}{29}{subsection.69}%
+\contentsline {chapter}{\numberline {3}Elektronika}{31}{chapter.72}%
+\contentsline {section}{\numberline {3.1}Schéma zapojení}{31}{section.73}%
+\contentsline {subsection}{\numberline {3.1.1}Schéma letadla}{31}{subsection.74}%
+\contentsline {subsection}{\numberline {3.1.2}Schéma ovladače}{32}{subsection.76}%
+\contentsline {section}{\numberline {3.2}Přehled součástek}{32}{section.78}%
+\contentsline {section}{\numberline {3.3}Popis součástek}{33}{section.81}%
+\contentsline {subsection}{\numberline {3.3.1}Mikrokontrolér ESP32}{33}{subsection.82}%
+\contentsline {subsection}{\numberline {3.3.2}Bezdrátový modul HC-12}{33}{subsection.83}%
+\contentsline {subsection}{\numberline {3.3.3}Servomotory MG90S}{34}{subsection.84}%
+\contentsline {subsection}{\numberline {3.3.4}Joystiky}{34}{subsection.86}%
+\contentsline {subsection}{\numberline {3.3.5}Regulátor ESC a motor}{34}{subsection.87}%
+\contentsline {subsection}{\numberline {3.3.6}Napájení --- LiPo baterie}{35}{subsection.88}%
+\contentsline {section}{\numberline {3.4}Ovladač --- hardwarová realizace}{35}{section.89}%
+\contentsline {chapter}{\numberline {4}Software a komunikace}{36}{chapter.90}%
+\contentsline {section}{\numberline {4.1}Architektura systému}{36}{section.91}%
+\contentsline {section}{\numberline {4.2}Komunikační modul HC-12}{36}{section.92}%
+\contentsline {subsection}{\numberline {4.2.1}Princip funkce a parametry}{36}{subsection.93}%
+\contentsline {subsection}{\numberline {4.2.2}Konfigurace modulu}{37}{subsection.95}%
+\contentsline {subsection}{\numberline {4.2.3}Anténa}{37}{subsection.96}%
+\contentsline {subsection}{\numberline {4.2.4}Formát přenášených dat}{38}{subsection.97}%
+\contentsline {section}{\numberline {4.3}Kód vysílače (ovladač)}{38}{section.105}%
+\contentsline {subsection}{\numberline {4.3.1}Struktura kódu}{38}{subsection.106}%
+\contentsline {subsection}{\numberline {4.3.2}Čtení vstupů}{39}{subsection.107}%
+\contentsline {subsection}{\numberline {4.3.3}Odesílání dat}{39}{subsection.108}%
+\contentsline {section}{\numberline {4.4}Kód přijímače (letadlo)}{39}{section.119}%
+\contentsline {subsection}{\numberline {4.4.1}Příjem a dekódování dat}{39}{subsection.120}%
+\contentsline {subsection}{\numberline {4.4.2}Řízení servomotorů a ESC}{40}{subsection.143}%
+\contentsline {subsection}{\numberline {4.4.3}Fail-safe}{41}{subsection.144}%
+\contentsline {chapter}{Závěr}{42}{chapter*.145}%
+\contentsline {chapter}{Literatura}{43}{chapter*.146}%
+\contentsline {chapter}{Přílohy}{I}{chapter*.147}%

@@ -20,7 +20,6 @@ struct Data {
   int16_t throttle;
   int16_t pitch;
   int16_t roll;
-  int16_t yaw;
 };
 
 Data packet;
@@ -64,9 +63,7 @@ void loop() {
       esc.writeMicroseconds(throttle_us);
       servoElevator.writeMicroseconds(pitch_us);
       servoAileronL.writeMicroseconds(roll_us);
-      
-      int roll_inverted = map(roll_us, SERVO_MIN, SERVO_MAX, SERVO_MAX, SERVO_MIN);
-      servoAileronR.writeMicroseconds(roll_inverted);
+      servoAileronR.writeMicroseconds(roll_us);
       
       Serial.print("T:");
       Serial.print(throttle_us);

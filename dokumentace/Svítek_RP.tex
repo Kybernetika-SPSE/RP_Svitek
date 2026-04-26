@@ -96,7 +96,7 @@
   {\Large \textbf{Autor práce:}} & \Large{Martin Svítek} \\
   {\Large \textbf{Třída:}} & \Large{3.M} \\ 
   {\Large \textbf{Vedoucí práce:}} & \Large{Mgr. Pavel Jedlička} \\ 
-  {\Large \textbf{Dne:}} & \Large{\today} \\ 
+  {\Large \textbf{Dne:}} & \Large{30. dubna 2026} \\ 
   {\Large \textbf{Hodnocení:}} &  \\ 
 \end{tabular}
 
@@ -113,7 +113,24 @@
 \chapter*{Anotace}
 \thispagestyle{empty}
 
-% ZDE NAPIŠ ANOTACI
+Tato ročníková práce se zabývá návrhem a~výrobou modelu RC letadla
+s~pevnými křídly. Práce pokrývá celý vývojový cyklus projektu a~to
+aerodynamickou analýzu profilu křídla, návrh geometrie nosných ploch,
+volbu pohonné soustavy, návrh palubní elektroniky a~implementaci
+bezdrátové komunikace mezi letadlem a~ovladačem.
+
+Aerodynamická analýza byla provedena v~programech Xfoil a~XFLR5
+metodou VLM1 pro Reynoldsova čísla v~rozsahu $80\,000$--$110\,000$.
+Pro hlavní křídlo byl zvolen profil NACA~4412 s~rozpětím 600~mm,
+pro ocasní plochy symetrický profil NACA~0012. Hlavní křídlo je tvořeno
+3D tištěnými žebry s~uhlíkovými nosníky potaženými fólií,
+trup je uhlíková trubka čtvercového průřezu.
+
+Řídicí elektronika je postavena na mikrokontroléru ESP32.
+Bezdrátová komunikace mezi ovladačem a~letadlem je realizována
+pomocí modulů HC-12 pracujících na frekvenci 433~MHz s~odesílací
+frekvencí 20~Hz. Řídicí data jsou přenášena jako binární struktura.
+
 
 \vfill
 
@@ -127,13 +144,14 @@ a~že na využití těchto nástrojů v~práci vhodným způsobem odkazuji.
 Souhlasím s~využitím mé práce učiteli VOŠ a~SPŠE Plzeň k~výuce.
 
 \vspace{1cm}
-V~Plzni dne \today \hfill Podpis: ..........................
+V~Plzni dne 30. dubna 2026 \hfill Podpis: ..........................
 
 %% OBSAH %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
+\pagenumbering{gobble}
 \tableofcontents
-\thispagestyle{empty}
-
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{8}
 \newpage
 
 %% ÚVOD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -169,7 +187,7 @@ v~kapitole~\ref{kap:navrh} při geometrickém návrhu modelu.
 %%-------------------------------------------------------------------------
 \section{Základní silové působení}
 
-Na letadlo při letu působí čtyři hlavní síly zobrazené na obrázku~\ref{fig:sily}:
+Na letadlo při letu působí čtyři hlavní síly zobrazené na obrázku~\ref{fig:sily} a to
 vztlak $L$, tíhová síla $W$, tah $T$
 a~aerodynamický odpor $D$.
 
@@ -187,7 +205,7 @@ na směr letu a~tíhová síla směřuje vždy k~zemi.
 \section{Rovnováha sil v ustáleném letu}
 
 V~ustáleném přímém letu bez zrychlení jsou síly v~rovnováze. Vztlak je roven
-tíze letadla a~tah motoru vyrovnává aerodynamický odpor:
+tíze letadla a~tah motoru vyrovnává aerodynamický odpor
 
 \begin{align}
     L &= W \label{eq:LW} \\
@@ -206,7 +224,7 @@ Velikost vztlaku závisí na rychlosti letu, hustotě vzduchu, ploše křídla
 a~tvaru profilu. Vztlak je popsán rovnicí
 
 \begin{equation}
-    L = \frac{1}{2}\,\rho\,V^{2}\,S\,C_L
+    L = \frac{1}{2}\,\rho\,V^{2}\,S\,C_L,
     \label{eq:lift}
 \end{equation}
 
@@ -215,10 +233,10 @@ $V$~[\si{\metre\per\second}] je rychlost letu,
 $S$~[\si{\square\metre}] je plocha křídla a~$C_L$~[--] je koeficient vztlaku.
 
 Z~rovnice~\ref{eq:lift} a~podmínky $L = W$ lze vyjádřit koeficient vztlaku
-pro ustálený vodorovný let:
+pro ustálený vodorovný let
 
 \begin{equation}
-    C_L = \frac{2W}{\rho\,V^{2}\,S}
+    C_L = \frac{2W}{\rho\,V^{2}\,S}.
     \label{eq:CL}
 \end{equation}
 
@@ -241,7 +259,7 @@ kterou musí motor trvale překonávat. Analogicky ke vztlaku je odpor
 popsán rovnicí
 
 \begin{equation}
-    D = \frac{1}{2}\,\rho\,V^{2}\,S\,C_D
+    D = \frac{1}{2}\,\rho\,V^{2}\,S\,C_D,
     \label{eq:drag}
 \end{equation}
 
@@ -251,10 +269,11 @@ plocha křídla a $C_D$~[--] koeficient odporu.
 
 \subsection{Koeficient odporu}
 
-Celkový koeficient odporu se skládá ze dvou hlavních složek:
+Celkový koeficient odporu se skládá ze dvou hlavních složek je 
 
 \begin{equation}
-    C_D = C_{D0} + C_{Di}
+    C_D = C_{D0} + C_{Di},
+     \label{eq:CD}
 \end{equation}
 
 Profilový odpor $C_{D0}$ vzniká třením vzduchu o povrch
@@ -266,22 +285,24 @@ Indukovaný odpor $C_{Di}$ je přímým důsledkem
 vztlaku. Na koncích křídla vzniká rozdíl tlaků mezi spodní a horní
 stranou, vzduch přetéká a vytváří koncové víry. Tyto víry mění směr aerodynamické síly
 dozadu a zvyšují celkový odpor. Indukovaný odpor roste s~rostoucím
-vztlakem a klesá s~vyšší štíhlostí křídla:
+vztlakem a klesá s~vyšší štíhlostí křídla. Jeho velikost lze vypočítat pomocí vzorce
 
 \begin{equation}
-    C_{Di} = \frac{C_L^2}{\pi \cdot e \cdot AR}
+    C_{Di} = \frac{C_L^2}{\pi \cdot e \cdot AR},
     \label{eq:Cdi}
 \end{equation}
 
 kde $e$~[--] je Oswaldův faktor účinnosti ($e = 1$ pro ideální
 eliptické rozložení vztlaku, pro obdélníkové křídlo typicky
-$e \approx 0{,}85$) a $AR$~[--] je štíhlost křídla:
+$e = 0{,}85$ \cite{anderson}) a $AR$~[--] je štíhlost křídla
 
 \begin{equation}
-    AR = \frac{b^2}{S}
+    AR = \frac{b^2}{S}.
     \label{eq:AR}
 \end{equation}
+
 %%-------------------------------------------------------------------------
+
 \section{Profil křídla}
 \label{sec:profil}
 
@@ -316,11 +337,11 @@ v~poloze 40~\% od náběžné hrany a~tloušťku 12~\%.
 
 \subsection{Volba profilů pro tento projekt}
 
-Pro hlavní křídlo byl zvolen profil \textbf{NACA 4412}. Profil má kladné prohnutí,
-díky kterému generuje vztlak i~při nulovém úhlu náběhu --- to je výhodné
+Pro hlavní křídlo byl zvolen profil NACA 4412. Profil má kladné prohnutí,
+díky kterému generuje vztlak i~při nulovém úhlu náběhu což je výhodné
 při nízkých rychlostech charakteristických pro tento model.
 
-Pro ocasní plochy byl zvolen symetrický profil \textbf{NACA 0012},
+Pro ocasní plochy byl zvolen symetrický profil NACA 0012,
 protože tyto plochy mají být aerodynamicky neutrální a~generovat sílu pouze
 při výchylce z~nulové polohy pomocí klapek.
 
@@ -328,8 +349,7 @@ při výchylce z~nulové polohy pomocí klapek.
     \centering
     \includegraphics[width=0.85\linewidth]{naca_profily.png}
     \caption{Profily NACA 4412 (hlavní křídlo) a NACA 0012 (ocasní
-             plochy) vygenerované v~programu XFLR5. Přerušovaná čára
-             znázorňuje střednici profilu.}
+             plochy) vygenerované v~programu XFLR5.}
     \label{fig:naca_profily}
 \end{figure}
 
@@ -339,10 +359,10 @@ při výchylce z~nulové polohy pomocí klapek.
 \label{sec:reynolds}
 
 Reynoldsovo číslo je bezrozměrný parametr popisující charakter proudění
-v~mezní vrstvě:
+v~mezní vrstvě a~je definován pomocí rovnice
 
 \begin{equation}
-    \Rey = \frac{V \cdot c}{\nu}
+    \Rey = \frac{V \cdot c}{\nu},
     \label{eq:Re}
 \end{equation}
 
@@ -352,17 +372,17 @@ viskozita vzduchu ($\nu = 1{,}5 \times 10^{-5}$~\si{\square\metre\per\second}
 za standardních podmínek).
 
 Při $\Rey < 5 \times 10^5$ zůstává mezní vrstva laminární. RC modely typicky
-operují v~rozsahu $\Rey \approx 10^4$--$10^5$, což přináší specifické chování:
+operují v~rozsahu $\Rey \approx 10^4$--$10^5$, což přináší specifické chování jako
 vyšší náchylnost k~separaci laminární mezní vrstvy a~horší poměr $C_L/C_D$
 ve srovnání s~velkými letadly ($\Rey > 10^6$). Tento fakt omezuje přesnost
 viskózních 3D simulací v~programech jako XFLR5, proto bylo u~3D analýzy
-použito inviskidní metody VLM1 a~výsledky jsou doplněny reálnými testy.
+použito inviskidní metody VLM1.
 
 Pro návrhovou rychlost $V = 12$~\si{\metre\per\second} a~tětiva hlavního
-křídla $c = 0{,}13$~\si{\metre} vychází:
+křídla $c = 0{,}13$~\si{\metre} vychází
 
 \begin{equation}
-    \Rey = \frac{12 \cdot 0{,}13}{1{,}5 \times 10^{-5}} \approx 104\,000
+    \Rey = \frac{12 \cdot 0{,}13}{1{,}5 \times 10^{-5}} = 104\,000 .
 \end{equation}
 
 Model se bude pohybovat v~rozsahu přibližně $\Rey = 80\,000$--$110\,000$.
@@ -370,10 +390,9 @@ Model se bude pohybovat v~rozsahu přibližně $\Rey = 80\,000$--$110\,000$.
 %%-------------------------------------------------------------------------
 \section{Wing loading}
 
-Wing loading neboli zátěž na křídlo je poměr hmotnosti letadla a~plochy křídla:
-
+Wing loading neboli zátěž na křídlo je poměr hmotnosti letadla a je definováno
 \begin{equation}
-    WL = \frac{m}{S}
+    WL = \frac{m}{S},
     \label{eq:WL}
 \end{equation}
 
@@ -385,10 +404,10 @@ letové vlastnosti při nízkých rychlostech.
 \section{Aerodynamická polára a klouzavost}
 
 Aerodynamická polára zobrazuje závislost $C_L$ na $C_D$ pro různé úhly náběhu.
-Klouzavost $K$ je definována jako:
+Klouzavost $K$ je definována jako
 
 \begin{equation}
-    K = \frac{C_L}{C_D}
+    K = \frac{C_L}{C_D} .
 \end{equation}
 
 Čím vyšší klouzavost, tím menší odpor letadlo generuje při dané hodnotě vztlaku.
@@ -399,44 +418,44 @@ Letadlo letí nejúsporněji v bodě, kde klouzavost $K$ dosahuje maxima.
 
 Objemový koeficient výškovky (\textit{tail volume coefficient}) $V_h$ vyjadřuje
 stabilizační účinek horizontálního stabilizátoru a~je klíčovým parametrem
-pro nastavení podélné stability:
+pro nastavení podélné stability definuje ho rovnice
 
 \begin{equation}
-    V_h = \frac{S_h \cdot l_h}{S \cdot c}
+    V_h = \frac{S_h \cdot l_h}{S \cdot c} ,
     \label{eq:Vh}
 \end{equation}
 
 kde $S_h$~[\si{\square\metre}] je plocha výškovky, $l_h$~[\si{\metre}] je rameno
-výškovky (vzdálenost aerodynamického středu výškovky od aerodynamického středu
-hlavního křídla, počítáno u~25~\% chordu obou ploch), $S$~[\si{\square\metre}]
+výškovky které určujevzdálenost aerodynamického středu výškovky od aerodynamického středu
+hlavního křídla, počítáno jako~25~\% tětivy obou ploch, $S$~[\si{\square\metre}]
 je plocha hlavního křídla a~$c$~[\si{\metre}] je tětiva hlavního křídla.
 U~obdélníkového křídla platí $c = $ chord. Pro typická lehká letadla
-se doporučuje $V_h = 0{,}3$--$0{,}7$.
+se doporučuje $V_h = 0{,}3$--$0{,}6$ \cite{drela_lab8}. 
 
 %%-------------------------------------------------------------------------
 \section{Objemový koeficient vertikálního stabilizátoru}
 
-Analogicky k~$V_h$ vyjadřuje $V_v$ stabilizační účinek vertikálního
-stabilizátoru (finu) ve směrové ose:
+Podobně jako~$V_h$ vyjadřuje $V_v$ stabilizační účinek vertikálního
+stabilizátoru (finu) ve směrové ose a je definován rovnicí
 
 \begin{equation}
-    V_v = \frac{S_v \cdot l_v}{S \cdot b}
+    V_v = \frac{S_v \cdot l_v}{S \cdot b} ,
     \label{eq:Vv}
 \end{equation}
 
 kde $S_v$~[\si{\square\metre}] je plocha finu, $l_v$~[\si{\metre}] je rameno finu,
 $S$~[\si{\square\metre}] je plocha hlavního křídla a~$b$~[\si{\metre}] je rozpětí
-hlavního křídla. Pro typická lehká letadla se doporučuje $V_v = 0{,}03$--$0{,}05$.
+hlavního křídla. Pro typická lehká letadla se doporučuje $V_v = 0{,}02$--$0{,}05$ \cite{drela_lab8}.
 
 %%-------------------------------------------------------------------------
 \section{Rychlost pádu}
 
 Rychlost pádu (\textit{stall speed}) $V_{stall}$ je minimální rychlost letu,
 při níž křídlo ještě generuje dostatečný vztlak. Vyplývá přímo
-z~podmínky $L = W$ a~rovnice~\ref{eq:lift} pro $C_L = C_{L,max}$:
+z~podmínky $L = W$ a~rovnice~\ref{eq:lift} a~je dána vzorcem
 
 \begin{equation}
-    V_{stall} = \sqrt{\frac{2\,W}{\rho\,S\,C_{L,max}}}
+    V_{stall} = \sqrt{\frac{2\,W}{\rho\,S\,C_{L,max}}} ,
     \label{eq:Vstall}
 \end{equation}
 
@@ -450,7 +469,7 @@ a~nerovnoměrné rozložení vztlaku po rozpětí. Proto se 2D hodnota $C_{l,max
 přepočítává korekčním koeficientem $k_{3D}$.
 
 \begin{equation}
-    C_{L,max} = C_{l,max} \cdot k_{3D}, \quad k_{3D} \approx 0{,}75\text{--}0{,}85
+    C_{L,max} = C_{l,max} \cdot k_{3D}, \quad k_{3D} = 0{,}75\text{--}0{,}85
     \label{eq:CLmax3D}
 \end{equation}
 
@@ -467,15 +486,15 @@ Letadlo je staticky podélně stabilní, pokud při vychýlení nosu nahoru
 vznikne moment který nos vrátí zpět dolů, a naopak. Tato podmínka
 je splněna tehdy, když těžiště (CG) leží před neutrálním bodem (NP)
 aerodynamické konfigurace. Statická zásoba stability (\textit{static margin}) říká o kolik procent tětivy leží těžiště před neutrálním bodem. Čím větší SM, tím stabilnější letadlo.
- Statickou zásobu stability uruje vzorec:
+ Statickou zásobu stability určuje vzorec
  
 \begin{equation}
-    SM = \frac{x_{NP} - x_{CG}}{\bar{c}} \cdot 100\,\%
+    SM = \frac{x_{NP} - x_{CG}}{\bar{c}} \cdot 100\,\% ,
     \label{eq:SM}
 \end{equation}
 
 kde $x_{CG}$ je poloha těžiště, $x_{NP}$ je poloha neutrálního bodu a $\bar{c}$ je střední aerodynamická tětiva. Pro RC modely se doporučuje
-$SM \approx 5$--$15~\%$.
+$SM= 5$--$15~\%$ \cite{drela_lab8}.
 
 Aerodynamický moment křídla je popsán koeficientem $C_m$. 
 Podmínka stability vyžaduje, aby se s~rostoucím úhlem náběhu 
@@ -550,7 +569,7 @@ Navržené rozměry všech nosných ploch jsou shrnuty v~tabulce~\ref{tab:kridla
 Hlavní křídlo má rozpětí 600~mm a~tětivu 130~mm, což dává plochu $S = 0{,}078$~m².
 Použitý profil NACA~4412 zajišťuje dobré vztlakové vlastnosti a~zároveň je dostatečně
 odolný vůči separaci proudění při nízkých rychlostech charakteristických pro tento model.
-Štíhlost křídla dle rovnice~\ref{eq:AR} vychází $AR \approx 4{,}62$,
+Štíhlost křídla dle rovnice~\ref{eq:AR} vychází $AR = 4{,}62$,
 což je pro RC modely rozumná hodnota vyvažující indukovaný odpor a~manévrovatelnost.
 Křídlo bude vybaveno křidélky (ailerony) pro řízení příčného naklonění.
 
@@ -560,9 +579,8 @@ Křídlo bude vybaveno křidélky (ailerony) pro řízení příčného nakloně
 Horizontální stabilizátor (výškovka) má rozpětí 200~mm a~tětivu 80~mm, což dává plochu $S_h = 0{,}016$~m².
 Použitý profil NACA~0012 je symetrický, což je vhodné pro stabilizátor, který má být aerodynamicky neutrální.
 Klapka výškovky bude výchylovatelná pro řízení náklonění nosu letadla (podélné kývání). Pro výpočet objemového 
-koeficientu výškovky $V_h$ dle rovnice~\ref{eq:Vh} je třeba určit rameno $l_h$ --- vzdálenost mezi
- aerodynamickým středem hlavního křídla a~aerodynamickým středem výškovky. Při navržené geometrii a~umístění výškovky za hlavním 
- křídlem vychází $l_h \approx 0{,}29$~m, což dává $V_h \approx 0{,}45$, což je v~doporučeném rozsahu pro lehká letadla.
+koeficientu výškovky $V_h$ dle rovnice~\ref{eq:Vh} je třeba určit rameno $l_h$ které určuje vzdálenost mezi
+ aerodynamickým středem hlavního křídla a~aerodynamickým středem výškovky. Při navržené geometrii vychází $l_h = 0{,}29$~m, které dává $V_h = 0{,}45$, což je v~doporučeném rozsahu pro lehká letadla.
 
 
 \subsection{Vertikální stabilizátor (fin)}
@@ -572,9 +590,8 @@ tětiva vychází 80~mm a~plocha $S_v = 0{,}0064\,\text{m}^2$. Použitý
 profil NACA 0012 je symetrický, což je vhodné pro stabilizátor, který má být aerodynamicky neutrální.
 Fin bude pevný, bez výchylky, protože při dané velikosti modelu a~navržené geometrii ocasních ploch je zajištěna dostatečná přímosměrná stabilita. 
 Pro výpočet objemového koeficientu vertikálního stabilizátoru $V_v$ dle rovnice~\ref{eq:Vv} 
-je třeba určit rameno $l_v$ --- vzdálenost mezi aerodynamickým středem hlavního křídla a~aerodynamickým středem finu vychází $l_v \approx 0{,}29$~m, což dává $V_v \approx 0{,}041$.Výsledek je v doporučeným rozsahu 
+je třeba určit rameno $l_v$ které určuje vzdálenost mezi aerodynamickým středem hlavního křídla a~aerodynamickým středem finu vychází $l_v = 0{,}29$~m, což dává $V_v = 0{,}041$.Výsledek je v doporučeným rozsahu 
  pro lehká letadla.
-% ZDE --- bez serva, pevný, výpočet Vv s výsledkem 0,041
 
 \subsection{Ovládací plochy}
 
@@ -597,13 +614,13 @@ Těžiště (CG) je navrženo tak, aby se nacházelo přibližně na 28~\% stře
 
 Neutrálníbod (NP) byl stanoven simulací VLM1 v programu XFLR5 
 na $x_{NP} = 51{,}0$ mm od přední hrany hlavního křídla. 
-Těžiště je navrženo na $x_{CG} = 37{,}0$ mm od přední hrany, 
-což odpovídá $28{,}5~\%$ střední aerodynamické tětivy (MAC). 
-Statická zásoba stability dle rovnice~\ref{eq:SM} vychází:
+Těžiště je navrženo na $x_{CG} = 41{,}0$ mm od přední hrany, 
+což odpovídá $31{,}5~\%$ střední aerodynamické tětivy (MAC). 
+Statická zásoba stability dle rovnice~\ref{eq:SM} vychází
 
 \[
 SM = \frac{x_{NP} - x_{CG}}{\bar{c}} \cdot 100 = 
-\frac{51{,}0 - 37{,}0}{130} \cdot 100 \approx 10{,}8~\%
+\frac{51{,}0 - 41{,}0}{130} \cdot 100 \approx 7{,}7~\%
 \]
 
 Výsledek leží v doporučeném rozsahu $5$–$15~\%$ pro RC modely, 
@@ -642,20 +659,20 @@ je zobrazena na obrázku~\ref{fig:xflr5_model}.
         \midrule
         Rozpětí $b$                      & 0,600 m \\
         Plocha křídla $S$              & 0,078 m² \\
-        Hmotnost $m$                       & 0,543 kg \\
+        Hmotnost $m$                       & 0,632 kg \\
         Koeficient vztlaku $C_L$             & 0,407 \\
         Koeficient odporu $C_D$         & 0,012 \\
         Klouzavost $C_L/C_D$              & 34,78 \\
         Momentový koeficient $C_m$         & $-0{,}066$ \\
         Poloha neutrálního bodu $x_{NP}$      & 0,058 m \\
-        Poloha těžiště $x_{CG}$               & 0,037 m \\
+        Poloha těžiště $x_{CG}$               & 0,041 m \\
         \bottomrule
     \end{tabular}
 \end{table}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{letove_plochy.png}
+    \includegraphics[width=0.85\textwidth]{letove_plochy_B.png}
     \caption{3D model letounu v~programu XFLR5. Parametry simulace 
         jsou uvedeny v~tabulce~\ref{tab:xflr5_vysledky}.}
     \label{fig:xflr5_model}
@@ -672,18 +689,16 @@ což potvrzuje její stabilizační funkci bez výrazného příspěvku k~celkov
 odporu.
 
 Simulace rovněž potvrzuje polohu neutrálního bodu $x_{NP} = 0{,}058\,\text{m}$
-a~polohu těžiště $x_{CG} = 0{,}037\,\text{m}$, ze kterých vychází
+a~polohu těžiště $x_{CG} = 0{,}041\,\text{m}$, ze kterých vychází
 statická zásoba stability vypočtená v~sekci~\ref{sec:stabilita}.
 Klouzavost modelu při tomto režimu letu vychází $K = 34{,}8$.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{rozlozeni_tlaku.png}
+    \includegraphics[width=0.85\textwidth]{rozlozeni_tlaku_B.png}
     \caption{Rozložení aerodynamické síly na plochu ($F/s = q \cdot C_p$)
     na profilu křídla z~analýzy VLM1 při $V = 12\,\text{m/s}$,
-    $\alpha = 2°$. Červené šipky na horní straně znázorňují podtlak (sání)
-    jako dominantní zdroj vztlaku. Modré šipky na náběžné hraně odpovídají
-    oblasti stagnačního tlaku.}
+    $\alpha = 2°$.}
     \label{fig:xflr5_tlak}
 \end{figure}
 
@@ -696,10 +711,10 @@ Maximální koeficient vztlaku $C_{L,max}$ pro 3D křídlo byl
 stanoven korekcí 2D hodnoty z programu Xfoil. Ze simulace 
 profilu NACA~4412 při $Re = 104\,000$ vychází z grafu \ref{fig:Cl} 
 $C_{l,max} = 1{,}32$. Po aplikaci korekčního koeficientu 
-$k_{3D} = 0{,}80$ dle rovnice~\ref{eq:CLmax3D}:
+$k_{3D} = 0{,}80$ dle rovnice~\ref{eq:CLmax3D} vychází
 
 \[
-C_{L,max} = 1{,}32 \cdot 0{,}80 = 1{,}06
+C_{L,max} = 1{,}32 \cdot 0{,}80 = 1{,}06 .
 \]
 
 \begin{figure}[H]
@@ -710,20 +725,20 @@ C_{L,max} = 1{,}32 \cdot 0{,}80 = 1{,}06
 \end{figure}
 
 Rychlost pádu byla vypočtena dle rovnice~\ref{eq:Vstall} 
-pro naměřenou hmotnost modelu $m = 0{,}543$ kg:
+pro hmotnost modelu $m = 0{,}632 \pm 0{,}001$ kg a vychází
 
 \[
-V_{stall} = \sqrt{\frac{2 \cdot 0{,}543 \cdot 9{,}81}
-{1{,}225 \cdot 0{,}078 \cdot 1{,}06}} \approx 10{,}3~\text{m/s}
+V_{stall} = \sqrt{\frac{2 \cdot 0{,}632 \cdot 9{,}81}
+{1{,}225 \cdot 0{,}078 \cdot 1{,}06}} = 11{,}1~\text{m/s} .
 \]
 
 Navrhovaná cestovní rychlost $V = 12$~m/s je přibližně 
-$17~\%$ nad rychlostí pádu, což není dostatečnou 
-bezpečnostní rezervou ale pro tento model bude stačit. Wing loading modelu dle 
-rovnice~\ref{eq:WL} vychází:
+$7{,}5~\%$ nad rychlostí pádu, což je dostatečnou 
+bezpečnostní rezervou pro tento model. Wing loading modelu dle 
+rovnice~\ref{eq:WL} vychází
 
 \[
-WL = \frac{0{,}543}{0{,}078} \approx 6{,}96~\text{kg/m}^2
+WL = \frac{0{,}632}{0{,}078} = 8{,}1~\text{kg/m}^2 .
 \]
 
 Uvedené hodnoty hmotnosti jsou realné hodnoty získané zvážením hotového modelu,
@@ -751,11 +766,11 @@ a stoupání.
 
 Odhadovaný tah pohonné soustavy s touto konfigurací dosahuje 
 přibližně $500$~g. Poměr tahu k celkové hmotnosti modelu 
-$m_{MTOW} \approx 540$~g je:
+$m_{MTOW} = 632$~g je
 \[
-\frac{T}{W} = \frac{500}{540} = 0{,}93
+\frac{T}{W} = \frac{500}{632} = 0{,}79 .
 \]
-Pro pevnokřídlý model je tento poměr dostačující -- na rozdíl 
+Pro pevnokřídlý model je tento poměr dostačujíc. Na rozdíl 
 od multikoptér nemusí motor nést celou hmotnost, neboť 
 vztlak křídla zajišťuje hlavní část nesené hmotnosti za letu. 
 Motor slouží primárně k udržení dostatečné cestovní rychlosti.
@@ -771,22 +786,25 @@ mezi hmotností a~výdrží.
 \subsection{Energetická bilance}
 
 Maximální příkon pohonné soustavy je omezen motorem KAVAN 
-C2822-1400KV na $P_{max} = 90$~W při proudu $I_{max} = 11$~A 
+C2822-1400KV na $P_{max} = 122$~W při proudu $I_{max} = 11$~A 
 ze zdroje $U = 11{,}1$~V (3S LiPo). Při cestovním letu 
 s přibližně $50~\%$ plynu se odhaduje odběr motoru na 
 $I_{motor} \approx 5{,}5$~A. Elektronika (ESP32, HC-12, 
 3$\times$~MG90S) odebírá přibližně $I_{el} \approx 0{,}5$~A. 
-Celkový odhadovaný odběr při cruisu je tedy:
+Celkový odhadovaný odběr při cruisu je tedy
+
 \[
-I_{cruise} \approx 5{,}5 + 0{,}5 = 6{,}0~\text{A}
+I_{cruise} = 5{,}5 + 0{,}5 = 6{,}0~\text{A}.
 \]
+
 Využitelná kapacita baterie při vybití do $80~\%$ nominální 
 kapacity (ochrana článků) je $1300 \cdot 0{,}8 = 1040$~mAh. 
-Odhadovaná doba letu:
+Odhadovaná doba letu při tomto odběru vychází
+
 \[
-t = \frac{1040~\text{mAh}}{6000~\text{mA}} \cdot 60 
-\approx 10~\text{min}
+t = \frac{1040~\text{mAh}}{6000~\text{mA}} \cdot 60 = 10,4~\text{min} .
 \]
+
 Baterie KAVAN LiPo 1300~mAh / 40C je schopna trvale 
 dodávat až $52$~A, což s rezervou pokrývá maximální 
 odběr $11$~A motoru. Výdrž $10$ minut je pro účely 
@@ -812,7 +830,8 @@ po celé délce, je navrženo jako sendvičová konstrukce tvořená
 Žebra odpovídající profilu NACA 4412 jsou tištěna na 3D tiskárně
 s~odlehčovacími otvory, které zároveň slouží jako otvor pro kabely k servomotorům.
  Skrze žebra procházejí dva uhlíkové nosníky
-(průměr 6~mm, délka 600~mm), které zajišťují torzní i~ohybovou tuhost křídla.
+(průměr 6~mm, délka 600~mm), které zajišťují torzní i~ohybovou tuhost křídla. Žeber je celkem 16,
+ na každé straně 8 a to 4 v~pevné části a~4 menší v~části s~křidélky.
 Povrch je potažen smršťovací fólií, která vytváří aerodynamicky hladký povrch
 a~přidává minimální hmotnost. Výsledná konstrukce je pevná, tvarově konzistentní
 a~lehká.
@@ -836,16 +855,53 @@ přičemž přesný tvar profilu NACA~0012 je zachován po celé délce. Výško
 bez serva. Přímosměrná stabilita je zajištěna samotnou geometrií ocasních ploch,
 což zjednodušuje konstrukci a~snižuje celkovou hmotnost modelu.
 
-\subsection{Uchycení křídla k trupu}
 
-Uhlíkové tyče procházejí žebry křídla a~jsou pevně přilepeny epoxidovým lepidlem.
-Křídlo je k~trupu připevněno pomocí dvou dřevěných příložek, které jsou šrouby
-uchyceny k~uhlíkové tyči trupu. Ocasní plochy jsou vytištěny jako celky
-a~připevněny k~trupu kombinací šroubů a~lepidla.
 \subsection{Výrobní postup}
+\label{subsec:vyrobni-postup}
 
-% ZDE --- postup krok za krokem + fotodokumentace
+Výroba modelu probíhala v několika navazujících krocích od centrální nosné konstrukce 
+směrem k periferním komponentám.
 
+Základem celého modelu je páteřní uhlíková trubka čtvercového průřezu, na kterou 
+navazují všechny ostatní díly. Na trubku byly z obou stran připevněny dřevěné příložky 
+z březové překližky, které slouží jako úchyt hlavního křídla a zároveň jako nosič 
+elektroniky umístěné mezi nimi.
+
+Skrze dřevěné příložky byly provléknuty dvě kulaté uhlíkové tyče tvořící hlavní 
+nosníky křídla. Na tyče byla postupně nasunuta 3D tištěná žebra ve správném pořadí 
+od kořene k oběma koncům křídla. Mezi vnitřní žebra v pevné části křídla byly 
+umístěny servomotory ovládající křidélka. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{IMG_2247.jpg}
+    \caption{Sestavené hlavní křídlo s 3D tištěnými žebry, uhlíkovými nosníky 
+    a integrovanou kabeláží.}
+    \label{fig:kridlo-zebra}
+\end{figure}
+
+V přední části modelu je k trupu přilepen čtvercový dřevěný držák motoru s pěti 
+otvory. Čtyři pro šrouby upevňující motor a jeden centrální pro průchod hřídele. 
+Tento držák je pevně spojen s trupem epoxidovým lepidlem a je 
+schopen přenášet tah motoru do nosné konstrukce.
+
+V zadní části modelu jsou do trupu zasunuty 3D tištěné ocasní plochy. Horizontální 
+stabilizátor je k trupu připevněn šroubem, vertikální stabilizátor je přilepen 
+k horizontálnímu. Servomotor výškovky je upevněn na trupu před ocasními plochami a 
+je propojen pomocí mechanického táhla.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{IMG_2251.jpg}
+    \caption{Detail motorové sekce s instalovaným motorem KAVAN C2822-1400KV 
+    a vrtulovým kuželem.}
+    \label{fig:motor-detail}
+\end{figure}
+
+Závěrečným krokem byla instalace elektroniky mezi dřevěné příložky trupu,
+připevnění ESP32, modulu HC-12 a ESC, propojení servomotorů s řídicí jednotkou 
+a umístění baterie co nejblíže nosu modelu pro dosažení správné polohy těžiště.
 
 %%=========================================================================
 %%  3. ELEKTRONIKA
@@ -866,11 +922,19 @@ je uveden v~kapitole~4.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.65\textwidth]{schema_letadlo.png}
-    \caption{Schéma zapojení elektroniky přijímače}
+    \caption{Schéma zapojení elektroniky letadla}
     \label{fig:schema_zapojeni}
 \end{figure}
 
 \subsection{Schéma ovladače}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{schema_ovladac.png}
+    \caption{Schéma zapojení elektroniky ovladače}
+    \label{fig:schema_zapojeni}
+\end{figure}
+
 
 %%-------------------------------------------------------------------------
 \section{Přehled součástek}
@@ -962,7 +1026,7 @@ shrnuty v~tabulce~\ref{tab:mg90s}.
     \end{tabular}
 \end{table}
  
-V~modelu jsou použity celkem tři kusy MG90S: dva pro křidélka
+V~modelu jsou použity celkem tři kusy MG90S, dva pro křidélka
 a~jeden pro výškovku.
 
 \subsection{Joystiky}
@@ -983,7 +1047,7 @@ který bude sloužit jako zdroj 5~V pro ESP32 a ostatní elektroniku.
 Motor KAVAN Brushless C2822-1400KV je bezkartáčový motor
 s~hodnotou KV udávající počet otáček za minutu na volt napájecího napětí.
 Při napájení z~3S LiPo (11{,}1~V) jsou tak teoretické volnoběžné otáčky
-přibližně $1400 \times 11{,}1 \approx 15\,500$~ot/min.
+přibližně $1400 \times 11{,}1 = 15\,500$~ot/min.
 Maximální tah s~vrtulí APC 8$\times$4'' na 3S dosahuje přibližně 500~g.
  
 \subsection{Napájení --- LiPo baterie}
@@ -1231,9 +1295,9 @@ Dostupné z: \url{https://web.mit.edu/drela/Public/web/xfoil/}
 [online]. 2022 [cit. 2026-04-10].
 Dostupné z: \url{http://www.xflr5.tech/xflr5.htm}
 
-\bibitem{kavan} \emph{KAVAN Brushless motor C2822-1400} [online].
-[cit. 2026-04-10].
-Dostupné z: \url{https://www.houska-modelar.cz/shop/product_info.php?products_id=24294}
+%\bibitem{kavan} \emph{KAVAN Brushless motor C2822-1400} [online].
+%[cit. 2026-04-10].
+%Dostupné z: \url{https://www.houska-modelar.cz/shop/product_info.php?products_id=24294}
 
 \bibitem{hc12} \emph{HC-12 Wireless Serial Port Communication Module
 --- Datasheet} [online]. [cit. 2026-04-10].
@@ -1242,6 +1306,25 @@ Dostupné z: \url{https://www.hc01.com/downloads/HC-12%20english%20datasheets.pd
 \bibitem{esp32} Espressif Systems. \emph{ESP32 Series Datasheet}
 [online]. 2023 [cit. 2026-04-10].
 Dostupné z: \url{https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf}
+
+\bibitem{drela_lab8}
+DRELA, Mark. \emph{Lab 8 Notes -- Basic Aircraft Design Rules}
+[online]. Massachusetts Institute of Technology, Unified Engineering,
+2006 [cit. 2026-04-25]. Dostupné z: \url{https://ocw.mit.edu/courses/16-01-unified-engineering-i-ii-iii-iv-fall-2005-spring-2006/ffbff8a4985ee6ea819afb90c40834e3_spl8.pdf}
+
+\bibitem{airfoiltools_naca4412}
+AIRFOIL TOOLS. \emph{NACA 4412 (naca4412-il)} [online].
+[cit. 2026-04-25]. Dostupné z: \url{http://airfoiltools.com/airfoil/details?airfoil=naca4412-il}
+
+\bibitem{uiuc_lsat}
+SELIG, Michael S.; LYON, Christopher A.; GIGUERE, Philippe;
+NINHAM, Cameron~A.; GUGLIELMO, James J. \emph{Summary of Low-Speed
+Airfoil Data -- Volume 2}. Virginia Beach: SoarTech Publications, 1996.
+Dostupné také z: \url{https://m-selig.ae.illinois.edu/uiuc_lsat/Low-Speed-Airfoil-Data-V2.pdf}
+
+\bibitem{nasa_lift}
+NASA GLENN RESEARCH CENTER. \emph{The Lift Equation} [online]. 2022
+[cit. 2026-04-25]. Dostupné z: \url{https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/lift-equation/}
 
 \end{thebibliography}
 
