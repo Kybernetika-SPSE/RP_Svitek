@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.18)  26 APR 2026 22:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.18)  27 APR 2026 22:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -425,10 +425,6 @@ File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 ) (Svítek_RP.aux
 Package babel Info: 'czech' activates 'czech' shorthands.
 (babel)             Reported on input line 9.
-
-
-LaTeX Warning: Label `fig:schema_zapojeni' multiply defined.
-
 )
 \openout1 = `Svítek_RP.aux'.
 
@@ -576,6 +572,13 @@ LaTeX Warning: Command \textdegree invalid in math mode on input line 700.
 LaTeX Warning: Command \textdegree invalid in math mode on input line 700.
 
 Missing character: There is no � in font cmr12!
+
+LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 707.
+
+
+LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 707.
+
+Missing character: There is no � in font cmr12!
 <letove_plochy_B.png, id=524, 1308.89pt x 937.5025pt>
 File: letove_plochy_B.png Graphic file (type png)
 <use letove_plochy_B.png>
@@ -613,38 +616,38 @@ Overfull \hbox (7.21176pt too wide) in paragraph at lines 798--804
 \OT1/cmr/m/n/12 mo-tor s rota^^Tcn^^S^^Pm pl^^Sa^^Tst^^Tem p^^Tr^^S^^Pmo ur^^Tcen^^Sy pro pev-nok^^Tr^^S^^Pdl^^Se RC mo-dely. Mo-tor je n^^S^^Pzkoot^^Sa^^Tckov^^Sy
  []
 
-[27 <./NACA_4412_Cl_alpha.png>] [28] [29] [30]
+[27 <./NACA_4412_Cl_alpha.png>] [28]
+Overfull \hbox (1.88857pt too wide) in paragraph at lines 874--885
+\OT1/cmr/m/n/12 Aby k^^Tr^^S^^Pdlo m^^Telo spr^^Savn^^Sy a kon-stantn^^S^^P tvar pro-filu po cel^^Se d^^Selce, je navr^^Tzeno jako sendvi^^Tcov^^Sa
+ []
+
+[29] [30]
 <IMG_2247.jpg, id=575, 2890.8pt x 2168.1pt>
 File: IMG_2247.jpg Graphic file (type jpg)
 <use IMG_2247.jpg>
-Package pdftex.def Info: IMG_2247.jpg  used on input line 922.
+Package pdftex.def Info: IMG_2247.jpg  used on input line 924.
 (pdftex.def)             Requested size: 386.96027pt x 290.19969pt.
  [31 <./IMG_2247.jpg>]
 <IMG_2251.jpg, id=582, 2168.1pt x 2074.75125pt>
 File: IMG_2251.jpg Graphic file (type jpg)
 <use IMG_2251.jpg>
-Package pdftex.def Info: IMG_2251.jpg  used on input line 941.
+Package pdftex.def Info: IMG_2251.jpg  used on input line 943.
 (pdftex.def)             Requested size: 273.14923pt x 261.36938pt.
  [32 <./IMG_2251.jpg>]
 Kapitola 3.
-
-Overfull \hbox (19.93846pt too wide) in paragraph at lines 956--961
-\OT1/cmr/m/n/12 Elektroniku mo-delu tvo^^Tr^^S^^P dva sa-mo-statn^^Se celky a to je le-ta-dlo a ovlada^^Tc pro-po-jen^^Se bezdr^^Satovou
- []
-
-<schema_letadlo.png, id=588, 1216.545pt x 1210.5225pt>
+<schema_letadlo.png, id=588, 785.93625pt x 609.77812pt>
 File: schema_letadlo.png Graphic file (type png)
 <use schema_letadlo.png>
-Package pdftex.def Info: schema_letadlo.png  used on input line 969.
-(pdftex.def)             Requested size: 295.90588pt x 294.42873pt.
-<schema_ovladac.png, id=589, 1267.73625pt x 945.5325pt>
+Package pdftex.def Info: schema_letadlo.png  used on input line 971.
+(pdftex.def)             Requested size: 295.90588pt x 229.58737pt.
+<schema_ovladac.png, id=589, 732.48656pt x 572.89032pt>
 File: schema_ovladac.png Graphic file (type png)
 <use schema_ovladac.png>
-Package pdftex.def Info: schema_ovladac.png  used on input line 978.
-(pdftex.def)             Requested size: 295.90588pt x 220.69969pt.
+Package pdftex.def Info: schema_ovladac.png  used on input line 980.
+(pdftex.def)             Requested size: 295.90588pt x 231.43362pt.
 [33
 
- <./schema_letadlo.png (PNG copy)>] [34 <./schema_ovladac.png (PNG copy)>] [35] [36] [37]
+ <./schema_letadlo.png>] [34 <./schema_ovladac.png>] [35] [36] [37]
 Kapitola 4.
 [38
 
@@ -653,55 +656,55 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 ) (C:\Users\marti\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 1199.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 1200.
  [40] [41] [42] [43] [44
 
 
 ]
-Underfull \hbox (badness 1789) in paragraph at lines 1352--1355
+Underfull \hbox (badness 1789) in paragraph at lines 1353--1356
 \OT1/cmr/m/n/12 stupn^^Se z: []$\OT1/cmtt/m/n/12 https : / / www . espressif . com / sites / default / files / documentation /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1358--1361
+Underfull \hbox (badness 10000) in paragraph at lines 1359--1362
 []\OT1/cmr/m/n/12 DRELA, Mark. \OT1/cmr/m/it/12 Lab 8 No-tes -- Ba-sic Ai-r-craft De-sign Ru-les \OT1/cmr/m/n/12 [on-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1358--1361
+Underfull \hbox (badness 10000) in paragraph at lines 1359--1362
 \OT1/cmr/m/n/12 line]. Massa-chusetts In-sti-tute of Tech-no-logy, Uni-fied En-gi-nee-ring,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1358--1361
+Underfull \hbox (badness 10000) in paragraph at lines 1359--1362
 \OT1/cmr/m/n/12 2006 [cit. 2026-04-25]. Do-stupn^^Se z: []$\OT1/cmtt/m/n/12 https : / / ocw . mit . edu / courses /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1358--1361
+Underfull \hbox (badness 10000) in paragraph at lines 1359--1362
 \OT1/cmtt/m/n/12 16-[]01-[]unified-[]engineering-[]i-[]ii-[]iii-[]iv-[]fall-[]2005-[]spring-[]2006 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1363--1365
+Underfull \hbox (badness 10000) in paragraph at lines 1364--1366
 []\OT1/cmr/m/n/12 NASA GLENN RE-SEARCH CEN-TER. \OT1/cmr/m/it/12 The Lift Equation \OT1/cmr/m/n/12 [on-line].
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1363--1365
+Underfull \hbox (badness 10000) in paragraph at lines 1364--1366
 \OT1/cmr/m/n/12 2022 [cit. 2026-04-25]. Do-stupn^^Se z: []$\OT1/cmtt/m/n/12 https : / / www1 . grc . nasa . gov /
  []
 
 [45
 
 ]
-Underfull \hbox (badness 7081) in paragraph at lines 1377--1379
-[]\OT1/cmr/m/n/12 KAVAN EU-ROPE. \OT1/cmr/m/it/12 KA-VAN Li-Po 1300mAh/11,1V 40/80C 14,4Wh \OT1/cmr/m/n/12 [on-
+Underfull \hbox (badness 6348) in paragraph at lines 1378--1380
+[]\OT1/cmr/m/n/12 KAVAN EU-ROPE. \OT1/cmr/m/it/12 KA-VAN Li-Po 1300 mAh/11,1 V 40/80C 14,4 Wh
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1377--1379
-\OT1/cmr/m/n/12 line]. [cit. 2026-04-26]. Do-stupn^^Se z: []$\OT1/cmtt/m/n/12 https : / / www . kavanrc . com / en / item /
+Underfull \hbox (badness 4608) in paragraph at lines 1378--1380
+\OT1/cmr/m/n/12 [on-line]. [cit. 2026-04-26]. Do-stupn^^Se z: []$\OT1/cmtt/m/n/12 https : / / www . kavanrc . com / en / item /
  []
 
 [46] [1
@@ -716,24 +719,21 @@ L3 programming layer <2025-12-24>
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.28pt have occurred.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `Svítek_RP.out' has not changed.
 (rerunfilecheck)             Checksum: 333BB1108450C8962DB7C683EA454000;11416.
  ) 
 Here is how much of TeX's memory you used:
- 19131 strings out of 467871
- 350618 string characters out of 5418376
- 1031053 words of memory out of 5000000
- 47605 multiletter control sequences out of 15000+600000
+ 19132 strings out of 467871
+ 350637 string characters out of 5418376
+ 1031086 words of memory out of 5000000
+ 47606 multiletter control sequences out of 15000+600000
  638083 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,82p,404b,1304s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Svítek_RP.pdf (47 pages, 1773149 bytes).
+Output written on Svítek_RP.pdf (47 pages, 1801112 bytes).
 PDF statistics:
- 852 PDF objects out of 1000 (max. 8388607)
+ 854 PDF objects out of 1000 (max. 8388607)
  205 named destinations out of 1000 (max. 500000)
  632 words of extra memory for PDF output out of 10000 (max. 10000000)
 

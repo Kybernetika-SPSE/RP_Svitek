@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1777235815.55856 "f:/Ročníkovka/RP_Svitek/dokumentace/Svítek_RP.tex" "Svítek_RP.pdf" "Svítek_RP" 1777235817.29273 0
+["pdflatex"] 1777321076.48664 "f:/Ročníkovka/RP_Svitek/dokumentace/Svítek_RP.tex" "Svítek_RP.pdf" "Svítek_RP" 1777321078.4101 0
   "C:/Users/marti/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1773856266 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/marti/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1773856271 14064 856e08d916f419c2fb569c431b28a149 ""
   "C:/Users/marti/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1773856113 13333487 05bddb2a0c2e8a66a85f9912bfc97fa6 ""
@@ -126,16 +126,16 @@
   "IMG_2251.jpg" 1777140150 737743 89062622f23eafba88ee5ac2e5962505 ""
   "Logo.png" 1773856295 7776 4d4a006e11e055680c89247a4d10c3dc ""
   "NACA_4412_Cl_alpha.png" 1776360654 8068 5f2106477cad6a623779075026d24126 ""
-  "Svítek_RP.aux" 1777235817 17195 a0a7c8665bdc63b4e1ed7ffe11aca975 "pdflatex"
-  "Svítek_RP.out" 1777235817 11416 333bb1108450c8962db7c683ea454000 "pdflatex"
-  "Svítek_RP.tex" 1777235815 60312 5987f7ee28102a7875be92d601102dae ""
-  "Svítek_RP.toc" 1777235817 6059 2fa2dbbda2fb282e5c7ec59a5c35597d "pdflatex"
-  "f:/Ročníkovka/RP_Svitek/dokumentace/Svítek_RP.tex" 1777235815 60312 5987f7ee28102a7875be92d601102dae ""
+  "Svítek_RP.aux" 1777321078 17193 34d14c99dcc2ac7fdcb3aa656c8dc6f8 "pdflatex"
+  "Svítek_RP.out" 1777321078 11416 333bb1108450c8962db7c683ea454000 "pdflatex"
+  "Svítek_RP.tex" 1777321075 60473 89a9191912a86e32915e278d17ae1b56 ""
+  "Svítek_RP.toc" 1777321078 6059 2fa2dbbda2fb282e5c7ec59a5c35597d "pdflatex"
+  "f:/Ročníkovka/RP_Svitek/dokumentace/Svítek_RP.tex" 1777321075 60473 89a9191912a86e32915e278d17ae1b56 ""
   "letove_plochy_B.png" 1777212715 83845 15899480ec51b2cfdfd652b7bb4e41b3 ""
   "naca_profily.png" 1777057952 65140 b9594c16a1843284f1c5c236ef852476 ""
   "rozlozeni_tlaku_B.png" 1777212715 79833 d7e2ecfb24a4c56727fbcaf62b3e4a24 ""
-  "schema_letadlo.png" 1776523974 38496 d01a7c50de3529d59304c212c7dfa74b ""
-  "schema_ovladac.png" 1776716649 38083 2efe8f58a35017e844124ab672ef3e7e ""
+  "schema_letadlo.png" 1777314161 82173 489cf388f7e54839682464ad0b6d3fba ""
+  "schema_ovladac.png" 1777314194 65631 b7934f5b75360be9046908a42576450a ""
   "sily.png" 1769351589 46576 806e2c784db8eb8912f5adcb5deaadcb ""
   (generated)
   "Svítek_RP.aux"

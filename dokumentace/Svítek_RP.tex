@@ -95,7 +95,7 @@
 \begin{tabular}{{p{4.5cm} p{12cm}}}
   {\Large \textbf{Autor práce:}} & \Large{Martin Svítek} \\
   {\Large \textbf{Třída:}} & \Large{3.M} \\ 
-  {\Large \textbf{Vedoucí práce:}} & \Large{Mgr. Pavel Jedlička} \\ 
+  {\Large \textbf{Vedoucí práce:}} & \Large{Ing. Pavel Jedlička} \\ 
   {\Large \textbf{Dne:}} & \Large{30. dubna 2026} \\ 
   {\Large \textbf{Hodnocení:}} &  \\ 
 \end{tabular}
@@ -384,7 +384,7 @@ v~poloze 40~\% od náběžné hrany a~tloušťku 12~\%.
 \subsection{Volba profilů pro tento projekt}
 
 Pro hlavní křídlo byl zvolen profil NACA 4412. Profil má kladné prohnutí,
-díky kterému generuje vztlak i~při nulovém úhlu náběhu což je výhodné
+díky kterému generuje vztlak i~při nulovém úhlu náběhu, což je výhodné
 při nízkých rychlostech charakteristických pro tento model.
 
 Pro ocasní plochy byl zvolen symetrický profil NACA 0012,
@@ -436,7 +436,7 @@ Model se bude pohybovat v~rozsahu přibližně $\Rey = 80\,000$--$110\,000$.
 %%-------------------------------------------------------------------------
 \section{Wing loading}
 
-Wing loading neboli zátěž na křídlo je poměr hmotnosti letadla a je definováno
+Wing loading neboli zátěž na křídlo je poměr hmotnosti letadla a je definován
 \begin{equation}
     WL = \frac{m}{S},
     \label{eq:WL}
@@ -464,7 +464,7 @@ Letadlo letí nejúsporněji v bodě, kde klouzavost $K$ dosahuje maxima.
 
 Objemový koeficient výškovky (\textit{tail volume coefficient}) $V_h$ vyjadřuje
 stabilizační účinek horizontálního stabilizátoru a~je klíčovým parametrem
-pro nastavení podélné stability definuje ho rovnice
+pro nastavení podélné stability. Je definován rovnicí
 
 \begin{equation}
     V_h = \frac{S_h \cdot l_h}{S \cdot c} ,
@@ -472,7 +472,7 @@ pro nastavení podélné stability definuje ho rovnice
 \end{equation}
 
 kde $S_h$~[\si{\square\metre}] je plocha výškovky, $l_h$~[\si{\metre}] je rameno
-výškovky které určujevzdálenost aerodynamického středu výškovky od aerodynamického středu
+výškovky, které určuje vzdálenost aerodynamického středu výškovky od aerodynamického středu
 hlavního křídla, počítáno jako~25~\% tětivy obou ploch, $S$~[\si{\square\metre}]
 je plocha hlavního křídla a~$c$~[\si{\metre}] je tětiva hlavního křídla.
 U~obdélníkového křídla platí $c = $ chord. Pro typická lehká letadla
@@ -586,7 +586,7 @@ parametrů a~volba pohonné soustavy.
 \section{Požadavky a specifikace}
 
 Model je navržen jako RC letadlo s rozpětím křídel 600~mm a hmotností do 600~g.
-Cílem je dosáhnoutí dostatečného vztlaku pro stabilní let při rychlosti 10--12~m/s, přičemž
+Cílem je dosáhnout dostatečného vztlaku pro stabilní let při rychlosti 10--12~m/s, přičemž
 model bude vybaven křidélky pro řízení příčného naklonění a~výškovkou pro řízení podélného kývání.
 Model bude poháněn jedním bezkartáčovým motorem s~vhodnou vrtulí, přičemž poměr tahu k hmotnosti bude dostatečný pro pevnokřídlý model.
 
@@ -658,7 +658,7 @@ Těžiště (CG) je navrženo tak, aby se nacházelo přibližně na 28~\% stře
 
 
 
-Neutrálníbod (NP) byl stanoven simulací VLM1 v programu XFLR5 
+Neutrální bod (NP) byl stanoven simulací VLM1 v programu XFLR5 
 na $x_{NP} = 51{,}0$ mm od přední hrany hlavního křídla. 
 Těžiště je navrženo na $x_{CG} = 41{,}0$ mm od přední hrany, 
 což odpovídá $31{,}5~\%$ střední aerodynamické tětivy (MAC). 
@@ -690,7 +690,7 @@ sklon křivky na obrázku~\ref{fig:Cm} dokazuje stabilitu letadla.
 
 Program XFLR5 byl použit k~ověření aerodynamických vlastností navrženého
 modelu metodou VLM1 při návrhové rychlosti $V = 12\,\text{m/s}$ a~úhlu
-náběhu v rozmezí $\alpha = -5$° až $ 15$°. Úhel 2° byl vybrán jako ukázkový, který odpovídá typickému cestovnímu režimu.
+náběhu v rozmezí $\alpha = -5$° až $15$°. Úhel $2$° byl vybrán jako ukázkový, který odpovídá typickému cestovnímu režimu.
 Geometrie modelu odpovídající parametrům z~tabulky~\ref{tab:kridla}
 je zobrazena na obrázku~\ref{fig:xflr5_model}.
 
@@ -703,15 +703,15 @@ je zobrazena na obrázku~\ref{fig:xflr5_model}.
         \toprule
         Parametr & Hodnota \\
         \midrule
-        Rozpětí $b$                      & 0,600 m \\
-        Plocha křídla $S$              & 0,078 m² \\
-        Hmotnost $m$                       & $0,632 \pm 0,005 kg$ \\
-        Koeficient vztlaku $C_L$             & 0,407 \\
-        Koeficient odporu $C_D$         & 0,012 \\
-        Klouzavost $C_L/C_D$              & 34,78 \\
+        Rozpětí $b$                      & $0{,}600~m$ \\
+        Plocha křídla $S$              & $0{,}078~m²$ \\
+        Hmotnost $m$                       & $0{,}632 \pm 0{,}005~kg$ \\
+        Koeficient vztlaku $C_L$             & $0{,}407$ \\
+        Koeficient odporu $C_D$         & $0{,}012$ \\
+        Klouzavost $C_L/C_D$              & $34{,}78$ \\
         Momentový koeficient $C_m$         & $-0{,}066$ \\
-        Poloha neutrálního bodu $x_{NP}$      & 0,051 m \\
-        Poloha těžiště $x_{CG}$               & 0,041 m \\
+        Poloha neutrálního bodu $x_{NP}$      & $0{,}051~m$ \\
+        Poloha těžiště $x_{CG}$               & $0{,}041~m$ \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -766,7 +766,7 @@ C_{L,max} = 1{,}32 \cdot 0{,}80 = 1{,}06 .
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.4\linewidth]{NACA_4412_Cl_alpha.png}
-    \caption{Závislost koeficientu vztlaku $C_L$ na úhlu náběhu $\alpha$ z~analýzy v~XFLR5.}
+    \caption{Závislost koeficientu vztlaku $C_L$ na úhlu náběhu $\alpha$ z~analýzy v~XFoil.}
     \label{fig:Cl}
 \end{figure}
 
@@ -775,7 +775,7 @@ pro hmotnost modelu $m = 632 \pm 5 \text{g}$ a vychází
 
 \[
 V_{stall} = \sqrt{\frac{2 \cdot 0{,}632 \cdot 9{,}81}
-{1{,}225 \cdot 0{,}078 \cdot 1{,}06}} = 11.1 \pm 0.04 \, \text{m/s} .
+{1{,}225 \cdot 0{,}078 \cdot 1{,}06}} = 11{,}1 \pm 0{,}04 \, \text{m/s} .
 \]
 
 Navrhovaná cestovní rychlost $V = 12$~m/s je přibližně 
@@ -784,7 +784,7 @@ bezpečnostní rezervou pro tento model. Wing loading modelu dle
 rovnice~\ref{eq:WL} vychází
 
 \[
-WL = \frac{0,632}{0,078} = 8,1 \pm 0,06 \, \text{kg/m}^2 .
+WL = \frac{0{,}632}{0{,}078} = 8{,}1 \pm 0{,}06 \, \text{kg/m}^2 .
 \]
 
 Uvedené hodnoty hmotnosti jsou realné hodnoty získané zvážením hotového modelu,
@@ -813,16 +813,16 @@ a stoupání.
 Naměřený tah při plném plynu se pohyboval v rozsahu 480–510 g. Pro další výpočty je uvažována hodnota $T = 495 \pm 15 \, \text{g}$. Poměr tahu k celkové hmotnosti modelu 
 $m_{MTOW} = 632 \pm 5 \, \text{g} $ je
 \[
-\frac{T}{W} = \frac{495}{632} = 0,78 \pm 0,02 .
+\frac{T}{W} = \frac{495}{632} = 0{,}78 \pm 0{,}02 .
 \]
-Pro pevnokřídlý model je tento poměr dostačujíc. Na rozdíl 
+Pro pevnokřídlý model je tento poměr dostačující. Na rozdíl 
 od multikoptér nemusí motor nést celou hmotnost, neboť 
 vztlak křídla zajišťuje hlavní část nesené hmotnosti za letu. 
 Motor slouží primárně k udržení dostatečné cestovní rychlosti.
 
 \subsection{Regulátor ESC a baterie}
 
-Pro regulaci otáček motoru je použit elektronický regulátor Hornet 40A
+Pro regulaci otáček motoru je použit elektronický regulátor Hornet 40~A
 (2--4S), který komunikuje s~řídící jednotkou pomocí standardního PWM signálu.
 Napájení zajišťuje baterie KAVAN LiPo 1300~mAh / 11{,}1~V (3S) / 40--80C \cite{kavan_lipo}.
 Jmenovité napětí 11{,}1~V a~kapacita 1300~mAh představují dobrý kompromis
@@ -843,11 +843,13 @@ I_{cruise} = 5{,}5 + 0{,}5 = 6{,}0~\text{A}.
 \]
 
 Využitelná kapacita baterie při vybití do $80~\%$ nominální 
-kapacity (ochrana článků) je $1300 \cdot 0{,}8 = 1040$~mAh. 
-Odhadovaná doba letu při tomto odběru vychází
+kapacity je $1300 \cdot 0{,}8 = 1040$~mAh. 
+Doba letu se vypočítá jako podíl využitelné kapacity baterie a celkového odběru, 
+převedený na minuty.
+Odhadovaná doba letu vychází
 
 \[
-t = \frac{1040~\text{mAh}}{6000~\text{mA}} \cdot 60 = 10,4~\text{min} .
+t = \frac{1040~\text{mAh}}{6000~\text{mA}} \cdot 60 = 10{,}4~\text{min} .
 \]
 
 Baterie KAVAN LiPo 1300~mAh / 40C je schopna trvale 
@@ -869,7 +871,7 @@ Mezi těmito plochami je umístěna baterie a~elektronika.
 
 
 \subsection{Návrh hlavního křídla}
-Aby křídlo mělo správný a konstatní tvar profilu 
+Aby křídlo mělo správný a~konstantní tvar profilu 
 po celé délce, je navrženo jako sendvičová konstrukce tvořená
 žebry s~uhlíkovými nosníky a~fólií.
 Žebra odpovídající profilu NACA 4412 jsou tištěna na 3D tiskárně
@@ -953,7 +955,7 @@ a umístění baterie co nejblíže nosu modelu pro dosažení správné polohy 
 %%=========================================================================
 \chapter{Elektronika}
 
-Elektroniku modelu tvoří dva samostatné celky a to je letadlo
+Elektroniku modelu tvoří dva samostatné celky: letadlo
 a~ovladač propojené bezdrátovou komunikací přes moduly HC-12.
 Tato kapitola popisuje všechny použité součástky, schéma zapojení
 a~napájecí architekturu obou celků. Podrobný popis softwarové části
@@ -968,7 +970,7 @@ je uveden v~kapitole~4.
     \centering
     \includegraphics[width=0.65\textwidth]{schema_letadlo.png}
     \caption{Schéma zapojení elektroniky letadla}
-    \label{fig:schema_zapojeni}
+    \label{fig:schema_letadlo}
 \end{figure}
 
 \subsection{Schéma ovladače}
@@ -977,7 +979,7 @@ je uveden v~kapitole~4.
     \centering
     \includegraphics[width=0.65\textwidth]{schema_ovladac.png}
     \caption{Schéma zapojení elektroniky ovladače}
-    \label{fig:schema_zapojeni}
+    \label{fig:schema_ovladac}
 \end{figure}
 
 
@@ -998,7 +1000,7 @@ všechny klíčové součástky obou celků.
         ESP32   & Hlavní řídící jednotka \\
         HC-12      & Bezdrátový přijímač \\
         MG90S $\times$ 3     & Servomotory (křídla, výškovka) \\
-        Hornet 40A ESC       & Regulátor otáček motoru \\
+        Hornet 40~A ESC       & Regulátor otáček motoru \\
         KAVAN C2822-1400KV       & Bezkartáčový motor \\
         LiPo 3S 1300~mAh     & Hlavní baterie \\
         APC 8$\times$4'' & Vrtule \\
@@ -1082,7 +1084,7 @@ Výstupy z~joysticků jsou čteny jako analogové hodnoty pomocí ADC pinů na E
  
 \subsection{Regulátor ESC a motor}
  
-Elektronický regulátor otáček Hornet 40A (2--4S LiPo) řídí
+Elektronický regulátor otáček Hornet 40~A (2--4S LiPo) řídí
 bezkartáčový motor pomocí třífázového PWM signálu. Vstupní signál
 z~ESP32 je standardní servo PWM (50~Hz, 1000--2000~\si{\micro\second}),
 kde 1000~\si{\micro\second} odpovídá nulovým otáčkám a~2000~\si{\micro\second}
@@ -1097,7 +1099,7 @@ Naměřený tah s~vrtulí APC 8$\times$4'' na 3S dosahuje přibližně 490~g.
  
 \subsection{Napájení --- LiPo baterie}
  
-Hlavním zdrojem energie je baterie KAVAN LiPo 1300~mAh / 11,1~V (3S) / 40--80C.
+Hlavním zdrojem energie je baterie KAVAN LiPo 1300~mAh / 11{,}1~V (3S) / 40--80C.
 Trojčlánková konfigurace (3S) poskytuje jmenovité napětí 11{,}1~V
 a~plně nabitý stav 12{,}6~V. Vybíjecí schopnost 40C znamená,
 že baterie dokáže trvale dodávat proud až 52~A,
@@ -1141,10 +1143,9 @@ mikrokontrolér ESP32 a~identické moduly HC-12.
 
 HC-12 je hotový bezdrátový modul pracující v~pásmu 433~MHz
 s~integrovaným rádiovým čipem Si4463. Z~pohledu mikrokontroléru se chová
-jako standardní sériová linka (UART). Co přijde na pin TX jednoho modulu, objeví se na
+jako standardní sériová linka (UART). Vše, co přijde na pin TX jednoho modulu, se objeví na
 pinu RX druhého modulu. Není tedy potřeba řešit žádné RF parametry ani
-instalovat speciální knihovny. Dosah modulu v~přímé viditelnosti dosahuje
-stovky metrů, což pro účely tohoto projektu plně dostačuje.
+instalovat speciální knihovny. Dosah modulu v~přímé viditelnosti je několik set metrů, což pro účely tohoto projektu plně dostačuje.
 
 Klíčové parametry modulu jsou shrnuty v~tabulce~\ref{tab:hc12}.
 
@@ -1198,9 +1199,9 @@ například 1/4 vlnovou tyčovou anténou, připojenou k~pinu ANT.
 
 \begin{lstlisting}[style=c_style, caption={Datová struktura řídicího paketu.}]
 struct Data {
-    int16_t throttle;  // plyn:     0 az 4095
-    int16_t pitch;     // vyskovka: 0 az 4095
-    int16_t roll;      // kridela:  0 az 4095
+    int16_t throttle;  // plyn:      0 az 4095
+    int16_t pitch;     // vyskovka:  0 az 4095
+    int16_t roll;      // kridelka:  0 az 4095
 };
 \end{lstlisting}
 
@@ -1374,7 +1375,7 @@ KAVAN EUROPE. \emph{KAVAN Brushless motor C2822-1400} [online].
 
 
 \bibitem{kavan_lipo}
-KAVAN EUROPE. \emph{KAVAN Li-Po 1300mAh/11,1V 40/80C 14,4Wh}
+KAVAN EUROPE. \emph{KAVAN Li-Po 1300~mAh/11{,}1~V 40/80C 14{,}4~Wh}
 [online]. [cit. 2026-04-26]. Dostupné z: \url{https://www.kavanrc.com/en/item/kavan-li-po-1300mah-11-1v-40-80c-14-4wh-140749}
 
 \end{thebibliography}
@@ -1389,9 +1390,9 @@ KAVAN EUROPE. \emph{KAVAN Li-Po 1300mAh/11,1V 40/80C 14,4Wh}
 
 
 \section*{Příloha I --- Zdrojový kód}
-% ZDE nebo odkaz na GitLab
 
-\section*{Příloha II --- Fotodokumentace}
-% ZDE
+\section*{Příloha II --- Schéma zapojení}
+
+\section*{Příloha III --- Fotodokumentace}
 
 \end{document}
