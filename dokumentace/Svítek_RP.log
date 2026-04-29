@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.18)  27 APR 2026 22:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.18)  28 APR 2026 21:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -476,7 +476,7 @@ Package hyperref Info: Link coloring OFF on input line 69.
 \@outlinefile=\write3
 \openout3 = `Sv√≠tek_RP.out'.
 
-<Logo.png, id=291, 65.043pt x 65.043pt>
+<Logo.png, id=294, 65.043pt x 65.043pt>
 File: Logo.png Graphic file (type png)
 <use Logo.png>
 Package pdftex.def Info: Logo.png  used on input line 75.
@@ -515,35 +515,35 @@ LaTeX Font Warning: Font shape `OT1/cmss/bx/n' in size <16> not available
 ]
 Kapitola 1.
 
-Overfull \hbox (2.54419pt too wide) in paragraph at lines 227--232
+Overfull \hbox (2.54419pt too wide) in paragraph at lines 209--214
 \OT1/cmr/m/n/12 po-stu-puje od z^^Sakladn^^S^^P si-lov^^Se rov-nov^^Sahy p^^Tres vztla-ko-vou rov-nici a^^Tz ke konkr^^Setn^^S^^Pm v^^Sypo^^Tct^^Wum
  []
 
 
-Overfull \hbox (2.8408pt too wide) in paragraph at lines 227--232
+Overfull \hbox (2.8408pt too wide) in paragraph at lines 209--214
 \OT1/cmr/m/n/12 jako je Rey-nold-sovo ^^Tc^^S^^Pslo, ob-je-mov^^Se koe-fi-ci-enty ocasn^^S^^Pch ploch nebo rych-lost p^^Sadu. V^^Tsechny
  []
 
-<sily.png, id=417, 602.25pt x 451.6875pt>
+<sily.png, id=421, 602.25pt x 451.6875pt>
 File: sily.png Graphic file (type png)
 <use sily.png>
-Package pdftex.def Info: sily.png  used on input line 242.
+Package pdftex.def Info: sily.png  used on input line 224.
 (pdftex.def)             Requested size: 250.38564pt x 187.79141pt.
 [11
 
  <./sily.png>]
-Overfull \hbox (3.32405pt too wide) in paragraph at lines 289--293
+Overfull \hbox (3.32405pt too wide) in paragraph at lines 271--275
 []\OT1/cmr/m/n/12 Toto je $\OML/cmm/m/it/12 C[]$ \OT1/cmr/m/n/12 pro ust^^Salen^^Sy let. $\OML/cmm/m/it/12 C[]$ \OT1/cmr/m/n/12 je pak ma-xim^^Saln^^S^^P koe-fi-ci-ent vztlaku, p^^Tri jeho^^Tz p^^Trekro^^Tcen^^S^^P
  []
 
 [12] [13] [14]
-<naca_profily.png, id=457, 1927.2pt x 1421.31pt>
+<naca_profily.png, id=461, 1927.2pt x 1421.31pt>
 File: naca_profily.png Graphic file (type png)
 <use naca_profily.png>
-Package pdftex.def Info: naca_profily.png  used on input line 396.
+Package pdftex.def Info: naca_profily.png  used on input line 378.
 (pdftex.def)             Requested size: 386.96027pt x 285.36302pt.
  [15] [16 <./naca_profily.png (PNG copy)>] [17] [18] [19]
-Overfull \hbox (9.33664pt too wide) in paragraph at lines 562--566
+Overfull \hbox (9.33664pt too wide) in paragraph at lines 544--548
 \OT1/cmr/m/n/12 v^^Sychylce jed-noho na-horu se druh^^Se vych^^Syl^^S^^P dol^^Wu. Vznik^^Sa ne-sy-me-t-rick^^Se rozlo^^Tzen^^S^^P vztlaku,
  []
 
@@ -552,98 +552,98 @@ Kapitola 2.
 [21
 
 ] [22]
-<Cm_alpha.png, id=516, 363.60844pt x 292.84406pt>
+<Cm_alpha.png, id=520, 363.60844pt x 292.84406pt>
 File: Cm_alpha.png Graphic file (type png)
 <use Cm_alpha.png>
-Package pdftex.def Info: Cm_alpha.png  used on input line 677.
+Package pdftex.def Info: Cm_alpha.png  used on input line 656.
 (pdftex.def)             Requested size: 182.09486pt x 146.6585pt.
  [23]
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 700.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 679.
 
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 700.
-
-Missing character: There is no ∞ in font cmr12!
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 700.
-
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 700.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 679.
 
 Missing character: There is no ∞ in font cmr12!
 
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 707.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 679.
 
 
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 707.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 679.
+
+Missing character: There is no ∞ in font cmr12!
+
+LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 686.
+
+
+LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 686.
 
 Missing character: There is no ≤ in font cmr12!
-<letove_plochy_B.png, id=524, 1308.89pt x 937.5025pt>
+<letove_plochy_B.png, id=528, 1308.89pt x 937.5025pt>
 File: letove_plochy_B.png Graphic file (type png)
 <use letove_plochy_B.png>
-Package pdftex.def Info: letove_plochy_B.png  used on input line 721.
+Package pdftex.def Info: letove_plochy_B.png  used on input line 700.
 (pdftex.def)             Requested size: 386.96027pt x 277.16165pt.
 [24 <./Cm_alpha.png>]
-<rozlozeni_tlaku_B.png, id=537, 1308.89pt x 937.5025pt>
+<rozlozeni_tlaku_B.png, id=541, 1308.89pt x 937.5025pt>
 File: rozlozeni_tlaku_B.png Graphic file (type png)
 <use rozlozeni_tlaku_B.png>
-Package pdftex.def Info: rozlozeni_tlaku_B.png  used on input line 744.
+Package pdftex.def Info: rozlozeni_tlaku_B.png  used on input line 723.
 (pdftex.def)             Requested size: 386.96027pt x 277.16165pt.
 
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 747.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 726.
 
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 747.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 726.
 
 Missing character: There is no ∞ in font cmr12!
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 747.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 726.
 
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 747.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 726.
 
 Missing character: There is no ∞ in font cmr12!
 [25 <./letove_plochy_B.png (PNG copy)>]
-<NACA_4412_Cl_alpha.png, id=546, 251.43938pt x 319.94531pt>
+<NACA_4412_Cl_alpha.png, id=550, 251.43938pt x 319.94531pt>
 File: NACA_4412_Cl_alpha.png Graphic file (type png)
 <use NACA_4412_Cl_alpha.png>
-Package pdftex.def Info: NACA_4412_Cl_alpha.png  used on input line 768.
+Package pdftex.def Info: NACA_4412_Cl_alpha.png  used on input line 747.
 (pdftex.def)             Requested size: 182.09486pt x 231.70786pt.
  [26 <./rozlozeni_tlaku_B.png (PNG copy)>]
-Overfull \hbox (7.21176pt too wide) in paragraph at lines 798--804
+Overfull \hbox (7.21176pt too wide) in paragraph at lines 777--783
 \OT1/cmr/m/n/12 mo-tor s rota^^Tcn^^S^^Pm pl^^Sa^^Tst^^Tem p^^Tr^^S^^Pmo ur^^Tcen^^Sy pro pev-nok^^Tr^^S^^Pdl^^Se RC mo-dely. Mo-tor je n^^S^^Pzkoot^^Sa^^Tckov^^Sy
  []
 
 [27 <./NACA_4412_Cl_alpha.png>] [28]
-Overfull \hbox (1.88857pt too wide) in paragraph at lines 874--885
+Overfull \hbox (1.88857pt too wide) in paragraph at lines 853--864
 \OT1/cmr/m/n/12 Aby k^^Tr^^S^^Pdlo m^^Telo spr^^Savn^^Sy a kon-stantn^^S^^P tvar pro-filu po cel^^Se d^^Selce, je navr^^Tzeno jako sendvi^^Tcov^^Sa
  []
 
 [29] [30]
-<IMG_2247.jpg, id=575, 2890.8pt x 2168.1pt>
+<IMG_2247.jpg, id=579, 2890.8pt x 2168.1pt>
 File: IMG_2247.jpg Graphic file (type jpg)
 <use IMG_2247.jpg>
-Package pdftex.def Info: IMG_2247.jpg  used on input line 924.
+Package pdftex.def Info: IMG_2247.jpg  used on input line 903.
 (pdftex.def)             Requested size: 386.96027pt x 290.19969pt.
  [31 <./IMG_2247.jpg>]
-<IMG_2251.jpg, id=582, 2168.1pt x 2074.75125pt>
+<IMG_2251.jpg, id=586, 2168.1pt x 2074.75125pt>
 File: IMG_2251.jpg Graphic file (type jpg)
 <use IMG_2251.jpg>
-Package pdftex.def Info: IMG_2251.jpg  used on input line 943.
+Package pdftex.def Info: IMG_2251.jpg  used on input line 916.
 (pdftex.def)             Requested size: 273.14923pt x 261.36938pt.
  [32 <./IMG_2251.jpg>]
 Kapitola 3.
-<schema_letadlo.png, id=588, 785.93625pt x 609.77812pt>
+<schema_letadlo.png, id=592, 785.93625pt x 609.77812pt>
 File: schema_letadlo.png Graphic file (type png)
 <use schema_letadlo.png>
-Package pdftex.def Info: schema_letadlo.png  used on input line 971.
+Package pdftex.def Info: schema_letadlo.png  used on input line 952.
 (pdftex.def)             Requested size: 295.90588pt x 229.58737pt.
-<schema_ovladac.png, id=589, 732.48656pt x 572.89032pt>
+<schema_ovladac.png, id=593, 732.48656pt x 572.89032pt>
 File: schema_ovladac.png Graphic file (type png)
 <use schema_ovladac.png>
-Package pdftex.def Info: schema_ovladac.png  used on input line 980.
+Package pdftex.def Info: schema_ovladac.png  used on input line 961.
 (pdftex.def)             Requested size: 295.90588pt x 231.43362pt.
 [33
 
@@ -656,58 +656,77 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 ) (C:\Users\marti\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 1200.
- [40] [41] [42] [43] [44
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 1181.
+ [40] [41] [42]
+Overfull \hbox (7.57832pt too wide) in paragraph at lines 1287--1293
+\OT1/cmr/m/n/12 des^^S^^Ptek mm do-zadu mimo do-poru^^Tcen^^Sy roz-sah. Tento probl^^Sem byl vy^^Tre^^Tsen p^^Tretiskem ocasn^^S^^Pch
+ []
+
+[43
 
 
 ]
-Underfull \hbox (badness 1789) in paragraph at lines 1353--1356
+Underfull \hbox (badness 1789) in paragraph at lines 1324--1327
 \OT1/cmr/m/n/12 stupn^^Se z: []$\OT1/cmtt/m/n/12 https : / / www . espressif . com / sites / default / files / documentation /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1359--1362
+Underfull \hbox (badness 10000) in paragraph at lines 1330--1333
 []\OT1/cmr/m/n/12 DRELA, Mark. \OT1/cmr/m/it/12 Lab 8 No-tes -- Ba-sic Ai-r-craft De-sign Ru-les \OT1/cmr/m/n/12 [on-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1359--1362
+Underfull \hbox (badness 10000) in paragraph at lines 1330--1333
 \OT1/cmr/m/n/12 line]. Massa-chusetts In-sti-tute of Tech-no-logy, Uni-fied En-gi-nee-ring,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1359--1362
+Underfull \hbox (badness 10000) in paragraph at lines 1330--1333
 \OT1/cmr/m/n/12 2006 [cit. 2026-04-25]. Do-stupn^^Se z: []$\OT1/cmtt/m/n/12 https : / / ocw . mit . edu / courses /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1359--1362
+Underfull \hbox (badness 10000) in paragraph at lines 1330--1333
 \OT1/cmtt/m/n/12 16-[]01-[]unified-[]engineering-[]i-[]ii-[]iii-[]iv-[]fall-[]2005-[]spring-[]2006 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1364--1366
+Underfull \hbox (badness 10000) in paragraph at lines 1335--1337
 []\OT1/cmr/m/n/12 NASA GLENN RE-SEARCH CEN-TER. \OT1/cmr/m/it/12 The Lift Equation \OT1/cmr/m/n/12 [on-line].
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1364--1366
+Underfull \hbox (badness 10000) in paragraph at lines 1335--1337
 \OT1/cmr/m/n/12 2022 [cit. 2026-04-25]. Do-stupn^^Se z: []$\OT1/cmtt/m/n/12 https : / / www1 . grc . nasa . gov /
  []
 
-[45
+[44
 
 ]
-Underfull \hbox (badness 6348) in paragraph at lines 1378--1380
+Underfull \hbox (badness 6348) in paragraph at lines 1349--1351
 []\OT1/cmr/m/n/12 KAVAN EU-ROPE. \OT1/cmr/m/it/12 KA-VAN Li-Po 1300 mAh/11,1 V 40/80C 14,4 Wh
  []
 
 
-Underfull \hbox (badness 4608) in paragraph at lines 1378--1380
+Underfull \hbox (badness 4608) in paragraph at lines 1349--1351
 \OT1/cmr/m/n/12 [on-line]. [cit. 2026-04-26]. Do-stupn^^Se z: []$\OT1/cmtt/m/n/12 https : / / www . kavanrc . com / en / item /
  []
 
-[46] [1
+[45] (Sv√≠tek_RP.lof
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 8.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 8.
+
+Missing character: There is no ∞ in font cmr12!
+)
+\tf@lof=\write5
+\openout5 = `Sv√≠tek_RP.lof'.
+
+ [46
+
+] [1
 
 ] (Sv√≠tek_RP.aux)
  ***********
@@ -720,20 +739,20 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.28pt have occurred.
 
 Package rerunfilecheck Info: File `Sv√≠tek_RP.out' has not changed.
-(rerunfilecheck)             Checksum: 333BB1108450C8962DB7C683EA454000;11416.
+(rerunfilecheck)             Checksum: 4DF711BFE358112D2846C0C8314C8286;11542.
  ) 
 Here is how much of TeX's memory you used:
- 19132 strings out of 467871
- 350637 string characters out of 5418376
- 1031086 words of memory out of 5000000
- 47606 multiletter control sequences out of 15000+600000
+ 19131 strings out of 467871
+ 350675 string characters out of 5418376
+ 999086 words of memory out of 5000000
+ 47610 multiletter control sequences out of 15000+600000
  638083 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,82p,404b,1304s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Sv√≠tek_RP.pdf (47 pages, 1801112 bytes).
+Output written on Sv√≠tek_RP.pdf (47 pages, 1803517 bytes).
 PDF statistics:
- 854 PDF objects out of 1000 (max. 8388607)
- 205 named destinations out of 1000 (max. 500000)
- 632 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 864 PDF objects out of 1000 (max. 8388607)
+ 197 named destinations out of 1000 (max. 500000)
+ 640 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -113,50 +113,32 @@
 \chapter*{Anotace}
 \thispagestyle{empty}
 
-Tato ročníková práce se zabývá návrhem a~výrobou modelu RC letadla
-s~pevnými křídly. Práce pokrývá celý vývojový cyklus projektu a~to
-aerodynamickou analýzu profilu křídla, návrh geometrie nosných ploch,
-volbu pohonné soustavy, návrh palubní elektroniky a~implementaci
-bezdrátové komunikace mezi letadlem a~ovladačem.
+Tato ročníková práce se zabývá návrhem a výrobou modelu RC letadla s pevnými 
+křídly. Práce pokrývá celý vývojový cyklus projektu a to aerodynamickou analýzu, 
+návrh geometrie nosných ploch, volbu pohonné soustavy, návrh 
+palubní elektroniky a implementaci bezdrátové komunikace mezi letadlem 
+a ovladačem. Aerodynamická analýza byla provedena v programech Xfoil a XFLR5 
+ pro Reynoldsova čísla v rozsahu 80\,000--110\,000. Řídicí elektronika 
+je postavena na mikrokontroléru ESP32 a bezdrátová komunikace je realizována 
+pomocí modulů HC-12 na frekvenci 433\,MHz.
 
-Aerodynamická analýza byla provedena v~programech Xfoil a~XFLR5
-metodou VLM1 pro Reynoldsova čísla v~rozsahu $80\,000$--$110\,000$.
-Pro hlavní křídlo byl zvolen profil NACA~4412 s~rozpětím 600~mm,
-pro ocasní plochy symetrický profil NACA~0012. Hlavní křídlo je tvořeno
-3D tištěnými žebry s~uhlíkovými nosníky potaženými fólií,
-trup je uhlíková trubka čtvercového průřezu.
-
-Řídicí elektronika je postavena na mikrokontroléru ESP32.
-Bezdrátová komunikace mezi ovladačem a~letadlem je realizována
-pomocí modulů HC-12 pracujících na frekvenci 433~MHz s~odesílací
-frekvencí 20~Hz. Řídicí data jsou přenášena jako binární struktura.
-
-
-Klíčová slova: RC letadlo, model letadla, aerodynamika, 
-NACA 4412, XFLR5, ESP32, HC-12, bezdrátová komunikace, 3D tisk, pevné křídlo
+Klíčová slova: RC letadlo, model letadla, aerodynamika, NACA 4412, 
+XFLR5, ESP32, HC-12, bezdrátová komunikace, 3D tisk, pevné křídlo
 
 \newpage
 
-\chapter*{Annotation}
+\chapter*{Abstract}
 \thispagestyle{empty}
 
 This thesis deals with the design and construction of a fixed-wing RC aircraft 
-model. The work covers the entire development cycle of the project, including 
-aerodynamic analysis of the wing profile, design of lifting surface geometry, 
-selection of the propulsion system, design of onboard electronics, and 
-implementation of wireless communication between the aircraft and the controller.
-
-The aerodynamic analysis was performed using Xfoil and XFLR5 software with the 
-VLM1 method for Reynolds numbers in the range of $80\,000$--$110\,000$. The NACA 4412 
-profile with a wingspan of 600 mm was selected for the main wing, and the 
-symmetrical NACA 0012 profile was used for the tail surfaces. The wing structure 
-consists of 3D-printed ribs with carbon spars covered with heat-shrink film. The 
-fuselage is made of a square cross-section carbon tube.
-
-The control electronics are based on the ESP32 microcontroller. Wireless 
-communication between the controller and the aircraft is implemented using HC-12 
-modules operating at 433 MHz with a transmission rate of 20 Hz. Control data is 
-transmitted as a binary structure.
+model. The work covers the entire development cycle of the project including aerodynamic 
+analysis, design of lifting surface geometry, selection of 
+the propulsion system, design of onboard electronics, and implementation of 
+wireless communication between the aircraft and the controller. The aerodynamic 
+analysis was performed using Xfoil and XFLR5 software for 
+Reynolds numbers in the range of 80,000--110,000. The control electronics are 
+based on the ESP32 microcontroller, and wireless communication is implemented 
+using HC-12 modules operating at 433\,MHz.
 
 Keywords: RC aircraft, model airplane, aerodynamics, NACA 4412, XFLR5, 
 ESP32, HC-12, wireless communication, 3D printing, fixed-wing
@@ -436,7 +418,7 @@ Model se bude pohybovat v~rozsahu přibližně $\Rey = 80\,000$--$110\,000$.
 %%-------------------------------------------------------------------------
 \section{Wing loading}
 
-Wing loading neboli zátěž na křídlo je poměr hmotnosti letadla a je definován
+Wing loading neboli zátěž na křídlo je poměr hmotnosti letadla a plochy hlavního křídla, je definován
 \begin{equation}
     WL = \frac{m}{S},
     \label{eq:WL}
@@ -529,7 +511,7 @@ a~$k_{3D}$~[--] je empirický korekční faktor zohledňující 3D efekty.
 \label{sec:stabilita}
 
 Letadlo je staticky podélně stabilní, pokud při vychýlení nosu nahoru
-vznikne moment který nos vrátí zpět dolů, a naopak. Tato podmínka
+vznikne moment, který nos vrátí zpět dolů, a naopak. Tato podmínka
 je splněna tehdy, když těžiště (CG) leží před neutrálním bodem (NP)
 aerodynamické konfigurace. Statická zásoba stability (\textit{static margin}) říká o kolik procent tětivy leží těžiště před neutrálním bodem. Čím větší SM, tím stabilnější letadlo.
  Statickou zásobu stability určuje vzorec
@@ -585,7 +567,7 @@ parametrů a~volba pohonné soustavy.
 %%-------------------------------------------------------------------------
 \section{Požadavky a specifikace}
 
-Model je navržen jako RC letadlo s rozpětím křídel 600~mm a hmotností do 600~g.
+Model je navržen jako RC letadlo s rozpětím křídel 600~mm a hmotností do 650~g.
 Cílem je dosáhnout dostatečného vztlaku pro stabilní let při rychlosti 10--12~m/s, přičemž
 model bude vybaven křidélky pro řízení příčného naklonění a~výškovkou pro řízení podélného kývání.
 Model bude poháněn jedním bezkartáčovým motorem s~vhodnou vrtulí, přičemž poměr tahu k hmotnosti bude dostatečný pro pevnokřídlý model.
@@ -624,7 +606,7 @@ Křídlo bude vybaveno křidélky (ailerony) pro řízení příčného nakloně
 
 Horizontální stabilizátor (výškovka) má rozpětí 200~mm a~tětivu 80~mm, což dává plochu $S_h = 0{,}016$~m².
 Použitý profil NACA~0012 je symetrický, což je vhodné pro stabilizátor, který má být aerodynamicky neutrální.
-Klapka výškovky bude výchylovatelná pro řízení náklonění nosu letadla (podélné kývání). Pro výpočet objemového 
+Klapka výškovky bude výchylovatelná pro řízení náklonění nosu letadla. Pro výpočet objemového 
 koeficientu výškovky $V_h$ dle rovnice~\ref{eq:Vh} je třeba určit rameno $l_h$ které určuje vzdálenost mezi
  aerodynamickým středem hlavního křídla a~aerodynamickým středem výškovky. Při navržené geometrii vychází $l_h = 0{,}29$~m, které dává $V_h = 0{,}45$, což je v~doporučeném rozsahu pro lehká letadla.
 
@@ -636,13 +618,11 @@ tětiva vychází 80~mm a~plocha $S_v = 0{,}0064\,\text{m}^2$. Použitý
 profil NACA 0012 je symetrický, což je vhodné pro stabilizátor, který má být aerodynamicky neutrální.
 Fin bude pevný, bez výchylky, protože při dané velikosti modelu a~navržené geometrii ocasních ploch je zajištěna dostatečná přímosměrná stabilita. 
 Pro výpočet objemového koeficientu vertikálního stabilizátoru $V_v$ dle rovnice~\ref{eq:Vv} 
-je třeba určit rameno $l_v$ které určuje vzdálenost mezi aerodynamickým středem hlavního křídla a~aerodynamickým středem finu vychází $l_v = 0{,}29$~m, což dává $V_v = 0{,}041$.Výsledek je v doporučeným rozsahu 
- pro lehká letadla.
-
+je třeba určit rameno $l_v$ které určuje vzdálenost mezi aerodynamickým středem hlavního křídla a~aerodynamickým středem finu, vychází $l_v = 0{,}29$~m, což dává $V_v = 0{,}041$. Výsledek je v doporučeném rozsahu pro lehká letadla.
 \subsection{Ovládací plochy}
 
 Křidélka (ailerons) budou umístěna na vnější části každého křídla
-o délce 190~mm, přičemž zbytek křídla u~trupu zůstane pevných.
+o délce 190~mm, přičemž zbytek křídla u~trupu zůstane pevné.
 Celková délka křidélek je tedy 380~mm.
 Klapky budou výchylovány pomocí servomotorů pro řízení naklonění letadla.
 Klapky a serva budou spojeny mechanicky pomocí táhel,
@@ -665,8 +645,7 @@ což odpovídá $31{,}5~\%$ střední aerodynamické tětivy (MAC).
 Statická zásoba stability dle rovnice~\ref{eq:SM} vychází
 
 \[
-SM = \frac{x_{NP} - x_{CG}}{\bar{c}} \cdot 100 = 
-\frac{51{,}0 - 41{,}0}{130} \cdot 100 \approx 7{,}7~\%
+SM = \frac{51{,}0 - 41{,}0}{130} \cdot 100 \approx 7{,}7~\%
 \]
 
 Výsledek leží v doporučeném rozsahu $5$–$15~\%$ pro RC modely, 
@@ -734,7 +713,7 @@ naráží na profil. Ocasní plocha vykazuje výrazně nižší silové zatíže
 což potvrzuje její stabilizační funkci bez výrazného příspěvku k~celkovému
 odporu.
 
-Simulace rovněž potvrzuje polohu neutrálního bodu $x_{NP} = 0{,}058\,\text{m}$
+Simulace rovněž potvrzuje polohu neutrálního bodu $x_{NP} = 0{,}051\,\text{m}$
 a~polohu těžiště $x_{CG} = 0{,}041\,\text{m}$, ze kterých vychází
 statická zásoba stability vypočtená v~sekci~\ref{sec:stabilita}.
 Klouzavost modelu při tomto režimu letu vychází $K = 34{,}8$.
@@ -864,7 +843,7 @@ Jako hlavní konstrukční materiál pro trup a~křídla je zvolen uhlíkový ko
 který nabízí vynikající poměr pevnosti k~hmotnosti. Žebrové profily
 křídel a~ocasních ploch jsou tištěné na 3D tiskárně z~PLA.
 Tyto díly jsou dostatečně pevné pro tento účel a~umožňují přesné zachování
-tvaru profilu. Povrch křídel je potažen smršťovací fólií, která zajišťuje 
+tvaru profilu. Povrch křídel bude potažen smršťovací fólií, která zajišťuje 
 hladký aerodynamický povrch a~minimalizuje hmotnost. Hlavní křídlo a páteřní tyč spojují dvě plochy z 4~mm tlusté břízové překližky, 
 které poskytují dostatečnou tuhost a~pevnost pro přenášení zatížení během letu.
 Mezi těmito plochami je umístěna baterie a~elektronika.
@@ -879,7 +858,7 @@ s~odlehčovacími otvory, které zároveň slouží jako otvor pro kabely k serv
  Skrze žebra procházejí dva uhlíkové nosníky
 (průměr 6~mm, délka 600~mm), které zajišťují torzní i~ohybovou tuhost křídla. Žeber je celkem 16,
  na každé straně 8 a to 4 v~pevné části a~4 menší v~části s~křidélky.
-Povrch je potažen smršťovací fólií, která vytváří aerodynamicky hladký povrch
+Povrch bude potažen smršťovací fólií, která vytváří aerodynamicky hladký povrch
 a~přidává minimální hmotnost. Výsledná konstrukce je pevná, tvarově konzistentní
 a~lehká.
 
@@ -932,12 +911,6 @@ otvory. Čtyři pro šrouby upevňující motor a jeden centrální pro průchod
 Tento držák je pevně spojen s trupem epoxidovým lepidlem a je 
 schopen přenášet tah motoru do nosné konstrukce.
 
-V zadní části modelu jsou do trupu zasunuty 3D tištěné ocasní plochy. Horizontální 
-stabilizátor je k trupu připevněn šroubem, vertikální stabilizátor je přilepen 
-k horizontálnímu. Servomotor výškovky je upevněn na trupu před ocasními plochami a 
-je propojen pomocí mechanického táhla.
-
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{IMG_2251.jpg}
@@ -945,6 +918,14 @@ je propojen pomocí mechanického táhla.
     a vrtulovým kuželem.}
     \label{fig:motor-detail}
 \end{figure}
+
+V zadní části modelu jsou do trupu zasunuty 3D tištěné ocasní plochy. Horizontální 
+stabilizátor je k trupu připevněn šroubem, vertikální stabilizátor je přilepen 
+k horizontálnímu. Servomotor výškovky je upevněn na trupu před ocasními plochami a 
+je propojen pomocí mechanického táhla.
+
+
+
 
 Závěrečným krokem byla instalace elektroniky mezi dřevěné příložky trupu,
 připevnění ESP32, modulu HC-12 a ESC, propojení servomotorů s řídicí jednotkou 
@@ -1111,7 +1092,7 @@ který zajišťuje bezpečné a~spolehlivé spojení.
 
 Jako ovladač byl použit starý ovladač na RC drony.
 V ovladači zůstaly pouze původní joysticky a~vše ostatní bylo odstraněno.
-Do těla ovladače bylo umístěno ESP32 a ve předu ovladače je otvor pro HC-12.
+Do těla ovladače bylo umístěno ESP32 a v přední části ovladače je otvor pro HC-12.
 Ovladač je napájen z~powerbanky, která poskytuje stabilní napětí pro ESP32 a~HC-12.
 
 
@@ -1246,7 +1227,7 @@ void loop() {
 Přijímač čeká, dokud není v~bufferu k~dispozici celý paket (6~bajtů).
 Jakmile data dorazí, přečte je do struktury \texttt{Data}
 a~předá dál k~řízení serv a~ESC. Dále jsou hodnoty mapovány 
-z~rozsahu 0--4095 (12bit ADC) na rozsah 1000--2000~\si{\micro\second} pro PWM signál.
+z~rozsahu 0--4095 (12bitový ADC) na rozsah 1000--2000~\si{\micro\second} pro PWM signál.
 
 \newpage
 
@@ -1261,15 +1242,6 @@ void loop() {
         servoAileronR.writeMicroseconds(map(packet.roll,  0, 4095, 2000, 1000));
 
         lastPacketTime = millis();
-    }
-
-    // Fail-safe
-
-    if (millis() - lastPacketTime > 1000) {
-        esc.writeMicroseconds(1000);
-        servoElevator.writeMicroseconds(1500);
-        servoAileronL.writeMicroseconds(1500);
-        servoAileronR.writeMicroseconds(1500);
     }
 }
 \end{lstlisting}
@@ -1313,15 +1285,14 @@ v případě výpadku spojení letadlo automaticky nastaví nulový plyn a vycen
 všechna serva.
 
 Při realizaci modelu se ukázalo, že hmotnost 3D tištěných ocasních ploch 
-významně ovlivňuje polohu těžiště. Původní verze ocasu vážila 88\,g, což 
-posunulo těžiště o 35\,mm dozadu mimo doporučený rozsah. Tento problém byl 
-vyřešen přetiskem ocasních ploch s nižší hustotou výplně a tenšími stěnami, 
-čímž se hmotnost ocasu snížila na 55\,g. Tato zkušenost potvrzuje, že 
-u 3D tištěných modelů musí být odhady hmotnosti součástí návrhového procesu 
+významně ovlivňuje polohu těžiště. Původní verze ocasu vážila 92\,g, což 
+posunulo těžiště o několik desítek mm dozadu mimo doporučený rozsah. Tento problém byl 
+vyřešen přetiskem ocasních ploch s nižší hustotou výplně a tenšími stěnami, čímž se hmotnost ocasu snížila na 50\,g. 
+Tato zkušenost potvrzuje, že u 3D tištěných modelů musí být odhady hmotnosti součástí návrhového procesu 
 od počátku.
 
 Letové testy budou dokončeny po finálním potažení křídla smršťovací fólií.
- Práce může v budoucích iteracích pokračovat přidáváíním více funkcí jako GPS modulu nebo přechodem na výkonnější řídicí jednotku 
+ Práce může v budoucích iteracích pokračovat přidáním více funkcí, jako je GPS modul nebo přechodem na výkonnější řídicí jednotku 
 schopnou autonomní stabilizace pomocí gyroskopu a akcelerometru.
 
 
@@ -1381,9 +1352,12 @@ KAVAN EUROPE. \emph{KAVAN Li-Po 1300~mAh/11{,}1~V 40/80C 14{,}4~Wh}
 \end{thebibliography}
 
 
-%%=========================================================================
+\addcontentsline{toc}{chapter}{Seznam obrázků}
+\listoffigures
+\newpage
+
 %%  PŘÍLOHY
-%%=========================================================================
+
 \chapter*{Přílohy}
 \pagenumbering{Roman}
 \addcontentsline{toc}{chapter}{Přílohy}

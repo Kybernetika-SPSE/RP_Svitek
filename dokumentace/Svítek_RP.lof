@@ -1,0 +1,15 @@
+\babel@toc {czech}{}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Čtyři základní síly působící na letadlo při letu.}}{11}{figure.caption.7}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Profily NACA 4412 (hlavní křídlo) a NACA 0012 (ocasní plochy) vygenerované v~programu XFLR5.}}{16}{figure.caption.27}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Závislost momentového koeficientu $C_m$ na úhlu náběhu $\alpha $ z~analýzy v~XFLR5.}}{24}{figure.caption.55}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces 3D model letounu v~programu XFLR5. Parametry simulace jsou uvedeny v~tabulce~\ref {tab:xflr5_vysledky}.}}{25}{figure.caption.58}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Rozložení aerodynamické síly na plochu ($F/s = q \cdot C_p$) na profilu křídla z~analýzy VLM1 při $V = 12\,\text {m/s}$, $\alpha = 2°$.}}{26}{figure.caption.59}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Závislost koeficientu vztlaku $C_L$ na úhlu náběhu $\alpha $ z~analýzy v~XFoil.}}{27}{figure.caption.61}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Sestavené hlavní křídlo s 3D tištěnými žebry, uhlíkovými nosníky a integrovanou kabeláží.}}{31}{figure.caption.71}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Detail motorové sekce s instalovaným motorem KAVAN C2822-1400KV a vrtulovým kuželem.}}{32}{figure.caption.72}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Schéma zapojení elektroniky letadla}}{33}{figure.caption.76}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Schéma zapojení elektroniky ovladače}}{34}{figure.caption.78}%
+\addvspace {10\p@ }

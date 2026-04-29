@@ -296,6 +296,10 @@ INPUT C:\Users\marti\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.st
 INPUT C:\Users\marti\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt12.tfm
 INPUT C:\Users\marti\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
 INPUT C:\Users\marti\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
+INPUT .\Svítek_RP.lof
+INPUT .\Svítek_RP.lof
+INPUT Svítek_RP.lof
+OUTPUT Svítek_RP.lof
 INPUT Svítek_RP.aux
 INPUT .\Svítek_RP.out
 INPUT .\Svítek_RP.out

@@ -66,8 +66,9 @@
 \contentsline {subsection}{\numberline {4.3.3}Odesílání dat}{41}{subsection.108}%
 \contentsline {section}{\numberline {4.4}Kód přijímače (letadlo)}{41}{section.118}%
 \contentsline {subsection}{\numberline {4.4.1}Příjem a dekódování dat}{41}{subsection.119}%
-\contentsline {subsection}{\numberline {4.4.2}Řízení servomotorů a ESC}{42}{subsection.142}%
-\contentsline {subsection}{\numberline {4.4.3}Fail-safe}{43}{subsection.143}%
-\contentsline {chapter}{Závěr}{44}{chapter*.144}%
-\contentsline {chapter}{Literatura}{45}{chapter*.145}%
-\contentsline {chapter}{Přílohy}{I}{chapter*.146}%
+\contentsline {subsection}{\numberline {4.4.2}Řízení servomotorů a ESC}{42}{subsection.133}%
+\contentsline {subsection}{\numberline {4.4.3}Fail-safe}{42}{subsection.134}%
+\contentsline {chapter}{Závěr}{43}{chapter*.135}%
+\contentsline {chapter}{Literatura}{44}{chapter*.136}%
+\contentsline {chapter}{Seznam obrázků}{45}{chapter*.136}%
+\contentsline {chapter}{Přílohy}{I}{chapter*.138}%
